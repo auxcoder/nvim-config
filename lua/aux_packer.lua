@@ -8,9 +8,9 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use {
-	'nvim-telescope/telescope.nvim', tag = '0.1.4',
-	-- or                            , branch = '0.1.x',
-	requires = { {'nvim-lua/plenary.nvim'} }
+		'nvim-telescope/telescope.nvim', tag = '0.1.4',
+		-- or                            , branch = '0.1.x',
+		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
 	use('navarasu/onedark.nvim')
@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
 		--- Uncomment these if you want to manage LSP servers from neovim
 			{'williamboman/mason.nvim'},
 			{'williamboman/mason-lspconfig.nvim'},
-			{'WhoIsSethDaniel/mason-tool-installer.nvim'},
+			--{'WhoIsSethDaniel/mason-tool-installer.nvim'},
 
 			-- LSP Support
 			{'neovim/nvim-lspconfig'},
