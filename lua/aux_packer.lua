@@ -4,7 +4,7 @@
 vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function(use)
-	-- Packer can manage itself
+  	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
 	use ({'nvim-telescope/telescope.nvim', tag = '0.1.4', requires = {'nvim-lua/plenary.nvim'}})
@@ -42,4 +42,14 @@ return require('packer').startup(function(use)
 			{'L3MON4D3/LuaSnip'},                    -- Snipperts
 		}
 	})
+
+	-- LSP integration and autocomplete
+	use 'editorconfig/editorconfig-vim'          -- Reads and use config from .editorconfig files
+
+	-- Prettier
+	use {
+		'prettier/vim-prettier',
+		run = 'yarn install --frozen-lockfile --production',
+		ft = {'javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'}
+	}
 end)
