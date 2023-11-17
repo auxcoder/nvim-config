@@ -21,6 +21,10 @@ return require('packer').startup(function(use)
 
 	use('tpope/vim-fugitive')
 
+	use({'nvim-lualine/lualine.nvim', requires = {'nvim-tree/nvim-web-devicons', opt = true}})
+
+	use({'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}})
+
 	use({
 		'VonHeikemen/lsp-zero.nvim', branch = 'v3.x',
 		requires = {

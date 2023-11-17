@@ -12,6 +12,13 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>src", ":luafile $MYVIMRC<CR>")
 
+-- LSP Mappings + Settings -----------------------------------------------------
+-- Basic diagnostic mappings, these will navigate to or display diagnostics
+vim.keymap.set('n', '<space>d', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+
 -- copy/paste
 vim.keymap.set("v", "p", '"_dP')
 
