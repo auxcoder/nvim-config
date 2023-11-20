@@ -320,25 +320,11 @@ return {
 			.. '}'
 	),
 
-	--[[
-		-- Log to Console
-		parse(
-			{
-				trig = 'log',
-				wordTrig = true,
-			},
-			"console.log('log > $1 >', ${1:$CLIPBOARD}); // eslint-disable-line",
-		),
-
-		-- Log Stringify to Console
-		parse(
-			{
-				trig = 'logasstr',
-				wordTrig = true,
-			},
-			'console.log(`${1:test} > ${JSON.stringify(${2:test})}`); // eslint-disable-line'
-		)
-	--]]
+	-- Log Stringify
+	parse({
+		trig = 'logjs',
+		wordTrig = true,
+	}, 'console.log(`${1:test} > ${JSON.stringify(${1:test})}`); // eslint-disable-line'),
 }
 
 -- vim: fdm=marker fdl=0
