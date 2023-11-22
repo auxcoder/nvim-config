@@ -32,7 +32,8 @@ return {
 		})
 	), --}}}
 
-	s( -- Console log {{{
+	--[[
+	s( --{{{
 		{
 			trig = 'log',
 			name = 'Do console Log with options',
@@ -44,6 +45,7 @@ return {
 			i(0),
 		})
 	), --}}}
+	--]]
 
 	-- Ng Component from VSCode
 	parse(
@@ -121,19 +123,15 @@ return {
 			trig = 'ngcls',
 			wordTrig = true,
 		},
-		"// import {x} from 'x-module'"
-			.. '//'
-			.. '/**'
+		'/**'
 			.. ' * @description'
 			.. '**/'
 			.. 'export class ${1:className} {'
 			.. '\tconstructor (${2:classDep}){'
 			.. "\t\t'ngInject';"
-			.. '\t\tthis.$2 = $2;'
+			.. '\t\tthis.${2:classDept} = $2{:classDept};'
 			.. '\t}'
 			.. '}'
-			.. "let compMod = angular.module('mod.svc.${1:className}', []).service('${1:className}Svc', ${1:className});"
-			.. 'export default compMod = compMod.name;'
 	),
 
 	-- Ng Svc Class
