@@ -13,6 +13,14 @@ Tutorials
 
 - <https://www.nerdfonts.com/font-downloads>
 
+### TagBar
+
+Rquires installing Ctags
+
+```sh
+brew install ctags
+```
+
 ## Todo
 
 - [NvimDap](https://github.com/mfussenegger/nvim-dap)
