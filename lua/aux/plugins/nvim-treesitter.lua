@@ -53,13 +53,6 @@ return {
 						node_decremental = '<bs>',
 					},
 				},
-				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-				-- commented after upgrading nvim-treesitter with error:
-				-- context_commentstring nvim-treesitter module is deprecated
-				-- context_commentstring = {
-				-- 	enable = true,
-				-- 	enable_autocmd = false,
-				-- },
 			})
 		end,
 	},
