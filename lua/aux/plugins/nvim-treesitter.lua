@@ -13,18 +13,14 @@ return {
 
 			-- configure treesitter
 			treesitter.setup({ -- enable syntax highlighting
-				highlight = {
-					enable = true,
-				},
+				highlight = { enable = true },
 				-- enable indentation
 				indent = { enable = true },
 				-- enable autotagging (w/ nvim-ts-autotag plugin)
-				autotag = {
-					enable = true,
-				},
+				autotag = { enable = true },
 				-- ensure these language parsers are installed
 				ensure_installed = {
-					'go',
+					-- 'go',
 					'json',
 					'javascript',
 					'typescript',
@@ -32,17 +28,17 @@ return {
 					'yaml',
 					'html',
 					'css',
+					'php',
 					'prisma',
 					'markdown',
 					'markdown_inline',
-					'svelte',
-					'graphql',
+					-- 'svelte',
+					-- 'graphql',
 					'bash',
 					'lua',
 					'vim',
 					'dockerfile',
 					'gitignore',
-					'dockerfile',
 					'git_config',
 					'jsdoc',
 					'toml',

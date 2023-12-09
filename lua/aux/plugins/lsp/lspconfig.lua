@@ -111,18 +111,36 @@ return {
 			end,
 		})
 
-		-- configure prisma orm server
-		lspconfig['prismals'].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
+		-- json validation
+		lspconfig['jsonls'].setup({
+			settings = {
+				json = {
+					-- Schemas https://schemastore.org
+					schemas = require('schemastore').json.schemas({
+						select = {
+							'.eslintrc',
+							'package.json',
+							-- 'tsconfig*.json',
+							'prettierrc.json',
+						},
+					}),
+					validate = { enable = true },
+				},
+			},
 		})
 
+		-- configure prisma orm server
+		-- lspconfig['prismals'].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
+
 		-- configure graphql language server
-		lspconfig['graphql'].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { 'graphql', 'gql', 'svelte', 'typescriptreact', 'javascriptreact' },
-		})
+		-- lspconfig['graphql'].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	filetypes = { 'graphql', 'gql', 'svelte', 'typescriptreact', 'javascriptreact' },
+		-- })
 
 		-- configure emmet language server
 		lspconfig['emmet_ls'].setup({
@@ -155,6 +173,19 @@ return {
 						},
 					},
 				},
+			},
+		})
+
+		-- https://marioyepes.com/blog/neovim-ide-with-lua-for-web-development/
+		lspconfig['intelephense'].setup({
+			on_attach = function(client, bufnr)
+				-- Enable (omnifunc) completion triggered by <c-x><c-o>
+				vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+				vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+				-- Here we should add additional keymaps and configuration options.
+			end,
+			flags = {
+				debounce_text_changes = 150,
 			},
 		})
 	end,
