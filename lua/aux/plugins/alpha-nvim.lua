@@ -5,7 +5,7 @@ return {
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
 	config = function()
 		local alpha = require('alpha')
-		local dashboard = require('alpha.themes.dashboard')
+		local dashboard = require('alpha.themes.dashboard') -- alpha.themes.startify
 
 		-- Set header
 		dashboard.section.header.val = {
@@ -29,10 +29,18 @@ return {
 			dashboard.button('q', ' > Quit NVIM', '<cmd>qa<CR>'),
 		}
 
-		-- Send config to alpha
-		alpha.setup(dashboard.opts)
+		dashboard.config.opts.noautocmd = true
 
+		-- local handle = io.popen('fortune')
+		-- local fortune = handle:read('*a')
+		-- handle:close()
+		-- dashboard.section.footer.val = fortune
+		-- dashboard.config.opts.noautocmd = true
 		-- Disable folding on alpha buffer
-		vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
+		-- vim.cmd([[autocmd User AlphaReady echo 'ready']])
+		-- vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
+		-- Send config to alpha
+		alpha.setup(dashboard.config)
+		-- alpha.setup(dashboard.config)
 	end,
 }
