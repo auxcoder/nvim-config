@@ -1,6 +1,3 @@
--- set leader key to space
-vim.g.mapleader = ' '
-
 local keymap = vim.keymap -- for conciseness
 local ls = require('luasnip') -- for jumps
 
