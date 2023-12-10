@@ -112,22 +112,17 @@ return {
 		})
 
 		-- json validation
-		lspconfig['jsonls'].setup({
-			settings = {
-				json = {
-					-- Schemas https://schemastore.org
-					schemas = require('schemastore').json.schemas({
-						select = {
-							'.eslintrc',
-							'package.json',
-							-- 'tsconfig*.json',
-							'prettierrc.json',
-						},
-					}),
-					validate = { enable = true },
-				},
-			},
-		})
+		-- lspconfig['jsonls'].setup({
+		-- 	settings = {
+		-- 		json = {
+		-- 			-- Schemas https://schemastore.org
+		-- 			schemas = require('schemastore').json.schemas({
+		-- 				select = { '.eslintrc', 'package.json', 'tsconfig*.json', 'prettierrc.json' },
+		-- 			}),
+		-- 			validate = { enable = true },
+		-- 		},
+		-- 	},
+		-- })
 
 		-- configure prisma orm server
 		-- lspconfig['prismals'].setup({
