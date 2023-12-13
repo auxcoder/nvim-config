@@ -6,14 +6,9 @@ return {
 		{ 'antosha417/nvim-lsp-file-operations', config = true },
 	},
 	config = function()
-		-- import lspconfig plugin
-		local lspconfig = require('lspconfig')
-
-		-- import cmp-nvim-lsp plugin
-		local cmp_nvim_lsp = require('cmp_nvim_lsp')
-
+		local lspconfig = require('lspconfig') -- import lspconfig plugin
+		local cmp_nvim_lsp = require('cmp_nvim_lsp') -- import cmp-nvim-lsp plugin
 		local keymap = vim.keymap -- for conciseness
-
 		local opts = { noremap = true, silent = true }
 		local on_attach = function(client, bufnr)
 			opts.buffer = bufnr

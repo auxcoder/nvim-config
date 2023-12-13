@@ -10,8 +10,11 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 
 		-- change color for arrows in tree to light blue
-		vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
-		vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
+		vim.cmd([[ hi NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
+		vim.cmd([[ hi NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
+		vim.cmd([[ hi NvimTreeWinSeparator guibg=none ]])
+		vim.cmd([[ hi NvimTreeNormal guibg=none ]])
+		vim.cmd([[ hi NvimTreeEndOfBuffer guibg=none ]])
 
 		-- configure nvim-tree
 		nvimtree.setup({
@@ -24,19 +27,6 @@ return {
 				width = 35,
 				side = 'left',
 				number = false,
-				-- mappings = {
-				-- 	list = {
-				-- 		{ key = 'l', action = 'edit' },
-				-- 		{ key = 'o', action = 'edit' },
-				-- 		{ key = '<cr>', action = 'edit' },
-				-- 		{ key = 'I', action = 'toggle_ignored' },
-				-- 		{ key = 'H', action = 'toggle_dotfiles' },
-				-- 		{ key = 'R', action = 'refresh' },
-				-- 		{ key = '=', action = 'preview' },
-				-- 		{ key = 'X', action = 'system_open' },
-				-- 		{ key = '?', action = 'toggle_help' },
-				-- 	},
-				-- },
 			},
 			-- change folder arrow icons
 			renderer = {

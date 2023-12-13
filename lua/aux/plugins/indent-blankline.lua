@@ -1,14 +1,10 @@
+-- Add indentation guides even on blank lines
 return {
-	-- Add indentation guides even on blank lines
 	'lukas-reineke/indent-blankline.nvim',
 	event = 'BufRead',
 	config = function()
 		local ibl = require('ibl')
 		local hooks = require('ibl.hooks')
-		local highlight = {
-			'CursorColumn',
-			'Whitespace',
-		}
 
 		ibl.setup({
 			exclude = {
@@ -16,7 +12,7 @@ return {
 				buftypes = { 'terminal', 'nofile' },
 			},
 			-- Background color indentation guides
-			-- indent = { highlight = highlight, char = '' },
+			-- indent = { highlight = {'CursorColumn', 'Whitespace'}, char = '' },
 			-- whitespace = {
 			-- 	highlight = highlight,
 			-- 	remove_blankline_trail = false,
