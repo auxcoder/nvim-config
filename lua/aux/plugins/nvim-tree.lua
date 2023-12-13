@@ -24,19 +24,6 @@ return {
 				width = 35,
 				side = 'left',
 				number = false,
-				-- mappings = {
-				-- 	list = {
-				-- 		{ key = 'l', action = 'edit' },
-				-- 		{ key = 'o', action = 'edit' },
-				-- 		{ key = '<cr>', action = 'edit' },
-				-- 		{ key = 'I', action = 'toggle_ignored' },
-				-- 		{ key = 'H', action = 'toggle_dotfiles' },
-				-- 		{ key = 'R', action = 'refresh' },
-				-- 		{ key = '=', action = 'preview' },
-				-- 		{ key = 'X', action = 'system_open' },
-				-- 		{ key = '?', action = 'toggle_help' },
-				-- 	},
-				-- },
 			},
 			-- change folder arrow icons
 			renderer = {

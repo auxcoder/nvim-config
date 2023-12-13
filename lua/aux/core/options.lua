@@ -18,7 +18,7 @@ opt.listchars = 'trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,multispace:
 -- opt.listchars = 'eol:¬,space:·,lead: ,trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,multispace:···⬝,leadmultispace:│   ,'
 
 -- line wrapping
-opt.wrap = false -- disable line wrapping
+opt.wrap = true -- disable line wrapping
 
 -- Number of screen lines to keep above and below the cursor
 opt.scrolloff = 8
@@ -73,9 +73,6 @@ opt.swapfile = false
 
 -- Improve diff
 vim.opt.diffopt:append('linematch:60')
-
--- soft wrap
-opt.wrap = true
 
 -- WARN: this won't update the search count after pressing `n` or `N`
 -- When running macros and regexes on a large file, lazy redraw tells neovim/vim not to draw the screen
