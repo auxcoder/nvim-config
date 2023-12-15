@@ -1,6 +1,6 @@
 -- Requires
 local ls = require('luasnip')
-local util = require('aux.snippets.util')
+local util = require('custom.snippets.util')
 local fmt = require('luasnip.extras.fmt').fmt
 local partial = require('luasnip.extras').partial
 
