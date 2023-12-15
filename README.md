@@ -4,46 +4,61 @@
 	- [Tutorials](#tutorials)
 	- [Keymap](#keymap)
 		- [Nerd Fonts](#nerd-fonts)
-	- [Plugins](#plugins)
+	- [DefaultPlugins](#defaultplugins)
+		- [nvim-lua/plenary.nvim](#nvim-luaplenarynvim)
+		- [NvChad/base46](#nvchadbase46)
+		- [NvChad/ui](#nvchadui)
+		- [NvChad/nvterm](#nvchadnvterm)
+		- [NvChad/nvim-colorizer](#nvchadnvim-colorizer)
+		- [nvim-tree/nvim-web-devicons](#nvim-treenvim-web-devicons)
+		- [lukas-reineke/indent-blankline.nvim](#lukas-reinekeindent-blanklinenvim)
+		- [nvim-treesitter/nvim-treesitter](#nvim-treesitternvim-treesitter)
+		- [lewis6991/gitsigns.nvim](#lewis6991gitsignsnvim)
+		- [williamboman/mason.nvim](#williambomanmasonnvim)
+		- [neovim/nvim-lspconfig](#neovimnvim-lspconfig)
+		- [windwp/nvim-autopairs](#windwpnvim-autopairs)
+		- [saadparwaiz1/cmp\_luasnip](#saadparwaiz1cmp_luasnip)
+		- [hrsh7th/cmp-nvim-lua](#hrsh7thcmp-nvim-lua)
+		- [hrsh7th/cmp-nvim-lsp](#hrsh7thcmp-nvim-lsp)
+		- [hrsh7th/cmp-buffer](#hrsh7thcmp-buffer)
+		- [hrsh7th/cmp-path](#hrsh7thcmp-path)
+		- [numToStr/Comment.nvim](#numtostrcommentnvim)
+		- [nvim-tree/nvim-tree.lua](#nvim-treenvim-treelua)
+		- [nvim-telescope/telescope.nvim](#nvim-telescopetelescopenvim)
+		- [folke/which-key.nvim](#folkewhich-keynvim)
+	- [Extra Plugins](#extra-plugins)
 		- [AlphaNvim](#alphanvim)
-		- [AutoSession](#autosession)
-		- [BufferLine](#bufferline)
-		- [Colorizer](#colorizer)
-		- [ColorScheme](#colorscheme)
-		- [Comment](#comment)
 		- [DiffView](#diffview)
 		- [Dressing](#dressing)
-		- [Formatting](#formatting)
+		- [jose-elias-alvarez/null-ls.nvim](#jose-elias-alvareznull-lsnvim)
+		- [folke/todo-comments.nvim](#folketodo-commentsnvim)
 		- [GitMessenger](#gitmessenger)
-		- [GitSigns](#gitsigns)
 		- [Harpoon](#harpoon)
 		- [IndentBlankLine](#indentblankline)
 		- [linting](#linting)
-		- [LuaLine](#lualine)
+		- [Lualine](#lualine)
 		- [LuaSnip](#luasnip)
 		- [NvimAutoPairs](#nvimautopairs)
 		- [NvimCmp](#nvimcmp)
 		- [NvimSurround](#nvimsurround)
 		- [NvimTree](#nvimtree)
-		- [NvimTreesitterTextObjects](#nvimtreesittertextobjects)
-		- [NvimTreesitter](#nvimtreesitter)
-		- [NvimTsContextCommentstring](#nvimtscontextcommentstring)
+		- [max397574/better-escape.nvim](#max397574better-escapenvim)
 		- [NvimWebDevicons](#nvimwebdevicons)
-		- [Tagbar](#tagbar)
-		- [Targets](#targets)
-		- [Telescope](#telescope)
-		- [VimCommentary](#vimcommentary)
-		- [VimMaximizer](#vimmaximizer)
-		- [VimSurround](#vimsurround)
-		- [WhichKey](#whichkey)
-		- [TagBar](#tagbar-1)
+		- [NvChad/nvcommunity](#nvchadnvcommunity)
+		- [sindrets/diffview.nvim](#sindretsdiffviewnvim)
+		- [ThePrimeagen/harpoon](#theprimeagenharpoon)
 		- [DiffView](#diffview-1)
 			- [Minimal Usage](#minimal-usage)
 	- [Todo](#todo)
 	- [NERDTree](#nerdtree)
 
+
 Based on
 
+- [NvChad](https://github.com/numToStr/dotfiles/tree/master/neovim/.config/nvim)
+    - [Docs](https://nvchad.com/)
+    - [NvChad Comunity](https://github.com/NvChad/nvcommunity)
+    - [BrunoKrugel/dotfiles](https://github.com/BrunoKrugel/dotfiles)
 - [NumToSrt dotfiles](https://github.com/numToStr/dotfiles/tree/master/neovim/.config/nvim)
 - [NeoVim config](https://github.com/josean-dev/dev-environment-files)
 - [NeoVim kickstart](https://github.com/nvim-lua/kickstart.nvim/tree/master)
@@ -69,52 +84,61 @@ Shortcuts & Mappings
 - <https://www.programmingfonts.org>
 - <https://www.codingfont.com>
 
-## Plugins
+## DefaultPlugins
+
+### nvim-lua/plenary.nvim
+### NvChad/base46
+### NvChad/ui
+### NvChad/nvterm
+### NvChad/nvim-colorizer
+### nvim-tree/nvim-web-devicons
+### lukas-reineke/indent-blankline.nvim
+### nvim-treesitter/nvim-treesitter
+### lewis6991/gitsigns.nvim
+### williamboman/mason.nvim
+### neovim/nvim-lspconfig
+### windwp/nvim-autopairs
+### saadparwaiz1/cmp_luasnip
+### hrsh7th/cmp-nvim-lua
+### hrsh7th/cmp-nvim-lsp
+### hrsh7th/cmp-buffer
+### hrsh7th/cmp-path
+### numToStr/Comment.nvim
+### nvim-tree/nvim-tree.lua
+### nvim-telescope/telescope.nvim
+### folke/which-key.nvim
+
+## Extra Plugins
 
 ### AlphaNvim
-### AutoSession
-### BufferLine
-### Colorizer
-### ColorScheme
-### Comment
 ### DiffView
 ### Dressing
-### Formatting
+### jose-elias-alvarez/null-ls.nvim
+<!-- ### Formatting -->
+### folke/todo-comments.nvim
 ### GitMessenger
-### GitSigns
 ### Harpoon
 ### IndentBlankLine
 ### linting
-### LuaLine
+### Lualine
 ### LuaSnip
 ### NvimAutoPairs
 ### NvimCmp
 ### NvimSurround
 ### NvimTree
-### NvimTreesitterTextObjects
-### NvimTreesitter
-### NvimTsContextCommentstring
+### max397574/better-escape.nvim
 ### NvimWebDevicons
-### Tagbar
-### Targets
-### Telescope
-### VimCommentary
-### VimMaximizer
-### VimSurround
-### WhichKey
-
-### TagBar
-
-Requires installing Ctags
-
-```sh
-brew install ctags
-```
+### NvChad/nvcommunity
+### sindrets/diffview.nvim
+<!-- ### Tagbar -->
+<!-- ### Targets -->
+### ThePrimeagen/harpoon
+<!-- ### VimMaximizer -->
+<!-- ### VimSurround -->
 
 ### DiffView
 
 - <https://github.com/sindrets/diffview.nvim>
-- [DiffView Youtube](https://www.youtube.com/watch?v=SWldGqw9wkc)
 
 #### Minimal Usage
 
