@@ -55,8 +55,8 @@
 
 Based on
 
-- [NvChad](https://github.com/numToStr/dotfiles/tree/master/neovim/.config/nvim)
-    - [Docs](https://nvchad.com/)
+- [NvChad](https://github.com/NvChad/NvChad)
+    - [Docs](https://nvchad.com/docs/quickstart/install)
     - [NvChad Comunity](https://github.com/NvChad/nvcommunity)
     - [BrunoKrugel/dotfiles](https://github.com/BrunoKrugel/dotfiles)
 - [NumToSrt dotfiles](https://github.com/numToStr/dotfiles/tree/master/neovim/.config/nvim)

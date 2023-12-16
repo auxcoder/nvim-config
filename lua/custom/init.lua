@@ -11,3 +11,5 @@ end
 --   pattern = "*",
 --   command = "tabdo wincmd =",
 -- })
+
+require('custom.utils.autocmd')
