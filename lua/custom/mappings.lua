@@ -14,9 +14,6 @@ M.general = {
 		['d'] = { '_d' },
 		['>'] = { '>gv', 'indent' },
 	},
-	i = {
-		['jk'] = { '<ESC>', { desc = 'Exit insert mode with jk' } },
-	},
 }
 
 M.text = {
@@ -33,7 +30,7 @@ M.text = {
 		['<A-Right>'] = { '<ESC>A', ' Move to end of line' },
 	},
 }
--- more keybinds!
+
 M.harpoon = {
 	n = {
 		['<C-m>'] = {

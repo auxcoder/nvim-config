@@ -1,4 +1,3 @@
--- lua format
 vim.g.lua_snippets_path = vim.fn.stdpath('config') .. '/lua/custom/snippets'
 
 if vim.g.vscode ~= nil then

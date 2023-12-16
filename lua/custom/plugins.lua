@@ -60,11 +60,16 @@ local plugins = {
 	--   "mg979/vim-visual-multi",
 	--   lazy = false,
 	-- }
+
+	-- added after example
+	-- community configs: https://github.com/NvChad/nvcommunity
 	{
 		'NvChad/nvcommunity',
 		{ import = 'nvcommunity.git.diffview' },
 		{ import = 'nvcommunity.git.neogit' },
 	},
+
+	-- simple file bookmark
 	{
 		'ThePrimeagen/harpoon',
 		branch = 'harpoon2',
