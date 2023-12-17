@@ -12,7 +12,7 @@ autocmd('VimResized', {
 
 autocmd('VimEnter', {
 	desc = 'Toggle TagBar sidebar',
-	pattern = { '*.js', '*.jsx', '*.tsx', '*.ts' , '*.lua', '*.html'},
+	pattern = { '*.js', '*.jsx', '*.tsx', '*.ts', '*.lua', '*.html' },
 	-- command = 'nested :TagbarOpen',
 	command = 'nested :call tagbar#autoopen(0)',
 })

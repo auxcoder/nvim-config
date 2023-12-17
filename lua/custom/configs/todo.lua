@@ -1,4 +1,11 @@
-require("todo-comments").setup {
+
+local present, todo = pcall(require, "todo-comments")
+
+if not present then
+  return
+end
+
+todo.setup {
   signs = true,
   sign_priority = 8,
   keywords = {

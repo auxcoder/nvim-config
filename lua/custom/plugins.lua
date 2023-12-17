@@ -53,20 +53,8 @@ local plugins = {
 	--   "mg979/vim-visual-multi",
 	--   lazy = false,
 	-- }
-	{
-		'akinsho/git-conflict.nvim',
-		ft = 'gitcommit',
-		config = function()
-			require('git-conflict').setup()
-		end,
-	},
 	-- added after example
 	-- community configs: https://github.com/NvChad/nvcommunity
-	{
-		'NvChad/nvcommunity',
-		{ import = 'nvcommunity.git.diffview' },
-		{ import = 'nvcommunity.git.neogit' },
-	},
 	-- simple file bookmark
 	{
 		'ThePrimeagen/harpoon',
@@ -80,28 +68,7 @@ local plugins = {
 		end,
 	},
 	-- git diff
-	{
-		'sindrets/diffview.nvim',
-		event = 'BufRead',
-		config = function()
-			require('diffview').setup({
-				enhanced_diff_hl = true,
-				view = {
-					merge_tool = {
-						layout = 'diff3_mixed',
-					},
-				},
-			})
-		end,
-	},
 	-- sho commit message
-	{
-		'rhysd/git-messenger.vim',
-		config = function()
-			vim.g.git_messenger_floating_win_opts = { border = 'single' }
-			vim.g.git_messenger_popup_content_margins = false
-		end,
-	},
 	-- highlight todo:, fixme:, etc
 	{
 		'folke/todo-comments.nvim',
@@ -113,12 +80,23 @@ local plugins = {
 			require('custom.configs.todo')
 		end,
 	},
-
+	 -- doc tree
 	{
 		'preservim/tagbar',
 		cmd = 'TagbarToggle',
 		config = function() end,
 	},
+	-- git integration
+	{
+		'tpope/vim-fugitive',
+		keys = {
+			{ "<leader>gs", "<cmd>vertical Git <cr>", desc = "[G]it [s]tatus" },
+			{ "<leader>gc", "<cmd>Git commit --quiet<cr>", desc = "[G]it [s]tatus" },
+			{ "<leader>gfp", "<cmd>Git push<cr>", desc = "[G]it [p]ush" },
+			{ "<leader>gfP", "<cmd>Git pull<cr>", desc = "[G]it [P]ull" },
+		},
+	},
+
 	---@type NvPluginSpec
 	{
 		'kevinhwang91/nvim-ufo',
