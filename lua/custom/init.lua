@@ -4,13 +4,6 @@ if vim.g.vscode ~= nil then
 	return require('custom.vscode')
 end
 
--- local autocmd = vim.api.nvim_create_autocmd
-
--- Auto resize panes when resizing nvim window
--- autocmd("VimResized", {
---   pattern = "*",
---   command = "tabdo wincmd =",
--- })
-
+-- load autocmd's
 require('custom.utils.autocmd')
 require('custom.utils.usercmd')

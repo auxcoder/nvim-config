@@ -46,6 +46,7 @@
 		- [NvimWebDevicons](#nvimwebdevicons)
 		- [NvChad/nvcommunity](#nvchadnvcommunity)
 		- [sindrets/diffview.nvim](#sindretsdiffviewnvim)
+		- [preservim/tagbar](#preservimtagbar)
 		- [ThePrimeagen/harpoon](#theprimeagenharpoon)
 		- [DiffView](#diffview-1)
 			- [Minimal Usage](#minimal-usage)
@@ -130,7 +131,7 @@ Shortcuts & Mappings
 ### NvimWebDevicons
 ### NvChad/nvcommunity
 ### sindrets/diffview.nvim
-<!-- ### Tagbar -->
+### preservim/tagbar
 <!-- ### Targets -->
 ### ThePrimeagen/harpoon
 <!-- ### VimMaximizer -->

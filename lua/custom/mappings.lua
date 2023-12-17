@@ -48,4 +48,13 @@ M.harpoon = {
 	},
 }
 
+M.tagbar = {
+	n = {
+		['<F8>'] = { ':TagbarToggle<CR>', 'Toggle Ctags sidebar' },
+	},
+	i = {
+		['<F8>'] = { ':TagbarToggle<CR>', 'Toggle Ctags sidebar' },
+	},
+}
+
 return M

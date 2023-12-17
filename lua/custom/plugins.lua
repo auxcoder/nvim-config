@@ -61,6 +61,14 @@ local plugins = {
 	--   lazy = false,
 	-- }
 
+	{
+		'akinsho/git-conflict.nvim',
+		ft = 'gitcommit',
+		config = function()
+			require('git-conflict').setup()
+		end,
+	},
+
 	-- added after example
 	-- community configs: https://github.com/NvChad/nvcommunity
 	{
@@ -91,7 +99,6 @@ local plugins = {
 					merge_tool = {
 						layout = 'diff3_mixed',
 					},
-				},
 			})
 		end,
 	},
@@ -112,12 +119,11 @@ local plugins = {
 			require('custom.configs.todo')
 		end,
 	},
+
 	{
 		'preservim/tagbar',
-		config = function()
-			-- set keymaps
-			vim.keymap.set('n', '<F8>', ':TagbarToggle<CR>', { desc = 'Toggle Ctags sidebar' })
-		end,
+		cmd = 'TagbarToggle',
+		config = function() end,
 	},
 	-- -@type NvPluginSpec
 	{
