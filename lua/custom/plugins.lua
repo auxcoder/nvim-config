@@ -53,8 +53,20 @@ local plugins = {
 	--   "mg979/vim-visual-multi",
 	--   lazy = false,
 	-- }
+	{
+		'akinsho/git-conflict.nvim',
+		version = "*",
+		ft = 'gitcommit',
+		config = true,
+	},
+
 	-- added after example
 	-- community configs: https://github.com/NvChad/nvcommunity
+	-- {
+	-- 	'NvChad/nvcommunity',
+	-- 	{ import = 'nvcommunity.git.diffview' },
+	-- 	{ import = 'nvcommunity.git.neogit' },
+	-- },
 	-- simple file bookmark
 	{
 		'ThePrimeagen/harpoon',
@@ -68,7 +80,20 @@ local plugins = {
 		end,
 	},
 	-- git diff
-	-- sho commit message
+	{
+		'sindrets/diffview.nvim',
+		event = 'BufRead',
+		config = function()
+			require('diffview').setup({
+				enhanced_diff_hl = true,
+				view = {
+					merge_tool = {
+						layout = 'diff3_mixed',
+					},
+				},
+			})
+		end,
+	},
 	-- highlight todo:, fixme:, etc
 	{
 		'folke/todo-comments.nvim',
