@@ -46,6 +46,7 @@
 		- [NvimWebDevicons](#nvimwebdevicons)
 		- [NvChad/nvcommunity](#nvchadnvcommunity)
 		- [sindrets/diffview.nvim](#sindretsdiffviewnvim)
+		- [preservim/tagbar](#preservimtagbar)
 		- [ThePrimeagen/harpoon](#theprimeagenharpoon)
 		- [DiffView](#diffview-1)
 			- [Minimal Usage](#minimal-usage)
@@ -55,8 +56,8 @@
 
 Based on
 
-- [NvChad](https://github.com/numToStr/dotfiles/tree/master/neovim/.config/nvim)
-    - [Docs](https://nvchad.com/)
+- [NvChad](https://github.com/NvChad/NvChad)
+    - [Docs](https://nvchad.com/docs/quickstart/install)
     - [NvChad Comunity](https://github.com/NvChad/nvcommunity)
     - [BrunoKrugel/dotfiles](https://github.com/BrunoKrugel/dotfiles)
 - [NumToSrt dotfiles](https://github.com/numToStr/dotfiles/tree/master/neovim/.config/nvim)
@@ -130,7 +131,7 @@ Shortcuts & Mappings
 ### NvimWebDevicons
 ### NvChad/nvcommunity
 ### sindrets/diffview.nvim
-<!-- ### Tagbar -->
+### preservim/tagbar
 <!-- ### Targets -->
 ### ThePrimeagen/harpoon
 <!-- ### VimMaximizer -->
