@@ -2,9 +2,8 @@ local overrides = require('custom.configs.overrides')
 
 ---@type NvPluginSpec[]
 local plugins = {
-
 	-- Override plugin definition options
-
+	-- lsp defaults & configs
 	{
 		'neovim/nvim-lspconfig',
 		dependencies = {
@@ -21,23 +20,19 @@ local plugins = {
 			require('custom.configs.lspconfig')
 		end, -- Override to setup mason-lspconfig
 	},
-
 	-- override plugin configs
 	{
 		'williamboman/mason.nvim',
 		opts = overrides.mason,
 	},
-
 	{
 		'nvim-treesitter/nvim-treesitter',
 		opts = overrides.treesitter,
 	},
-
 	{
 		'nvim-tree/nvim-tree.lua',
 		opts = overrides.nvimtree,
 	},
-
 	-- Install a plugin
 	{
 		'max397574/better-escape.nvim',
@@ -46,13 +41,11 @@ local plugins = {
 			require('better_escape').setup()
 		end,
 	},
-
 	-- To make a plugin not be loaded
 	-- {
 	--   "NvChad/nvim-colorizer.lua",
 	--   enabled = false
 	-- },
-
 	-- All NvChad plugins are lazy-loaded by default
 	-- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
 	-- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
@@ -60,7 +53,6 @@ local plugins = {
 	--   "mg979/vim-visual-multi",
 	--   lazy = false,
 	-- }
-
 	{
 		'akinsho/git-conflict.nvim',
 		ft = 'gitcommit',
@@ -68,7 +60,6 @@ local plugins = {
 			require('git-conflict').setup()
 		end,
 	},
-
 	-- added after example
 	-- community configs: https://github.com/NvChad/nvcommunity
 	{
@@ -76,7 +67,6 @@ local plugins = {
 		{ import = 'nvcommunity.git.diffview' },
 		{ import = 'nvcommunity.git.neogit' },
 	},
-
 	-- simple file bookmark
 	{
 		'ThePrimeagen/harpoon',
@@ -89,6 +79,7 @@ local plugins = {
 			require('harpoon'):setup()
 		end,
 	},
+	-- git diff
 	{
 		'sindrets/diffview.nvim',
 		event = 'BufRead',
@@ -99,9 +90,11 @@ local plugins = {
 					merge_tool = {
 						layout = 'diff3_mixed',
 					},
+				},
 			})
 		end,
 	},
+	-- sho commit message
 	{
 		'rhysd/git-messenger.vim',
 		config = function()
@@ -109,6 +102,7 @@ local plugins = {
 			vim.g.git_messenger_popup_content_margins = false
 		end,
 	},
+	-- highlight todo:, fixme:, etc
 	{
 		'folke/todo-comments.nvim',
 		dependencies = {
@@ -125,7 +119,7 @@ local plugins = {
 		cmd = 'TagbarToggle',
 		config = function() end,
 	},
-	-- -@type NvPluginSpec
+	---@type NvPluginSpec
 	{
 		'kevinhwang91/nvim-ufo',
 		event = 'VimEnter',
