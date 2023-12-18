@@ -13,6 +13,16 @@ local function handleFallbackException(bufnr, err, providerName)
 	end
 end
 
+---@param bufnr number
+---@return Promise
+local function customizeSelector(bufnr)
+	return require('ufo').getFolds(bufnr, 'lsp'):catch(function(err)
+		return handleFallbackException(err, 'treesitter')
+	end):catch(function(err)
+		return handleFallbackException(err, 'indent')
+	end)
+end
+
 -- render count of folded lines
 local handler = function(virtText, lnum, endLnum, width, truncate)
 	local newVirtText = {}
@@ -42,60 +52,39 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
 	return newVirtText
 end
 
----@param bufnr number
----@return Promise
-local function customizeSelector(bufnr)
-	local function handleFallbackException(err, providerName)
-		if type(err) == 'string' and err:match('UfoFallbackException') then
-			return require('ufo').getFolds(bufnr, providerName)
-		else
-			return require('promise').reject(err)
-		end
-	end
-
-	return require('ufo').getFolds(bufnr, 'lsp'):catch(function(err)
-		return handleFallbackException(err, 'treesitter')
-	end):catch(function(err)
-		return handleFallbackException(err, 'indent')
-	end)
-end
-
 local ftMap = {
 	vim = 'indent',
 	python = {'indent'},
-	git = ''
+	git = '',
+	go = "lsp",
 }
 
 ufo.setup({
-	close_fold_kinds = { 'imports' },
+	close_fold_kinds = { 'imports', 'comment' },
+	open_fold_hl_timeout = 400,
 	fold_virt_text_handler = handler, -- render lines count
-	-- ufo = {
-	-- 	height = 10, -- Adjust the height of the floating window as needed
-	-- 	focus = false, -- Set to true if you want the floating window to auto-focus
-	-- },
+	preview = {
+		win_config = {
+			border = { "", "─", "", "", "", "─", "", "" },
+			-- winhighlight = "Normal:Folded",
+			winblend = 0,
+		},
+		mappings = {
+			scrollU = "<C-u>",
+			scrollD = "<C-d>",
+			jumpTop = "[",
+			jumpBot = "]",
+		},
+	},
 	 provider_selector = function(_, filetype, buftype)
 		-- use nested markdown folding
 		if filetype == 'markdown' then
 			return ''
 		end
 
-		return ftMap[filetype] or customizeSelector
-		-- return { 'treesitter', 'indent' }
-		-- return ftMap[filetype] or { "treesitter", "indent" }
 		-- only use indent until a file is opened
-		-- return (filetype == '' or buftype == 'nofile') and 'indent' or function(bufnr)
-		-- 	return require('ufo')
-		-- 		.getFolds(bufnr, 'lsp')
-		-- 		:catch(function(err)
-		-- 			return handleFallbackException(bufnr, err, 'treesitter')
-		-- 		end)
-		-- 		:catch(function(err)
-		-- 		return handleFallbackException(bufnr, err, 'indent')
-		-- 	end)
-		-- end
+		-- return ftMap[filetype] or customizeSelector
+		return ftMap[filetype] or {'treesitter', 'indent'}
 	end,
 })
 
--- local ftMap = {
---   go = "lsp",
--- }
