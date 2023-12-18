@@ -57,10 +57,4 @@ M.tagbar = {
 	},
 }
 
-M.ufo = {
-	n = {
-		['zR'] = {require('ufo').openAllFolds, 'Open all folds'},
-		['zM'] = {require('ufo').closeAllFolds, 'Close all folds'},
-	}
-}
 return M

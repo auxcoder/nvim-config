@@ -78,7 +78,6 @@ local plugins = {
 	{
 		'NvChad/nvcommunity',
 		{ import = 'nvcommunity.lsp.dim' },
-		{ import = 'nvcommunity.folds.ufo' },
 		-- { import = 'nvcommunity.git.diffview' },
 		-- { import = 'nvcommunity.git.neogit' },
 	},
@@ -126,6 +125,39 @@ local plugins = {
 		'preservim/tagbar',
 		cmd = 'TagbarToggle',
 		config = function() end,
+	},
+
+	{
+		'kevinhwang91/nvim-ufo',
+		event = 'VimEnter',
+		init = function()
+			vim.o.foldcolumn = 'auto'
+			vim.o.foldlevel = 99 -- Using ufo provider need a large value
+			vim.o.foldlevelstart = 99
+			vim.o.foldnestmax = 0
+			vim.o.foldenable = true
+			vim.o.foldmethod = 'indent'
+			-- vim.opt.fillchars = {
+			-- 	fold = ' ',
+			-- 	foldopen = '',
+			-- 	foldsep = ' ',
+			-- 	foldclose = '',
+			-- 	stl = ' ',
+			-- 	eob = ' ',
+			-- }
+		end,
+		dependencies = {
+			'kevinhwang91/promise-async',
+			{
+				'luukvbaal/statuscol.nvim',
+				opts = function()
+					require('custom.configs.statuscol')
+				end,
+			},
+		},
+		opts = function()
+			require('custom.configs.ufo')
+		end,
 	},
 }
 
