@@ -13,6 +13,16 @@ local function handleFallbackException(bufnr, err, providerName)
 	end
 end
 
+---@param bufnr number
+---@return Promise
+local function customizeSelector(bufnr)
+	return require('ufo').getFolds(bufnr, 'lsp'):catch(function(err)
+		return handleFallbackException(err, 'treesitter')
+	end):catch(function(err)
+		return handleFallbackException(err, 'indent')
+	end)
+end
+
 -- render count of folded lines
 local handler = function(virtText, lnum, endLnum, width, truncate)
 	local newVirtText = {}
@@ -40,16 +50,6 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
 	end
 	table.insert(newVirtText, { suffix, 'UfoFoldedEllipsis' })
 	return newVirtText
-end
-
----@param bufnr number
----@return Promise
-local function customizeSelector(bufnr)
-	return require('ufo').getFolds(bufnr, 'lsp'):catch(function(err)
-		return handleFallbackException(err, 'treesitter')
-	end):catch(function(err)
-		return handleFallbackException(err, 'indent')
-	end)
 end
 
 local ftMap = {
@@ -83,8 +83,8 @@ ufo.setup({
 		end
 
 		-- only use indent until a file is opened
-		return ftMap[filetype] or customizeSelector
-		-- return ftMap[filetype] or {'treesitter', 'indent'}
+		-- return ftMap[filetype] or customizeSelector
+		return ftMap[filetype] or {'treesitter', 'indent'}
 	end,
 })
 

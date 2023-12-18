@@ -152,6 +152,27 @@ local plugins = {
 			require('custom.configs.ufo')
 		end,
 	},
+	-- show diagnostics, references, telescope results
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		cmd = { "Trouble", "TroubleToggle", "TodoTrouble" },
+		opts = {},
+		init = function()
+			require("custom.configs.trouble")
+		end,
+	},
+	--  split/join blocks of code
+	{
+		{
+			"Wansmer/treesj",
+			keys = { '<space>m', '<space>j', '<space>s' },
+			requires = { 'nvim-treesitter/nvim-treesitter' },
+			config = function()
+				require('custom.configs.treesj')
+			end,
+		},
+	}
 }
 
 return plugins
