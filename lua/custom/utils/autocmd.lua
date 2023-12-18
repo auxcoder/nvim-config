@@ -1,7 +1,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 local cmd = vim.api.nvim_command
 local augroup = vim.api.nvim_create_augroup
-local settings = require('custom.chadrc').settings
+-- local settings = require('custom.chadrc').settings
 local fn = vim.fn
 
 autocmd('VimResized', {
@@ -12,7 +12,7 @@ autocmd('VimResized', {
 
 autocmd('VimEnter', {
 	desc = 'Toggle TagBar sidebar',
-	pattern = '*.*',
+	pattern = { '*.js', '*.jsx', '*.tsx', '*.ts', '*.lua', '*.html' },
 	-- command = 'nested :TagbarOpen',
 	command = 'nested :call tagbar#autoopen(0)',
 })
@@ -83,17 +83,30 @@ autocmd('VimEnter', {
 		vim.g.status_version = ''
 		local cwd = vim.fn.getcwd()
 
+		local function execute_command(command)
+			local handle = io.popen(command)
+			local result = handle:read('*a')
+			local success, error_code, _ = handle:close()
+
+			if success and error_code == 0 then
+				return result
+			else
+				return nil
+			end
+		end
+
 		-- Check if it's a Go workspace
 		local go_mod_filepath = cwd .. '/go.mod'
 		local go_mod_exists = vim.fn.filereadable(go_mod_filepath) == 1
 
 		if go_mod_exists then
 			local command = 'go version'
-			local handle = io.popen(command)
-			local result = handle:read('*a')
-			handle:close()
-			local version = string.match(result, 'go(%d+%.%d+%.%d+)')
-			vim.g.status_version = 'Go ' .. version .. ' 󱐋 '
+			local result = execute_command(command)
+
+			if result then
+				local version = string.match(result, 'go(%d+%.%d+%.%d+)')
+				vim.g.status_version = 'Go ' .. version .. ' 󱐋 '
+			end
 		else
 			-- Check if it's a Node.js workspace
 			local package_json_filepath = cwd .. '/package.json'
@@ -101,16 +114,16 @@ autocmd('VimEnter', {
 
 			if package_json_exists then
 				local command = 'node --version'
-				local handle = io.popen(command)
-				local result = handle:read('*a')
-				handle:close()
-				local version = string.match(result, 'v([%d.]+)')
-				vim.g.status_version = 'Node ' .. version .. ' 󱐋 '
+				local result = execute_command(command)
+
+				if result then
+					local version = string.match(result, 'v([%d.]+)')
+					vim.g.status_version = 'Node ' .. version .. ' 󱐋 '
+				end
 			end
 		end
 	end,
 })
-
 -- autocmd("BufRead", {
 --   desc = "Prefetch tabnine",
 --   group = augroup("prefetch", { clear = true }),
@@ -179,62 +192,62 @@ autocmd('BufWritePost', {
 	end,
 })
 
--- autocmd({ 'FileType', 'BufWinEnter' }, {
--- 	desc = 'Disable status column in the following files',
--- 	callback = function()
--- 		local ft_ignore = {
--- 			'man',
--- 			'help',
--- 			'neo-tree',
--- 			'starter',
--- 			'TelescopePrompt',
--- 			'Trouble',
--- 			'NvimTree',
--- 			'nvcheatsheet',
--- 			'dapui_watches',
--- 			'dap-repl',
--- 			'dapui_console',
--- 			'dapui_stacks',
--- 			'spectre_panel',
--- 			'dapui_breakpoints',
--- 			'dapui_scopes',
--- 			'nvdash',
--- 		}
--- 		local b = vim.api.nvim_get_current_buf()
--- 		local f = vim.api.nvim_buf_get_option(b, 'filetype')
--- 		for _, e in ipairs(ft_ignore) do
--- 			if f == e then
--- 				vim.api.nvim_win_set_option(0, 'statuscolumn', '')
--- 				return
--- 			end
--- 		end
--- 	end,
--- })
+autocmd({ 'FileType', 'BufWinEnter' }, {
+	desc = 'Disable status column in the following files',
+	callback = function()
+		local ft_ignore = {
+			'man',
+			'help',
+			'neo-tree',
+			'starter',
+			'TelescopePrompt',
+			'Trouble',
+			'NvimTree',
+			'nvcheatsheet',
+			'dapui_watches',
+			'dap-repl',
+			'dapui_console',
+			'dapui_stacks',
+			'spectre_panel',
+			'dapui_breakpoints',
+			'dapui_scopes',
+			'nvdash',
+		}
+		local b = vim.api.nvim_get_current_buf()
+		local f = vim.api.nvim_buf_get_option(b, 'filetype')
+		for _, e in ipairs(ft_ignore) do
+			if f == e then
+				vim.api.nvim_win_set_option(0, 'statuscolumn', '')
+				return
+			end
+		end
+	end,
+})
 
--- autocmd({ 'BufEnter', 'BufNew' }, {
--- 	callback = function()
--- 		local ft_ignore = {
--- 			'man',
--- 			'help',
--- 			'neo-tree',
--- 			'starter',
--- 			'TelescopePrompt',
--- 			'Trouble',
--- 			'NvimTree',
--- 			'nvcheatsheet',
--- 			'dapui_watches',
--- 			'dap-repl',
--- 			'dapui_console',
--- 			'spectre_panel',
--- 			'dapui_stacks',
--- 			'dapui_breakpoints',
--- 			'dapui_scopes',
--- 		}
--- 		if vim.tbl_contains(ft_ignore, vim.bo.filetype) then
--- 			vim.cmd('setlocal statuscolumn=')
--- 		end
--- 	end,
--- })
+autocmd({ 'BufEnter', 'BufNew' }, {
+	callback = function()
+		local ft_ignore = {
+			'man',
+			'help',
+			'neo-tree',
+			'starter',
+			'TelescopePrompt',
+			'Trouble',
+			'NvimTree',
+			'nvcheatsheet',
+			'dapui_watches',
+			'dap-repl',
+			'dapui_console',
+			'spectre_panel',
+			'dapui_stacks',
+			'dapui_breakpoints',
+			'dapui_scopes',
+		}
+		if vim.tbl_contains(ft_ignore, vim.bo.filetype) then
+			vim.cmd('setlocal statuscolumn=')
+		end
+	end,
+})
 
 -- autocmd('TextYankPost', {
 -- 	desc = 'Highlight on yank',
