@@ -41,6 +41,7 @@ local plugins = {
 			require('better_escape').setup()
 		end,
 	},
+
 	-- To make a plugin not be loaded
 	-- {
 	--   "NvChad/nvim-colorizer.lua",
@@ -53,20 +54,34 @@ local plugins = {
 	--   "mg979/vim-visual-multi",
 	--   lazy = false,
 	-- }
+	--
+	-- version control (git)
 	{
 		'akinsho/git-conflict.nvim',
-		version = "*",
+		version = '*',
 		ft = 'gitcommit',
 		config = true,
+	},
+	-- git integration
+	{
+		'tpope/vim-fugitive',
+		keys = {
+			{ '<leader>gs', '<cmd>vertical Git <cr>', desc = '[G]it [s]tatus' },
+			{ '<leader>gc', '<cmd>Git commit --quiet<cr>', desc = '[G]it [s]tatus' },
+			{ '<leader>gfp', '<cmd>Git push<cr>', desc = '[G]it [p]ush' },
+			{ '<leader>gfP', '<cmd>Git pull<cr>', desc = '[G]it [P]ull' },
+		},
 	},
 
 	-- added after example
 	-- community configs: https://github.com/NvChad/nvcommunity
-	-- {
-	-- 	'NvChad/nvcommunity',
-	-- 	{ import = 'nvcommunity.git.diffview' },
-	-- 	{ import = 'nvcommunity.git.neogit' },
-	-- },
+	{
+		'NvChad/nvcommunity',
+		{ import = 'nvcommunity.lsp.dim' },
+		{ import = 'nvcommunity.folds.ufo' },
+		-- { import = 'nvcommunity.git.diffview' },
+		-- { import = 'nvcommunity.git.neogit' },
+	},
 	-- simple file bookmark
 	{
 		'ThePrimeagen/harpoon',
@@ -105,133 +120,12 @@ local plugins = {
 			require('custom.configs.todo')
 		end,
 	},
-	 -- doc tree
+
+	-- doc tree
 	{
 		'preservim/tagbar',
 		cmd = 'TagbarToggle',
 		config = function() end,
-	},
-	-- git integration
-	{
-		'tpope/vim-fugitive',
-		keys = {
-			{ "<leader>gs", "<cmd>vertical Git <cr>", desc = "[G]it [s]tatus" },
-			{ "<leader>gc", "<cmd>Git commit --quiet<cr>", desc = "[G]it [s]tatus" },
-			{ "<leader>gfp", "<cmd>Git push<cr>", desc = "[G]it [p]ush" },
-			{ "<leader>gfP", "<cmd>Git pull<cr>", desc = "[G]it [P]ull" },
-		},
-	},
-
-	---@type NvPluginSpec
-	{
-		'kevinhwang91/nvim-ufo',
-		event = 'VimEnter',
-		init = function()
-			vim.o.foldcolumn = 'auto'
-			vim.o.foldlevel = 99 -- Using ufo provider need a large value
-			vim.o.foldlevelstart = 99
-			vim.o.foldnestmax = 0
-			vim.o.foldenable = true
-			vim.o.foldmethod = 'indent'
-
-			vim.opt.fillchars = {
-				fold = ' ',
-				foldopen = '',
-				foldsep = ' ',
-				foldclose = '',
-				stl = ' ',
-				eob = ' ',
-			}
-		end,
-		dependencies = {
-			'kevinhwang91/promise-async',
-			{
-				'luukvbaal/statuscol.nvim',
-				opts = function()
-					local builtin = require('statuscol.builtin')
-					return {
-						relculright = true,
-						bt_ignore = { 'nofile', 'prompt', 'terminal', 'packer' },
-						ft_ignore = {
-							'NvimTree',
-							'dashboard',
-							'nvcheatsheet',
-							'dapui_watches',
-							'dap-repl',
-							'dapui_console',
-							'dapui_stacks',
-							'dapui_breakpoints',
-							'dapui_scopes',
-							'help',
-							'vim',
-							'alpha',
-							'dashboard',
-							'neo-tree',
-							'Trouble',
-							'noice',
-							'lazy',
-							'toggleterm',
-						},
-						segments = {
-							-- Segment: Add padding
-							{
-								text = { ' ' },
-							},
-							-- Segment: Fold Column
-							{
-								text = { builtin.foldfunc },
-								click = 'v:lua.ScFa',
-								maxwidth = 1,
-								colwidth = 1,
-								auto = false,
-							},
-							-- Segment: Add padding
-							{
-								text = { ' ' },
-							},
-							-- Segment : Show signs with one character width
-							{
-								sign = {
-									name = { '.*' },
-									maxwidth = 1,
-									colwidth = 1,
-								},
-								auto = true,
-								click = 'v:lua.ScSa',
-							},
-							-- Segment: Show line number
-							{
-								text = { ' ', ' ', builtin.lnumfunc, ' ' },
-								click = 'v:lua.ScLa',
-								condition = { true, builtin.not_empty },
-							},
-							-- Segment: GitSigns exclusive
-							{
-								sign = {
-									namespace = { 'gitsign.*' },
-									maxwidth = 1,
-									colwidth = 1,
-									auto = false,
-								},
-								click = 'v:lua.ScSa',
-							},
-							-- Segment: Add padding
-							{
-								text = { ' ' },
-								hl = 'Normal',
-								condition = { true, builtin.not_empty },
-							},
-						},
-					}
-				end,
-			},
-		},
-		opts = {
-			close_fold_kinds = { 'imports' },
-			provider_selector = function()
-				return { 'treesitter', 'indent' }
-			end,
-		},
 	},
 }
 
