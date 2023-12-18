@@ -27,59 +27,10 @@ require('statuscol').setup({
 		'nvdash',
 		'toggleterm',
 	},
+
 	segments = {
-		-- Segment: Add padding
-		{
-			text = { ' ' },
-		},
-		-- Segment: Fold Column
-		{
-			text = { builtin.foldfunc },
-			click = 'v:lua.ScFa',
-			maxwidth = 2,
-			colwidth = 2,
-			auto = false,
-		},
-		-- Segment: Add padding
-		{
-			text = { ' ' },
-		},
-		-- Segment : Show signs with one character width
-		{
-			sign = {
-				name = { '.*' },
-				-- name = {
-				--   "Dap",
-				--   "neotest",
-				--   "Diagnostic",
-				-- },
-				maxwidth = 1,
-				colwidth = 1,
-			},
-			auto = true,
-			click = 'v:lua.ScSa',
-		},
-		-- Segment: Show line number
-		{
-			text = { ' ', ' ', builtin.lnumfunc, ' ' },
-			click = 'v:lua.ScLa',
-			condition = { true, builtin.not_empty },
-		},
-		-- Segment: GitSigns exclusive
-		{
-			sign = {
-				namespace = { 'gitsign.*' },
-				maxwidth = 1,
-				colwidth = 1,
-				auto = false,
-			},
-			click = 'v:lua.ScSa',
-		},
-		-- Segment: Add padding
-		{
-			text = { ' ' },
-			hl = 'Normal',
-			condition = { true, builtin.not_empty },
-		},
+		{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+		{ text = { "%s" }, click = "v:lua.ScSa" },
+		{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
 	},
 })

@@ -129,22 +129,15 @@ local plugins = {
 
 	{
 		'kevinhwang91/nvim-ufo',
-		event = 'VimEnter',
+		event = 'VeryLazy',
 		init = function()
-			vim.o.foldcolumn = 'auto'
+			vim.o.foldcolumn = '1'
 			vim.o.foldlevel = 99 -- Using ufo provider need a large value
 			vim.o.foldlevelstart = 99
 			vim.o.foldnestmax = 0
 			vim.o.foldenable = true
 			vim.o.foldmethod = 'indent'
-			-- vim.opt.fillchars = {
-			-- 	fold = ' ',
-			-- 	foldopen = '',
-			-- 	foldsep = ' ',
-			-- 	foldclose = '',
-			-- 	stl = ' ',
-			-- 	eob = ' ',
-			-- }
+			-- vim.o.fillchars = [[eob: slt: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 		end,
 		dependencies = {
 			'kevinhwang91/promise-async',
