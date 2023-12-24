@@ -6,19 +6,17 @@ local plugins = {
 	-- lsp defaults & configs
 	{
 		'neovim/nvim-lspconfig',
-		dependencies = {
-			-- format & linting
-			{
-				'jose-elias-alvarez/null-ls.nvim',
-				config = function()
-					require('custom.configs.null-ls')
-				end,
-			},
-		},
 		config = function()
 			require('plugins.configs.lspconfig')
 			require('custom.configs.lspconfig')
-		end, -- Override to setup mason-lspconfig
+		end,
+	},
+	{
+		'nvimtools/none-ls.nvim',
+		event = 'VeryLazy',
+		opts = function()
+			return require('custom.configs.null-ls')
+		end,
 	},
 	-- override plugin configs
 	{
@@ -33,7 +31,8 @@ local plugins = {
 		'nvim-tree/nvim-tree.lua',
 		opts = overrides.nvimtree,
 	},
-	-- Install a plugin
+	-- better ux
+	-- SCP
 	{
 		'max397574/better-escape.nvim',
 		event = 'InsertEnter',
@@ -41,28 +40,32 @@ local plugins = {
 			require('better_escape').setup()
 		end,
 	},
-
+	{
+		'yamatsum/nvim-cursorline',
+		config = function()
+			require('custom.configs.cursorline')
+		end,
+	},
+	{ 'itchyny/vim-cursorword' },
 	-- To make a plugin not be loaded
 	-- {
 	--   "NvChad/nvim-colorizer.lua",
 	--   enabled = false
 	-- },
-	-- All NvChad plugins are lazy-loaded by default
-	-- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
 	-- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
 	-- {
 	--   "mg979/vim-visual-multi",
 	--   lazy = false,
 	-- }
-	--
-	-- version control (git)
+	-- version control
+	-- git conflicts
 	{
 		'akinsho/git-conflict.nvim',
 		version = '*',
 		ft = 'gitcommit',
 		config = true,
 	},
-	-- git integration
+	--
 	{
 		'tpope/vim-fugitive',
 		keys = {
@@ -72,8 +75,8 @@ local plugins = {
 			{ '<leader>gfP', '<cmd>Git pull<cr>', desc = '[G]it [P]ull' },
 		},
 	},
-
-	-- added after example
+	-- All NvChad plugins are lazy-loaded by default
+	-- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
 	-- community configs: https://github.com/NvChad/nvcommunity
 	{
 		'NvChad/nvcommunity',
@@ -154,25 +157,24 @@ local plugins = {
 	},
 	-- show diagnostics, references, telescope results
 	{
-		"folke/trouble.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		cmd = { "Trouble", "TroubleToggle", "TodoTrouble" },
+		'folke/trouble.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		cmd = { 'Trouble', 'TroubleToggle', 'TodoTrouble' },
 		opts = {},
 		init = function()
-			require("custom.configs.trouble")
+			require('custom.configs.trouble')
 		end,
 	},
 	--  split/join blocks of code
 	{
 		{
-			"Wansmer/treesj",
+			'Wansmer/treesj',
 			keys = { '<space>m', '<space>j', '<space>s' },
-			requires = { 'nvim-treesitter/nvim-treesitter' },
+			dependencies = { 'nvim-treesitter/nvim-treesitter' },
 			config = function()
 				require('custom.configs.treesj')
 			end,
 		},
-	}
 	},
 	-- a tree like view for symbols
 	{
