@@ -173,6 +173,25 @@ local plugins = {
 			end,
 		},
 	}
+	},
+	-- a tree like view for symbols
+	{
+		'simrat39/symbols-outline.nvim',
+		cmd = 'SymbolsOutline',
+		config = function()
+			require('custom.configs.symbols')
+		end,
+		-- config = true,
+	},
+	-- markdown preview
+	{
+		'iamcco/markdown-preview.nvim',
+		cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+		ft = { 'markdown' },
+		build = function()
+			vim.fn['mkdp#util#install']()
+		end,
+	},
 }
 
 return plugins
