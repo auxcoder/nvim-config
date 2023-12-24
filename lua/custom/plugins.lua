@@ -47,6 +47,15 @@ local plugins = {
 		end,
 	},
 	{ 'itchyny/vim-cursorword' },
+	-- web
+	{
+		'razak17/tailwind-fold.nvim',
+		opts = {
+			min_chars = 3, -- min chars to fold.
+		},
+		dependencies = { 'nvim-treesitter/nvim-treesitter' },
+		ft = { 'html', 'svelte', 'astro', 'vue', 'typescriptreact' },
+	},
 	-- To make a plugin not be loaded
 	-- {
 	--   "NvChad/nvim-colorizer.lua",
