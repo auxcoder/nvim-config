@@ -1,6 +1,8 @@
 ---@type MappingsTable
 local M = {}
 
+-- <C> -> Ctrl, <leader> -> Space, <A> -> alt, <S> -> shift
+
 M.general = {
 	n = {
 		[';'] = { ':', 'enter command mode', opts = { nowait = true } },

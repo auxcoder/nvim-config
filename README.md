@@ -42,6 +42,7 @@
 		- [NvimCmp](#nvimcmp)
 		- [NvimSurround](#nvimsurround)
 		- [NvimTree](#nvimtree)
+		- [folke/trouble.nvim](#folketroublenvim)
 		- [max397574/better-escape.nvim](#max397574better-escapenvim)
 		- [NvimWebDevicons](#nvimwebdevicons)
 		- [NvChad/nvcommunity](#nvchadnvcommunity)
@@ -127,7 +128,25 @@ Shortcuts & Mappings
 ### NvimCmp
 ### NvimSurround
 ### NvimTree
+### folke/trouble.nvim
+
+[Repo Site](https://github.com/folke/trouble.nvim)
+
+A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing.
+
+---
+
 ### max397574/better-escape.nvim
+
+[Repo Site](https://github.com/max397574/better-escape.nvim)
+
+- Escape without getting delay when typing in insert mode
+- Customizable mapping and timeout
+- Use multiple mappings
+- Really small and fast
+
+---
+
 ### NvimWebDevicons
 ### NvChad/nvcommunity
 ### sindrets/diffview.nvim

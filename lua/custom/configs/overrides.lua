@@ -10,31 +10,29 @@ M.treesitter = {
 		'typescript',
 		'tsx',
 		'go',
-		'c',
+		-- 'c',
 		'markdown',
 		'markdown_inline',
 	},
 	indent = {
 		enable = true,
-		-- disable = {
-		--   "python"
-		-- },
+		disable = { 'python' },
 	},
 }
 
 M.mason = {
 	ensure_installed = {
+		'eslint-lsp',
+		'prettierd',
 		-- lua stuff
 		'lua-language-server',
 		'stylua',
-
 		-- web dev stuff
 		'css-lsp',
 		'html-lsp',
 		'typescript-language-server',
-		'deno',
-		'prettier',
-
+		'tailwindcss-language-server',
+		-- 'deno',
 		-- c/cpp stuff
 		'clangd',
 		'clang-format',

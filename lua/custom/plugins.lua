@@ -6,19 +6,17 @@ local plugins = {
 	-- lsp defaults & configs
 	{
 		'neovim/nvim-lspconfig',
-		dependencies = {
-			-- format & linting
-			{
-				'jose-elias-alvarez/null-ls.nvim',
-				config = function()
-					require('custom.configs.null-ls')
-				end,
-			},
-		},
 		config = function()
 			require('plugins.configs.lspconfig')
 			require('custom.configs.lspconfig')
-		end, -- Override to setup mason-lspconfig
+		end,
+	},
+	{
+		'nvimtools/none-ls.nvim',
+		event = 'VeryLazy',
+		opts = function()
+			return require('custom.configs.null-ls')
+		end,
 	},
 	-- override plugin configs
 	{
@@ -33,36 +31,57 @@ local plugins = {
 		'nvim-tree/nvim-tree.lua',
 		opts = overrides.nvimtree,
 	},
-	-- Install a plugin
+	-- better ux
+	-- SCP
 	{
 		'max397574/better-escape.nvim',
 		event = 'InsertEnter',
+		opts = {
+			mapping = { 'jk', 'jj' }, -- a table with mappings to use
+			timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
+			clear_empty_lines = false, -- clear line after escaping if there is only whitespace
+			keys = '<Esc>', -- keys used for escaping, if it is a function will use the result everytime
+			-- example(recommended)
+			-- keys = function()
+			--   return vim.api.nvim_win_get_cursor(0)[2] > 1 and '<esc>l' or '<esc>'
+			-- end,
+		},
+	},
+	{
+		'yamatsum/nvim-cursorline',
 		config = function()
-			require('better_escape').setup()
+			require('custom.configs.cursorline')
 		end,
 	},
-
+	{ 'itchyny/vim-cursorword' },
+	-- web
+	{
+		'razak17/tailwind-fold.nvim',
+		opts = {
+			min_chars = 3, -- min chars to fold.
+		},
+		dependencies = { 'nvim-treesitter/nvim-treesitter' },
+		ft = { 'html', 'svelte', 'astro', 'vue', 'typescriptreact' },
+	},
 	-- To make a plugin not be loaded
 	-- {
 	--   "NvChad/nvim-colorizer.lua",
 	--   enabled = false
 	-- },
-	-- All NvChad plugins are lazy-loaded by default
-	-- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
 	-- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-	-- {
-	--   "mg979/vim-visual-multi",
-	--   lazy = false,
-	-- }
-	--
-	-- version control (git)
+	{
+		'mg979/vim-visual-multi',
+		lazy = false,
+	},
+	-- version control
+	-- git conflicts
 	{
 		'akinsho/git-conflict.nvim',
 		version = '*',
 		ft = 'gitcommit',
 		config = true,
 	},
-	-- git integration
+	--
 	{
 		'tpope/vim-fugitive',
 		keys = {
@@ -72,8 +91,8 @@ local plugins = {
 			{ '<leader>gfP', '<cmd>Git pull<cr>', desc = '[G]it [P]ull' },
 		},
 	},
-
-	-- added after example
+	-- All NvChad plugins are lazy-loaded by default
+	-- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
 	-- community configs: https://github.com/NvChad/nvcommunity
 	{
 		'NvChad/nvcommunity',
@@ -154,25 +173,41 @@ local plugins = {
 	},
 	-- show diagnostics, references, telescope results
 	{
-		"folke/trouble.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		cmd = { "Trouble", "TroubleToggle", "TodoTrouble" },
-		opts = {},
-		init = function()
-			require("custom.configs.trouble")
+		'folke/trouble.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		cmd = { 'Trouble', 'TroubleToggle', 'TodoTrouble' },
+		opts = function()
+			require('custom.configs.trouble')
 		end,
 	},
 	--  split/join blocks of code
 	{
 		{
-			"Wansmer/treesj",
+			'Wansmer/treesj',
 			keys = { '<space>m', '<space>j', '<space>s' },
-			requires = { 'nvim-treesitter/nvim-treesitter' },
+			dependencies = { 'nvim-treesitter/nvim-treesitter' },
 			config = function()
 				require('custom.configs.treesj')
 			end,
 		},
-	}
+	},
+	-- a tree like view for symbols
+	{
+		'simrat39/symbols-outline.nvim',
+		cmd = 'SymbolsOutline',
+		config = function()
+			require('custom.configs.symbols')
+		end,
+	},
+	-- markdown preview
+	{
+		'iamcco/markdown-preview.nvim',
+		cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+		ft = { 'markdown' },
+		build = function()
+			vim.fn['mkdp#util#install']()
+		end,
+	},
 }
 
 return plugins
