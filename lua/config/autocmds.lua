@@ -14,6 +14,20 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
+-- Add support for go templates
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.gohtml,*.gotmpl,*.html",
+  callback = function()
+    if vim.fn.search("{{.\\+}}", "nw") ~= 0 then
+      local buf = vim.api.nvim_get_current_buf()
+      vim.api.nvim_buf_set_option(buf, "filetype", "gotmpl")
+      vim.api.nvim_buf_set_option(buf, "filetype", "html")
+    else
+      vim.bo.filetype = "html"
+    end
+  end,
+})
+
 -- Additional autocommand to switch back to 'blade' after LSP has attached
 vim.api.nvim_create_autocmd("LspAttach", {
   pattern = "*.blade.php",
