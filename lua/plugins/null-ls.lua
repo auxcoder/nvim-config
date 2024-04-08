@@ -10,6 +10,7 @@ return {
               "--memory-limit=2G",
             },
           }),
+          nls.builtins.diagnostics.markdownlint,
         },
       }
     end,

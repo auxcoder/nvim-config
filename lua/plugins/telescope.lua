@@ -13,6 +13,8 @@ return {
   version = false, -- telescope did only one release, so use HEAD for now
   optional = true,
   keys = {
+    -- open find project
+    -- { "<leader>pp", "<cmd>Telescope projects<CR>", desc = "Find Projects" },
     -- change a keymap
     { "<C-p>", "<cmd>Telescope find_files<CR>", desc = "Find Files" },
     -- add a keymap to browse plugin files

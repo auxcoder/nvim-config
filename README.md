@@ -1,9 +1,6 @@
 # 💤 LazyVim + Laravel
 
-(and some stuff I also use)
 This is my best effort to fully integrate my LazyVim config with Laravel and all Laravel-related tools.
-Works great with Livewire v3 as well as Volt and Folio.
-When using Volt, use class-based syntax for maximum compatibility.
 Functional Volt works, too, but has issues with `$this`.
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
@@ -27,6 +24,7 @@ This config is setup with the best available dev tooling for laravel
 
 - [LazyVim - A beautiful neovim config for the lazy](https://www.barbarianmeetscoding.com/notes/neovim-lazyvim/)
 - [lazyGit - Video tutorial](https://www.youtube.com/watch?v=CPLdltN7wgE)
+  - [LazyGit - Resolve Conflicts Tutorial](https://www.youtube.com/watch?v=CPLdltN7wgE)
 
 ### Requirements
 
@@ -57,3 +55,6 @@ Optional:
 
 If opening a py file leads to pyright analyzing your whole library, make sure to add an empty `pyrightconfig.json` into the file root.
 This can be your $HOME folder or for example on darwin using homebrew it could be `/opt/homebrew/`.
+
+## Config Refs
+-[BarbaricLazyVim - LazyVim Config](https://github.com/Vintharas/BarbaricLazyVim)
