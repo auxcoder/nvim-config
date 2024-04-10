@@ -1,3 +1,6 @@
+-- `conform.nvim` and `nvim-lint` are now the default formatters and linters in LazyVim.
+-- but you need to enable the `lazyvim.plugins.extras.lsp.none-ls` extra,
+-- In case you want to use `none-ls.nvim`, just rename the spec from your config.
 return {
   {
     "nvimtools/none-ls.nvim",
