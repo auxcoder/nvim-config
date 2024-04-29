@@ -6,6 +6,9 @@ Functional Volt works, too, but has issues with `$this`.
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
+
+- [heavenshell/vim-jsdoc](https://github.com/heavenshell/vim-jsdoc)
+
 ## Laravel Native
 
 This config is setup with the best available dev tooling for laravel
@@ -20,11 +23,17 @@ This config is setup with the best available dev tooling for laravel
 - XDebug with configuration for Laravel Sail
 - Treesitter beta for blade files included
 
-## Additions
+## Git integrations
+
+- [The Holy Grail of Neovim Git Integrations](https://www.youtube.com/watch?v=K-FKqXj8BAQ)
+  - [LazyGit](https://youtu.be/K-FKqXj8BAQ?t=100)
+  - [Fugitive](https://youtu.be/K-FKqXj8BAQ?t=222)
+  - [NeoGit](https://youtu.be/K-FKqXj8BAQ?t=347)
+  - [DiffView](https://youtu.be/K-FKqXj8BAQ?t=537)
 
 - [LazyVim - A beautiful neovim config for the lazy](https://www.barbarianmeetscoding.com/notes/neovim-lazyvim/)
-- [lazyGit - Video tutorial](https://www.youtube.com/watch?v=CPLdltN7wgE)
-  - [LazyGit - Resolve Conflicts Tutorial](https://www.youtube.com/watch?v=CPLdltN7wgE)
+  - [lazyGit - Video tutorial](https://www.youtube.com/watch?v=CPLdltN7wgE)
+    - [LazyGit - Resolve Conflicts Tutorial](https://www.youtube.com/watch?v=CPLdltN7wgE)
 
 ### Requirements
 
