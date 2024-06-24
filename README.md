@@ -1,11 +1,22 @@
-# 💤 LazyVim + Laravel
+# Readme
+
+## Reinstall & Force config
+
+As `LazyVim` uses `Lazy` package manager all its plugins are installed under folder:
+
+```sh
+~/.local/share/nvim/lazy/
+```
+
+Some times is needed to force install config, so removing folder `/nvim` will force **Neovim** to reinstall all its config dependencies.
+
+## 💤 LazyVim + Laravel
 
 This is my best effort to fully integrate my LazyVim config with Laravel and all Laravel-related tools.
 Functional Volt works, too, but has issues with `$this`.
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
-
 
 - [heavenshell/vim-jsdoc](https://github.com/heavenshell/vim-jsdoc)
 

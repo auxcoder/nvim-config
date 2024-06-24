@@ -17,6 +17,9 @@ return {
     -- or add custom linters.
     ---@type table<string,table>
     linters = {
+      markdownlint = {
+        args = { "--disable", "MD013", "---" },
+      },
       -- -- Example of using selene only when a selene.toml file is present
       -- selene = {
       --   -- `condition` is another LazyVim extension that allows you to

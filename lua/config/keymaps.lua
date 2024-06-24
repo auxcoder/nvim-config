@@ -3,6 +3,7 @@
 -- Add any additional keymaps here
 
 local Util = require("lazyvim.util")
+
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
   ---@cast keys LazyKeysHandler
@@ -15,10 +16,7 @@ local function map(mode, lhs, rhs, opts)
 end
 
 map("n", "<leader>gd", function()
-  Util.float_term(
-    { "lazydocker", "-f", Util.get_root() .. "docker-compose.yml" },
-    { cwd = Util.get_root(), esc_esc = false }
-  )
+  Util.terminal({ "lazydocker", "-f", Util.root() .. "docker-compose.yml" }, { cwd = Util.root(), esc_esc = false })
 end, { desc = "LazyDocker (root dir)" })
 
 -- exit insert mode with jk
