@@ -16,12 +16,13 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 
 -- Add support for go templates
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.gohtml,*.gotmpl,*.html",
+  pattern = "*.gohtml,*.gotmpl",
+  -- pattern = "*.gohtml,*.gotmpl,*.html",
   callback = function()
     if vim.fn.search("{{.\\+}}", "nw") ~= 0 then
       local buf = vim.api.nvim_get_current_buf()
-      vim.api.nvim_buf_set_option(buf, "filetype", "gotmpl")
-      vim.api.nvim_buf_set_option(buf, "filetype", "html")
+      vim.bo[buf].filetype = "gotmpl"
+      vim.bo[buf].filetype = "html"
     else
       vim.bo.filetype = "html"
     end
@@ -34,14 +35,42 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     vim.schedule(function()
       -- Check if the attached client is 'intelephense'
-      for _, client in ipairs(vim.lsp.get_active_clients()) do
+      for _, client in ipairs(vim.lsp.get_clients()) do
         if client.name == "intelephense" and client.attached_buffers[args.buf] then
-          vim.api.nvim_buf_set_option(args.buf, "filetype", "blade")
+          vim.bo[args.buf].filetype = "blade"
           -- update treesitter parser to blade
-          vim.api.nvim_buf_set_option(args.buf, "syntax", "blade")
+          vim.bo[args.buf].syntax = "blade"
           break
         end
       end
     end)
+  end,
+})
+
+-- Disable Codeium for markdown files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    -- Assuming Codeium has a configuration option `enabled`
+    vim.b.codeium_enabled = false
+  end,
+})
+
+-- Prevent highlighting AngularJs expressions  {{$ctrl}} as error
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "html",
+  callback = function()
+    vim.cmd("setlocal filetype=html.angularjs")
+    vim.cmd('syntax match angularjsExpression "{{\\$ctrl\\.\\w+}}"')
+  end,
+})
+
+-- Set indentation for Go files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "go",
+  callback = function()
+    vim.bo.shiftwidth = 2 -- Change this value to your desired indentation width
+    vim.bo.tabstop = 2 -- Change this value to your desired tab stop
+    vim.bo.expandtab = false -- Use tabs instead of spaces for Go files (common convention)
   end,
 })

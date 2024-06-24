@@ -9,7 +9,7 @@ return {
             -- "astro",
             "blade",
             "css",
-            -- "eruby",
+            "eruby",
             "html",
             -- "htmldjango",
             "javascriptreact",
