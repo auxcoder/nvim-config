@@ -5,7 +5,7 @@ return {
     ---@class ConformOpts
     local opts = {
       -- LazyVim will use these options when formatting with the conform.nvim formatter
-      format = {
+      default_format_opts = {
         timeout_ms = 3000,
         async = false, -- not recommended to change
         quiet = false, -- not recommended to change
@@ -15,7 +15,7 @@ return {
         lua = { "stylua" },
         fish = { "fish_indent" },
         sh = { "shfmt" },
-        php = { "pint" },
+        php = { "pint", "php_cs_fixer" },
         blade = { "blade-formatter", "rustywind" },
         python = { "black" },
         javascript = { "prettierd" },
@@ -36,10 +36,12 @@ return {
         -- shfmt = {
         --   extra_args = { "-i", "2", "-ci" },
         -- },
+        -- pint for use php laravel
+        -- https://laravel.com/docs/11.x/pint
         pint = {
           meta = {
             url = "https://github.com/laravel/pint",
-            description = "Laravel Pint is an opinionated PHP code style fixer for minimalists. Pint is built on top of PHP-CS-Fixer and makes it simple to ensure that your code style stays clean and consistent.",
+            description = "Laravel Pint is an opinionated PHP code style fixer. Pint is built on top of PHP-CS-Fixer.",
           },
           command = util.find_executable({
             vim.fn.stdpath("data") .. "/mason/bin/pint",
