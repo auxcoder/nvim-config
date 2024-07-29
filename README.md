@@ -77,4 +77,6 @@ If opening a py file leads to pyright analyzing your whole library, make sure to
 This can be your $HOME folder or for example on darwin using homebrew it could be `/opt/homebrew/`.
 
 ## Config Refs
--[BarbaricLazyVim - LazyVim Config](https://github.com/Vintharas/BarbaricLazyVim)
+
+- [BarbaricLazyVim - LazyVim Config](https://github.com/Vintharas/BarbaricLazyVim)
+- [JazzyGrim - dotfiles](https://github.com/JazzyGrim/dotfiles/tree/master/.config/nvim)
