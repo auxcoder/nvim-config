@@ -8,6 +8,7 @@ return {
       fish = { "fish" },
       dockerfile = { "hadolint" },
 			php = {}, -- "phpcs"
+      markdown = {}
       -- python = { "pylint" },
       -- Use the "*" filetype to run linters on all filetypes.
       -- ['*'] = { 'global linter' },
@@ -19,7 +20,9 @@ return {
     ---@type table<string,table>
     linters = {
       markdownlint = {
-        args = { "--disable", "MD013", "---" },
+        args = {
+          '--disable', 'MD013', -- line length
+        }
       },
       -- -- Example of using selene only when a selene.toml file is present
       -- selene = {
