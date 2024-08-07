@@ -14,7 +14,7 @@ return {
       ---@type lspconfig.options
       servers = {
         -- automatically installed with mason and loaded with lspconfig
-        pyright = {},
+        -- pyright = {},
         -- groovyls = {},
         phpactor = {
           enabled = lsp == "phpactor",
