@@ -15,6 +15,11 @@ return {
       "emmet-ls",
       "eslint_d",
       "flake8",
+      -- go stuff
+      "goimports",
+      "gofumpt",
+      "gomodifytags",
+      "impl",
       "hadolint",
       "html-lsp",
       "intelephense",
