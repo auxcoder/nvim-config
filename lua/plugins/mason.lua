@@ -19,6 +19,7 @@ return {
       "html-lsp",
       "intelephense",
       "nginx-language-server",
+      -- php stuff
       "php-debug-adapter",
       "phpcs",
       "php-cs-fixer",

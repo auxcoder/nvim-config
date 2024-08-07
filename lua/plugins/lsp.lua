@@ -1,8 +1,8 @@
 if lazyvim_docs then
   -- LSP Server to use for PHP.
-  vim.g.lazyvim_php_lsp = "phpactor" -- "intelephense"
+  vim.g.lazyvim_php_lsp = "intelephense" -- "intelephense", "phpactor"
 end
-local lsp = vim.g.lazyvim_php_lsp or "phpactor"
+local lsp = vim.g.lazyvim_php_lsp or "intelephense"
 
 return {
   {
