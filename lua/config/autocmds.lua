@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
--- Add support for go templates
+-- Add support for Go templates
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.gohtml,*.gotmpl",
   -- pattern = "*.gohtml,*.gotmpl,*.html",
@@ -65,12 +65,16 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Set indentation for Go files
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "go",
+  pattern = "Jenkinsfile*",
   callback = function()
-    vim.bo.shiftwidth = 2 -- Change this value to your desired indentation width
-    vim.bo.tabstop = 2 -- Change this value to your desired tab stop
-    vim.bo.expandtab = false -- Use tabs instead of spaces for Go files (common convention)
+		vim.bo.filetype = "groovy"
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "Dockerfile.*",
+  callback = function()
+		vim.bo.filetype = "dockerfile"
   end,
 })
