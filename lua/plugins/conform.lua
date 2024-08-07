@@ -15,7 +15,7 @@ return {
         lua = { "stylua" },
         fish = { "fish_indent" },
         sh = { "shfmt" },
-        php = { "php_cs_fixer" }, -- "pint",
+        php = { "pint" }, -- "pint", "php_cs_fixer"
         blade = { "blade-formatter", "rustywind" },
         python = { "black" },
         javascript = { "prettierd" },
@@ -36,6 +36,19 @@ return {
         -- shfmt = {
         --   extra_args = { "-i", "2", "-ci" },
         -- },
+        ["blade-formatter"] = {
+          command = "blade-formatter",
+          args = {
+            "--write",
+            "$FILENAME",
+            "--wrap-line-length",
+            9999,
+            "--wrap-attributes",
+            "preserve-aligned",
+          },
+          cwd = util.root_file({ ".editorconfig", "composer.json", "package.json" }),
+          stdin = false,
+        },
         -- pint for use php laravel
         -- https://laravel.com/docs/11.x/pint
         pint = {
@@ -43,10 +56,7 @@ return {
             url = "https://github.com/laravel/pint",
             description = "Laravel Pint is an opinionated PHP code style fixer. Pint is built on top of PHP-CS-Fixer.",
           },
-          command = util.find_executable({
-            vim.fn.stdpath("data") .. "/mason/bin/pint",
-            "vendor/bin/pint",
-          }, "pint"),
+          command = util.find_executable({ vim.fn.stdpath("data") .. "/mason/bin/pint", "vendor/bin/pint" }, "pint"),
           args = { "$FILENAME" },
           stdin = false,
         },

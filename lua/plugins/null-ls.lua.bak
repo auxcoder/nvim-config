@@ -8,15 +8,11 @@ return {
       local nls = require("null-ls")
       opts.sources = opts.sources or {}
       table.insert(opts.sources, nls.builtins.diagnostics.markdownlint)
-      table.insert(opts.sources, nls.builtins.formatting.phpcsfixer)
-      table.insert(opts.sources, nls.builtins.diagnostics.phpcs.with({"--standard=PSR1"}))
+      table.insert(opts.sources, nls.builtins.diagnostics.phpstan.with({ extra_args = { "--memory-limit=2G" } }))
+      -- table.insert(opts.sources, nls.builtins.formatting.phpcsfixer)
+      -- table.insert(opts.sources, nls.builtins.diagnostics.phpcs.with({
+      --   extra_args = {"--standard=PSR1"},
+      -- }))
     end,
-  },
-  {
-    -- add longer timeout, since formatting blade files gets a little slow
-    -- "neovim/nvim-lspconfig",
-    -- opts = {
-    --   format = { timeout_ms = 2000 },
-    -- },
   },
 }

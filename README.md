@@ -46,12 +46,16 @@ This config is setup with the best available dev tooling for laravel
   - [lazyGit - Video tutorial](https://www.youtube.com/watch?v=CPLdltN7wgE)
     - [LazyGit - Resolve Conflicts Tutorial](https://www.youtube.com/watch?v=CPLdltN7wgE)
 
+## Php
+
 ### Requirements
 
 If you encounter an issue with `Intelephense` not recognising facade or model function calls, you will need to install [Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper) into your project and execute the relevant artisan commands. Thanks to [@ermand](https://github.com/ermand) for bringing up the issue as well as the solution.
 
 Make sure you install all TreeSitter parsers by doing:
+
 `:TSInstall all` and `:TSInstall php_only`.
+
 This will install both the experimental blade parser, for which configuration is included in this config, as well as the php_only parser, which is needed for it to work fully.
 For some reason php_only is not included in `all`.
 

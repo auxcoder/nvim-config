@@ -1,48 +1,38 @@
+if lazyvim_docs then
+  -- LSP Server to use for PHP.
+  vim.g.lazyvim_php_lsp = "phpactor" -- "intelephense"
+end
+local lsp = vim.g.lazyvim_php_lsp or "phpactor"
+
 return {
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
+      -- add longer timeout, since formatting blade files gets a little slow
+      format = { timeout_ms = 2000 },
       ---@type lspconfig.options
       servers = {
         -- automatically installed with mason and loaded with lspconfig
         pyright = {},
-        groovyls = {},
-				intelephense = {
-					enabled = true,
-				},
-        tailwindcss = {
+        -- groovyls = {},
+        phpactor = {
+          enabled = lsp == "phpactor",
+        },
+        [lsp] = {
+          enabled = true,
+        },
+        intelephense = {
           settings = {
-            tailwindCSS = {
-              experimental = {
-                classRegex = {
-                  "@?class\\(([^]*)\\)",
-                  "'([^']*)'",
-                },
+            intelephense = {
+              format = {
+                braces = "k&r",
               },
             },
           },
         },
-        emmet_ls = {
-          filetypes = {
-            -- "astro",
-            "blade",
-            "css",
-            "eruby",
-            "html",
-            -- "htmldjango",
-            -- "javascriptreact",
-            -- "less",
-            -- "pug",
-            -- "sass",
-            "scss",
-            -- "svelte",
-            "typescriptreact",
-            -- "vue",
-          },
-        },
       },
-			autoformat = true,
+      autoformat = true,
     },
   },
 }
