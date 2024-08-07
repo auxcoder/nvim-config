@@ -1,5 +1,4 @@
 return {
-  -- add groovyls to lspconfig
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
@@ -8,8 +7,39 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
-        -- groovyls = {},
+        groovyls = {},
+        tailwindcss = {
+          settings = {
+            tailwindCSS = {
+              experimental = {
+                classRegex = {
+                  "@?class\\(([^]*)\\)",
+                  "'([^']*)'",
+                },
+              },
+            },
+          },
+        },
+        emmet_ls = {
+          filetypes = {
+            -- "astro",
+            "blade",
+            "css",
+            "eruby",
+            "html",
+            -- "htmldjango",
+            -- "javascriptreact",
+            -- "less",
+            -- "pug",
+            -- "sass",
+            "scss",
+            -- "svelte",
+            "typescriptreact",
+            -- "vue",
+          },
+        },
       },
+			autoformat = true,
     },
   },
 }
