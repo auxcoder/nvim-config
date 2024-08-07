@@ -4,18 +4,12 @@
 return {
   {
     "nvimtools/none-ls.nvim",
-    opts = function()
+    opts = function(_, opts)
       local nls = require("null-ls")
-      return {
-        sources = {
-          nls.builtins.diagnostics.phpstan.with({
-            extra_args = {
-              "--memory-limit=2G",
-            },
-          }),
-          nls.builtins.diagnostics.markdownlint,
-        },
-      }
+      opts.sources = opts.sources or {}
+      table.insert(opts.sources, nls.builtins.diagnostics.markdownlint)
+      table.insert(opts.sources, nls.builtins.formatting.phpcsfixer)
+      table.insert(opts.sources, nls.builtins.diagnostics.phpcs.with({"--standard=PSR1"}))
     end,
   },
   {

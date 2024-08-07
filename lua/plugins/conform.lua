@@ -15,7 +15,7 @@ return {
         lua = { "stylua" },
         fish = { "fish_indent" },
         sh = { "shfmt" },
-        php = { "pint", "php_cs_fixer" },
+        php = { "php_cs_fixer" }, -- "pint",
         blade = { "blade-formatter", "rustywind" },
         python = { "black" },
         javascript = { "prettierd" },
