@@ -20,7 +20,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 - [heavenshell/vim-jsdoc](https://github.com/heavenshell/vim-jsdoc)
 
-## Laravel Native
+## Laravel
 
 This config is setup with the best available dev tooling for laravel
 
@@ -33,6 +33,45 @@ This config is setup with the best available dev tooling for laravel
 - Tailwind LS
 - XDebug with configuration for Laravel Sail
 - Treesitter beta for blade files included
+
+---
+
+Used in the past and removed due errors
+
+- [laravel.vim](https://github.com/adalessa/laravel.nvim)
+
+With config
+
+```lua
+return {
+  {
+    -- Add the Laravel.nvim plugin which gives the ability to run Artisan commands
+    "adalessa/laravel.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "tpope/vim-dotenv",
+      "MunifTanjim/nui.nvim",
+      "nvimtools/none-ls.nvim",
+    },
+    cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
+    keys = {
+      { "<leader>la", ":Laravel artisan<cr>" },
+      { "<leader>lr", ":Laravel routes<cr>" },
+      { "<leader>lm", ":Laravel related<cr>" },
+    },
+    event = { "VeryLazy" },
+    config = true,
+  },
+  {
+    -- Add the blade-nav.nvim plugin which provides Goto for Blade files.
+    "ricardoramirezr/blade-nav.nvim",
+    dependencies = {
+      "hrsh7th/nvim-cmp",
+    },
+    ft = { "blade", "php" },
+  },
+}
+```
 
 ## Git integrations
 
@@ -70,10 +109,6 @@ Optional:
 
 - Tailwind support
 - Intelephense for php (best in class for Laravel development)
-
-### Theme
-
-- I concede, we are back to using catppuccin. There is just too many integrations.
 
 ## Troubleshooting
 

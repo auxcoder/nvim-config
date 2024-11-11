@@ -20,9 +20,8 @@ return {
     ---@type table<string,table>
     linters = {
       markdownlint = {
-        args = {
-          '--disable', 'MD013', -- line length
-        }
+        args = {'--disable', 'MD013', } -- line length
+        -- args = {'--config', '/path/to/your/.markdownlint.json'} -- file
       },
       -- -- Example of using selene only when a selene.toml file is present
       -- selene = {
