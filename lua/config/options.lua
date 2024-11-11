@@ -12,3 +12,6 @@ opt.listchars = {
   trail = "<", -- default " "
   nbsp = "+",
 }
+
+-- automatically wrap long lines
+opt.wrap = true

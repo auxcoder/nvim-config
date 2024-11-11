@@ -3,16 +3,35 @@ return {
   -- { "folke/tokyonight.nvim" },
   -- { "ellisonleao/gruvbox.nvim" },
   -- { "joshdick/onedark.vim" },
-  { "EdenEast/nightfox.nvim" },
+  -- { "EdenEast/nightfox.nvim" },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    opts = {
+      flavour = "frappe",
+    },
+    -- config = function()
+    --   Colors = require("catppuccin.palettes").get_palette("frappe")
+    --   require("catppuccin").setup({
+    --     custom_highlights = function(Colors)
+    --       return {
+    --         VertSplit = { fg = Colors.overlay0 },
+    --         Comment = { fg = Colors.flamingo },
+    --       }
+    --     end,
+    --   })
+    -- end,
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      lazy = false,
+      lazy = true,
+      priority = 1000,
+      colorscheme = "catppuccin",
       -- colorscheme = "github_dark_dimmed",
-      -- colorscheme = "catppuccin",
       -- colorscheme = "gruvbox",
       -- colorscheme = "onedark",
-      colorscheme = "nordfox", -- nightfox
+      -- colorscheme = "nordfox", -- nightfox
     },
   },
 }
