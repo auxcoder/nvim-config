@@ -10,7 +10,6 @@ return {
         async = false, -- not recommended to change
         quiet = false, -- not recommended to change
       },
-      ---@type table<string, conform.FormatterUnit[]>
       formatters_by_ft = {
         lua = { "stylua" },
         fish = { "fish_indent" },
@@ -31,7 +30,6 @@ return {
         --     return vim.fs.find({ "dprint.json" }, { path = ctx.filename, upward = true })[1]
         --   end,
         -- },
-        --
         -- # Example of using shfmt with extra args
         -- shfmt = {
         --   extra_args = { "-i", "2", "-ci" },
@@ -62,6 +60,27 @@ return {
         },
       },
     }
+
+    vim.api.nvim_create_autocmd("BufWritePost", {
+      pattern = "*.html", -- Targets HTML files
+      callback = function(args)
+        local conform = require("conform")
+        local formatters = conform.get_formatters("html")
+        print("Conform Formatters:", vim.inspect(formatters))
+        -- require("conform").format({ async = true })
+      end,
+    })
+
     return opts
+  end,
+  -- Keymap configuration in `init`
+  init = function()
+    vim.keymap.set({ "n", "v" }, "<leader>mp", function()
+      require("conform").format({
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 500,
+      })
+    end, { desc = "Format file or range (in visual mode)" })
   end,
 }
