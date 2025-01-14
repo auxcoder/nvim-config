@@ -42,7 +42,6 @@ return {
         --     return vim.fs.find({ "dprint.json" }, { path = ctx.filename, upward = true })[1]
         --   end,
         -- },
-        --
         -- # Example of using shfmt with extra args
         -- shfmt = {
         --   extra_args = { "-i", "2", "-ci" },
@@ -77,14 +76,6 @@ return {
   end,
   -- Keymap configuration in `init`
   init = function()
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      callback = function(args)
-        require("conform").format({
-          bufnr = args.buf,
-          lsp_fallback = true, -- Use LSP if no formatter is configured
-        })
-      end,
-    })
     vim.keymap.set({ "n", "v" }, "<leader>mp", function()
       require("conform").format({
         lsp_fallback = true,
