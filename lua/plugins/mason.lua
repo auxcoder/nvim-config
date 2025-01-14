@@ -1,12 +1,26 @@
 return {
   "williamboman/mason.nvim",
+  config = function()
+    -- import mason
+    local mason = require("mason")
+
+    -- enable mason and configure icons
+    mason.setup({
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+    })
+  end,
   opts = {
     ensure_installed = {
       "actionlint",
       "ansible-language-server",
       "ansible-lint",
       "antlers-language-server",
-      "black",
       "bash-language-server",
       "blade-formatter",
       "docker-compose-language-service",
@@ -30,14 +44,20 @@ return {
       "php-cs-fixer",
       "phpstan",
       "pint",
-      "prettierd",
-      -- python
-      -- "pyright",
+      -- css, js, json
+      "eslint_d", -- js linter
+      "prettier", -- prettier formatter
       "rustywind",
+      "tailwindcss-language-server",
+      -- "prettierd",
+      -- python
+      -- "black",
+      -- "isort",
+      -- "pyright",
+      -- "pylint", -- python linter
       "shellcheck",
       "shfmt",
       "stylua",
-      "tailwindcss-language-server",
     },
   },
 }

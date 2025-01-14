@@ -1,6 +1,7 @@
 local util = require("conform.util")
 return {
   "stevearc/conform.nvim",
+  event = { "BufReadPre", "BufNewFile" },
   opts = function()
     ---@class ConformOpts
     local opts = {
@@ -10,15 +11,25 @@ return {
         async = false, -- not recommended to change
         quiet = false, -- not recommended to change
       },
-      ---@type table<string, conform.FormatterUnit[]>
       formatters_by_ft = {
         lua = { "stylua" },
         fish = { "fish_indent" },
         sh = { "shfmt" },
         php = { "pint" }, -- "pint", "php_cs_fixer"
         blade = { "blade-formatter", "rustywind" },
-        python = { "black" },
-        javascript = { "prettierd" },
+        python = { "isort", "black" },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescriptreact = { "prettier" },
+        svelte = { "prettier" },
+        css = { "prettier" },
+        html = { "prettier" },
+        json = { "prettier" },
+        yaml = { "prettier" },
+        markdown = { "prettier" },
+        graphql = { "prettier" },
+        -- javascript = { "prettierd" },
       },
       -- LazyVim will merge the options you set here with builtin formatters.
       -- You can also define any custom formatters here.
@@ -63,5 +74,23 @@ return {
       },
     }
     return opts
+  end,
+  -- Keymap configuration in `init`
+  init = function()
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      callback = function(args)
+        require("conform").format({
+          bufnr = args.buf,
+          lsp_fallback = true, -- Use LSP if no formatter is configured
+        })
+      end,
+    })
+    vim.keymap.set({ "n", "v" }, "<leader>mp", function()
+      require("conform").format({
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 500,
+      })
+    end, { desc = "Format file or range (in visual mode)" })
   end,
 }
