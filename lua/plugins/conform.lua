@@ -72,6 +72,17 @@ return {
         },
       },
     }
+
+    vim.api.nvim_create_autocmd("BufWritePost", {
+      pattern = "*.html", -- Targets HTML files
+      callback = function(args)
+        local conform = require("conform")
+        local formatters = conform.get_formatters("html")
+        print("Conform Formatters:", vim.inspect(formatters))
+        -- require("conform").format({ async = true })
+      end,
+    })
+
     return opts
   end,
   -- Keymap configuration in `init`
