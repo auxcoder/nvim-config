@@ -45,6 +45,7 @@ return {
       "phpstan",
       "pint",
       -- css, js, json
+      -- "vue-language-server",
       "eslint_d", -- js linter
       "prettier", -- prettier formatter
       "rustywind",

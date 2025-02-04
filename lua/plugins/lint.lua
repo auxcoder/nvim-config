@@ -33,12 +33,17 @@ return {
       eslint_d = {
         name = "eslint_d",
         cmd = "eslint_d", -- Make sure this is correct
-        args = { "--fix", "--stdin", "--stdin-filename", "%filepath" },
+        args = { "--fix", "--stdin", "--stdin-filename", "%filepath", "--format", "json" },
         parser = {
-          on_chunk = function(chunk)
-            local data = vim.fn.json_decode(chunk)
-            return data
-          end,
+          -- on_chunk = function(chunk)
+          --   -- Use Lua's vim.json.decode to safely decode the JSON chunk
+          --   local success, data = pcall(vim.json.decode, chunk)
+          --   if not success then
+          --     vim.notify("Error decoding JSON: " .. tostring(data), vim.log.levels.ERROR)
+          --     return {}
+          --   end
+          --   return data
+          -- end,
           on_done = function()
             -- No-op: This is just to fulfill the requirement for `on_done`
           end,
