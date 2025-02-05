@@ -13,6 +13,13 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "php"
   end,
 })
+-- set folding method for blade
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "blade",
+  callback = function()
+    vim.opt_local.foldmethod = "indent"
+  end,
+})
 
 -- Add support for Go templates
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
@@ -38,13 +45,12 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.expandtab = false -- Use tabs instead of spaces for Go files (common convention)
   end,
 })
-
 -- to have your imports organized on save using the logic of goimports
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
     local params = vim.lsp.util.make_range_params()
-    params.context = {only = {"source.organizeImports"}}
+    params.context = { only = { "source.organizeImports" } }
     -- buf_request_sync defaults to a 1000ms timeout. Depending on your
     -- machine and codebase, you may want longer. Add an additional
     -- argument after params if you find that you have to write the file
@@ -59,8 +65,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         end
       end
     end
-    vim.lsp.buf.format({async = false})
-  end
+    vim.lsp.buf.format({ async = false })
+  end,
 })
 
 -- Additional autocommand to switch back to 'blade' after LSP has attached
