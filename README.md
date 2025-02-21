@@ -76,6 +76,7 @@ return {
 ## Git integrations
 
 - [The Holy Grail of Neovim Git Integrations](https://www.youtube.com/watch?v=K-FKqXj8BAQ)
+
   - [LazyGit](https://youtu.be/K-FKqXj8BAQ?t=100)
   - [Fugitive](https://youtu.be/K-FKqXj8BAQ?t=222)
   - [NeoGit](https://youtu.be/K-FKqXj8BAQ?t=347)
