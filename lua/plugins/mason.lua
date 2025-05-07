@@ -42,8 +42,8 @@ return {
       "php-debug-adapter",
       "phpcs",
       "php-cs-fixer",
-      "phpstan",
-      "pint",
+      -- "phpstan",
+      -- "pint",
       -- css, js, json
       "eslint_d", -- js linter
       "prettier", -- prettier formatter

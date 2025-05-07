@@ -15,7 +15,7 @@ return {
       -- svelte = { "eslint_d" },
       fish = { "fish" },
       dockerfile = { "hadolint" },
-      php = {}, -- "phpcs"
+      php = { "phpcs" }, -- "phpcs" -- syntax errors only
       markdown = {},
       python = { "pylint" },
       -- Use the "*" filetype to run linters on all filetypes.
@@ -33,17 +33,45 @@ return {
       eslint_d = {
         name = "eslint_d",
         cmd = "eslint_d", -- Make sure this is correct
-        args = { "--fix", "--stdin", "--stdin-filename", "%filepath" },
-        parser = {
-          on_chunk = function(chunk)
-            local data = vim.fn.json_decode(chunk)
-            return data
-          end,
-          on_done = function()
-            -- No-op: This is just to fulfill the requirement for `on_done`
-          end,
-        },
-        use_cache = true,
+        args = { "--stdin", "--stdin-filename", "$FILENAME", "--format", "json" },
+        parse = function(output)
+          local ok, decoded = pcall(vim.json.decode, output)
+          if not ok then
+            return {}
+          end
+          -- parse decoded as needed
+        end,
+        -- args = { "--fix", "--stdin", "--stdin-filename", "%filepath" },
+        -- parser = (function()
+        --   local output = {} -- Collect chunks here
+        --   return {
+        --     on_chunk = function(chunk)
+        --       table.insert(output, chunk) -- Store each chunk
+        --     end,
+        --     on_done = function()
+        --       local data = table.concat(output) -- Combine all chunks
+        --       local ok, result = pcall(vim.json.decode, data) -- Decode only once
+        --       if not ok then
+        --         vim.notify("Failed to decode linter output", vim.log.levels.ERROR)
+        --         return
+        --       end
+        --       return result -- Send parsed JSON to nvim-lint
+        --     end,
+        --   }
+        -- end)(),
+        -- use_cache = true,
+      },
+      phpcs = {
+        cmd = "phpcs", -- Make sure it's in your PATH
+        stdin = false,
+        -- or whatever standard you use
+        -- args = { "--standard=" .. vim.fn.expand("~/.ruleset.xml") },
+        stream = "stderr",
+        ignore_exitcode = true,
+        parser = require("lint.parser").from_errorformat("%f:%l:%c: %m", {
+          source = "phpcs",
+          severity = vim.diagnostic.severity.WARN,
+        }),
       },
       -- Example of using selene only when a selene.toml file is present
       -- selene = {

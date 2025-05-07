@@ -19,9 +19,6 @@ map("n", "<leader>gd", function()
   Util.terminal({ "lazydocker", "-f", Util.root() .. "docker-compose.yml" }, { cwd = Util.root(), esc_esc = false })
 end, { desc = "LazyDocker (root dir)" })
 
--- exit insert mode with jj
-vim.keymap.set("i", "jj", "<ESC>", { noremap = true, silent = true, desc = "<ESC>" })
-
 -- Perusing code faster with K and J
 vim.keymap.set({ "n", "v" }, "K", "5k", { noremap = true, desc = "Up faster" })
 vim.keymap.set({ "n", "v" }, "J", "5j", { noremap = true, desc = "Down faster" })
@@ -30,6 +27,5 @@ vim.keymap.set({ "n", "v" }, "J", "5j", { noremap = true, desc = "Down faster" }
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { noremap = true, desc = "Save window" })
 
 -- Convert selected text to snake_case and lowercase
-vim.api.nvim_set_keymap('x', '<leader>s', [[:s/\%V\s\+/_/g<CR>gvgu]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>s', [[viw:s/\s\+/_/g<CR>viwgu]], { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap("x", "<leader>s", [[:s/\%V\s\+/_/g<CR>gvgu]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>s", [[viw:s/\s\+/_/g<CR>viwgu]], { noremap = true, silent = true })

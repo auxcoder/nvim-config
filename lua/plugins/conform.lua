@@ -10,7 +10,7 @@ return {
         lua = { "stylua" },
         fish = { "fish_indent" },
         sh = { "shfmt" },
-        php = { "pint" }, -- "pint", "php_cs_fixer"
+        php = { "pint", "php" }, -- "pint", "php_cs_fixer"
         blade = { "blade-formatter", "rustywind" },
         python = { "isort", "black" },
         javascript = { "prettier" },
@@ -67,6 +67,12 @@ return {
           command = util.find_executable({ vim.fn.stdpath("data") .. "/mason/bin/pint", "vendor/bin/pint" }, "pint"),
           args = { "$FILENAME" },
           stdin = false,
+        },
+        phpcbf = {
+          command = "phpcbf",
+          args = { "--standard=.phpcs.xml", "--no-patch", "--report=summary", "-" },
+          stdin = true,
+          cwd = require("conform.util").root_file({ ".git" }),
         },
       },
       -- Set this to change the default values when calling conform.format()
