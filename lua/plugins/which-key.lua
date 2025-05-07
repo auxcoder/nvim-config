@@ -1,12 +1,11 @@
--- Enhanced key binding display
 return {
   {
     "folke/which-key.nvim",
     optional = true,
     opts = {
+      -- Update to the new format as suggested by which-key health check
       defaults = {
-        ["<leader>q"] = { name = "+session" },
-        ["<leader>u"] = { name = "+undo" },
+        { "<leader>q", group = "session", mode = { "n" } },
       },
     },
   },
