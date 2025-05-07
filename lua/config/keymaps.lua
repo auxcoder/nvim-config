@@ -23,9 +23,8 @@ end, { desc = "LazyDocker (root dir)" })
 vim.keymap.set({ "n", "v" }, "K", "5k", { noremap = true, desc = "Up faster" })
 vim.keymap.set({ "n", "v" }, "J", "5j", { noremap = true, desc = "Down faster" })
 
--- Save file
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { noremap = true, desc = "Save window" })
+-- vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { noremap = true, desc = "Save file" })
 
--- Convert selected text to snake_case and lowercase
+--_Convert_selected_text_to_snake_case_and_lowercase
 vim.api.nvim_set_keymap("x", "<leader>s", [[:s/\%V\s\+/_/g<CR>gvgu]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>s", [[viw:s/\s\+/_/g<CR>viwgu]], { noremap = true, silent = true })

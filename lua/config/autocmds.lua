@@ -52,16 +52,16 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function()
     local params = vim.lsp.util.make_range_params()
     params.context = { only = { "source.organizeImports" } }
-    
+
     -- Increase timeout to 3000ms for larger codebases
     local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
-    
+
     -- Add error handling
     if not result or vim.tbl_isempty(result) then
       -- No result could mean the server doesn't support this feature or there was an error
       return
     end
-    
+
     for cid, res in pairs(result) do
       -- Check if we have a valid result
       if res.result and not vim.tbl_isempty(res.result) then
@@ -74,7 +74,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         end
       end
     end
-    
+
     -- Format the file
     vim.lsp.buf.format({ async = false })
   end,
