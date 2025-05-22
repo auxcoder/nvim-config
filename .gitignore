@@ -47,4 +47,5 @@ debug
 foo.*
 *.log
 data
+.vscode/
 examples/
