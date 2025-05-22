@@ -2,27 +2,17 @@ return {
   {
     "folke/which-key.nvim",
     optional = true,
-    opts = function(_, opts)
-      opts = opts or {}
-      
-      -- Add triggers that shouldn't show the which-key popup
-      opts.triggers_nowait = vim.list_extend(opts.triggers_nowait or {}, {
-        "`", "'", "g`", "g'", '"', "<c-r>", "z=",
-      })
-      
-      -- Ignore overlapping keymaps
-      opts.ignore_missing = true
-      
-      -- Customize the appearance
-      opts.window = {
+    opts = {
+      win = {
         border = "rounded",
-        position = "bottom",
-        margin = { 1, 0, 1, 0 },
-        padding = { 1, 2, 1, 2 },
-      }
-      
-      return opts
-    end,
+        padding = { 1, 2 },
+      },
+      icons = {
+        breadcrumb = "»",
+        separator = "➜",
+        group = "+",
+      },
+    },
     keys = {
       { "<leader>b", group = "buffer" },
       { "<leader>dp", group = "profiler" },
