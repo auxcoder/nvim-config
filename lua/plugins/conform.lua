@@ -12,7 +12,7 @@ return {
         sh = { "shfmt" },
         php = { "pint", "php" }, -- "pint", "php_cs_fixer"
         blade = { "blade-formatter", "rustywind" },
-        python = { "isort", "black" },
+        python = { "isort" },
         javascript = { "prettier" },
         typescript = { "prettier" },
         javascriptreact = { "prettier" },
@@ -34,17 +34,7 @@ return {
             ignore_errors = true,
           },
         },
-        -- Example of using dprint only when a dprint.json file is present
-        -- dprint = {
-        --   condition = function(ctx)
-        --     return vim.fs.find({ "dprint.json" }, { path = ctx.filename, upward = true })[1]
-        --   end,
-        -- },
-        -- Example of using shfmt with extra args
-        -- shfmt = {
-        --   extra_args = { "-i", "2", "-ci" },
-        -- },
-        ["blade-formatter"] = {
+        blade_formatter = {
           command = "blade-formatter",
           args = {
             "--write",
@@ -74,6 +64,16 @@ return {
           stdin = true,
           cwd = require("conform.util").root_file({ ".git" }),
         },
+        -- Example of using dprint only when a dprint.json file is present
+        -- dprint = {
+        --   condition = function(ctx)
+        --     return vim.fs.find({ "dprint.json" }, { path = ctx.filename, upward = true })[1]
+        --   end,
+        -- },
+        -- Example of using shfmt with extra args
+        -- shfmt = {
+        --   extra_args = { "-i", "2", "-ci" },
+        -- },
       },
       -- Set this to change the default values when calling conform.format()
       -- This will also affect the default values for format_on_save/format_after_save
