@@ -38,41 +38,6 @@ This config is setup with the best available dev tooling for laravel
 
 Used in the past and removed due errors
 
-- [laravel.vim](https://github.com/adalessa/laravel.nvim)
-
-With config
-
-```lua
-return {
-  {
-    -- Add the Laravel.nvim plugin which gives the ability to run Artisan commands
-    "adalessa/laravel.nvim",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "tpope/vim-dotenv",
-      "MunifTanjim/nui.nvim",
-      "nvimtools/none-ls.nvim",
-    },
-    cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
-    keys = {
-      { "<leader>la", ":Laravel artisan<cr>" },
-      { "<leader>lr", ":Laravel routes<cr>" },
-      { "<leader>lm", ":Laravel related<cr>" },
-    },
-    event = { "VeryLazy" },
-    config = true,
-  },
-  {
-    -- Add the blade-nav.nvim plugin which provides Goto for Blade files.
-    "ricardoramirezr/blade-nav.nvim",
-    dependencies = {
-      "hrsh7th/nvim-cmp",
-    },
-    ft = { "blade", "php" },
-  },
-}
-```
-
 ## Git integrations
 
 - [The Holy Grail of Neovim Git Integrations](https://www.youtube.com/watch?v=K-FKqXj8BAQ)
