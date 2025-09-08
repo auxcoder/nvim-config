@@ -24,6 +24,7 @@ return {
         yaml = { "prettier" },
         markdown = { "prettier" },
         graphql = { "prettier" },
+        groovy = { "prettier" }, -- or your formatter
       },
       -- LazyVim will merge the options you set here with builtin formatters.
       -- You can also define any custom formatters here.

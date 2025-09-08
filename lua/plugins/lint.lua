@@ -17,6 +17,7 @@ return {
       dockerfile = { "hadolint" },
       php = { "phpcs" }, -- "phpcs" -- syntax errors only
       markdown = {},
+      kotlin = { "ktlint" },
       python = { "pylint" },
       -- Use the "*" filetype to run linters on all filetypes.
       -- ['*'] = { 'global linter' },

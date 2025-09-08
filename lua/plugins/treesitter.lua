@@ -18,7 +18,7 @@ return {
     "nvim-treesitter/nvim-treesitter-textobjects",
   },
   opts = {
-    ensure_installed = { "lua", "javascript", "typescript", "json", "php", "blade", "html", "css" },
+    ensure_installed = { "lua", "javascript", "typescript", "json", "php", "blade", "html", "css", "kotlin" },
     auto_install = true,
     highlight = {
       enable = true,

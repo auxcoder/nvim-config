@@ -45,6 +45,7 @@ return {
             },
           },
         },
+        kotlin_language_server = {},
         -- automatically installed with mason and loaded with lspconfig
         -- pyright = {},
         -- groovyls = {},
