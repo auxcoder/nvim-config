@@ -8,6 +8,11 @@ return {
       -- add longer timeout, since formatting blade files gets a little slow
       format = { timeout_ms = 2000 },
       servers = {
+        -- javascript & typescript
+        tsserver = {
+          enabled = true,
+          filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+        },
         -- php
         phpactor = {
           enabled = lsp == "phpactor",
