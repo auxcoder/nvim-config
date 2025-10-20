@@ -6,20 +6,27 @@ return {
       servers = {
         emmet_ls = {
           filetypes = {
-            "astro",
+            -- "astro",
             "blade",
             "css",
             "eruby",
             "html",
-            "htmldjango",
+            -- "htmldjango",
             "javascriptreact",
-            "less",
-            "pug",
-            "sass",
+            -- "less",
+            -- "pug",
+            -- "sass",
             "scss",
-            "svelte",
+            -- "svelte",
             "typescriptreact",
             "vue",
+          },
+          init_options = {
+            html = {
+              options = {
+                ["bem.enabled"] = true,
+              },
+            },
           },
         },
       },

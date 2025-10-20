@@ -12,55 +12,85 @@ return {
       typescript = { "eslint_d" },
       javascriptreact = { "eslint_d" },
       typescriptreact = { "eslint_d" },
-      svelte = { "eslint_d" },
+      -- svelte = { "eslint_d" },
       fish = { "fish" },
       dockerfile = { "hadolint" },
-      php = {}, -- "phpcs"
-      markdown = {},
+      php = { "phpcs" }, -- "phpcs" -- syntax errors only
+      markdown = { "markdownlint" },
+      kotlin = { "ktlint" },
       python = { "pylint" },
       -- Use the "*" filetype to run linters on all filetypes.
       -- ['*'] = { 'global linter' },
       -- Use the "_" filetype to run linters on filetypes that don't have other linters configured.
       -- ['_'] = { 'fallback linter' },
     }
-    ---@type table<string,table>
-    lint.linters = {
-      markdownlint = {
-        args = { "--disable", "MD013" }, -- Disable line length rule
-        -- Uncomment below to use a specific markdownlint config file:when
-        -- args = { "--config", "/path/to/your/.markdownlint.json" },
+
+    lint.linters.eslint_d = {
+      name = "eslint_d",
+      cmd = "eslint_d",
+      stdin = true,
+      args = {
+        "--no-eslintrc",
+        "--config", vim.fn.stdpath("config") .. "/eslint.config.js",
+        "--format", "compact",
+        "--stdin",
+        "--stdin-filename", "%filepath",
       },
-      eslint_d = {
-        name = "eslint_d",
-        cmd = "eslint_d", -- Make sure this is correct
-        args = { "--fix", "--stdin", "--stdin-filename", "%filepath" },
-        parser = {
-          on_chunk = function(chunk)
-            local data = vim.fn.json_decode(chunk)
-            return data
-          end,
-          on_done = function()
-            -- No-op: This is just to fulfill the requirement for `on_done`
-          end,
-        },
-        use_cache = true,
-      },
-      -- Example of using selene only when a selene.toml file is present
-      -- selene = {
-      --   -- `condition` is another LazyVim extension that allows you to
-      --   -- dynamically enable/disable linters based on the context.
-      --   condition = function(ctx)
-      --     return vim.fs.find({ "selene.toml" }, { path = ctx.filename, upward = true })[1]
-      --   end,
-      -- },
+      parser = require("lint.parser").from_errorformat("%f: line %l, col %c, %m", {
+        source = "eslint_d",
+        severity = vim.diagnostic.severity.WARN,
+      }),
     }
+
+    -- Use built-in eslint_d configuration from nvim-lint
+    lint.linters.markdownlint = {
+      name = "markdownlint",
+      cmd = "markdownlint",
+      args = { "--disable", "MD013" }, -- Disable line length rule
+      stdin = true,
+      parser = require("lint.parser").from_pattern(
+        [[:(%d+):(%d+) ([%w-/]+) (.*)]],
+        { "line", "col", "code", "message" },
+        {
+          source = "markdownlint",
+          severity = vim.diagnostic.severity.WARN,
+        }
+      ),
+    }
+
+    lint.linters.phpcs = {
+      name = "phpcs",
+      cmd = "phpcs", -- Make sure it's in your PATH
+      stdin = false,
+      -- or whatever standard you use
+      -- args = { "--standard=" .. vim.fn.expand("~/.ruleset.xml") },
+      stream = "stderr",
+      ignore_exitcode = true,
+      parser = require("lint.parser").from_errorformat("%f:%l:%c: %m", {
+        source = "phpcs",
+        severity = vim.diagnostic.severity.WARN,
+      }),
+    }
+
+    -- Example of using selene only when a selene.toml file is present
+    -- lint.linters.selene = {
+    --   -- `condition` is another LazyVim extension that allows you to
+    --   -- dynamically enable/disable linters based on the context.
+    --   condition = function(ctx)
+    --     return vim.fs.find({ "selene.toml" }, { path = ctx.filename, upward = true })[1]
+    --   end,
+    -- }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
     vim.api.nvim_create_autocmd({ "BufWritePost" }, {
       group = lint_augroup,
       callback = function()
-        -- Run conform formatting first
+        -- Run conform formatting first, commented due conflicts with prettier
         conform.format({ async = true })
+
+        -- Use eslint --fix for formatting + linting
+        -- vim.cmd("silent !eslint_d --fix " .. vim.fn.expand("%"))
+
         -- Then trigger linting
         lint.try_lint()
       end,
