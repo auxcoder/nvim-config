@@ -21,6 +21,13 @@ return {
             "typescriptreact",
             "vue",
           },
+          init_options = {
+            html = {
+              options = {
+                ["bem.enabled"] = true,
+              },
+            },
+          },
         },
       },
     },

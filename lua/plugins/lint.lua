@@ -16,13 +16,30 @@ return {
       fish = { "fish" },
       dockerfile = { "hadolint" },
       php = { "phpcs" }, -- "phpcs" -- syntax errors only
-      markdown = {},
+      markdown = { "markdownlint" },
       kotlin = { "ktlint" },
       python = { "pylint" },
       -- Use the "*" filetype to run linters on all filetypes.
       -- ['*'] = { 'global linter' },
       -- Use the "_" filetype to run linters on filetypes that don't have other linters configured.
       -- ['_'] = { 'fallback linter' },
+    }
+
+    lint.linters.eslint_d = {
+      name = "eslint_d",
+      cmd = "eslint_d",
+      stdin = true,
+      args = {
+        "--no-eslintrc",
+        "--config", vim.fn.stdpath("config") .. "/eslint.config.js",
+        "--format", "compact",
+        "--stdin",
+        "--stdin-filename", "%filepath",
+      },
+      parser = require("lint.parser").from_errorformat("%f: line %l, col %c, %m", {
+        source = "eslint_d",
+        severity = vim.diagnostic.severity.WARN,
+      }),
     }
 
     -- Use built-in eslint_d configuration from nvim-lint
@@ -68,8 +85,12 @@ return {
     vim.api.nvim_create_autocmd({ "BufWritePost" }, {
       group = lint_augroup,
       callback = function()
-        -- Run conform formatting first
+        -- Run conform formatting first, commented due conflicts with prettier
         conform.format({ async = true })
+
+        -- Use eslint --fix for formatting + linting
+        -- vim.cmd("silent !eslint_d --fix " .. vim.fn.expand("%"))
+
         -- Then trigger linting
         lint.try_lint()
       end,

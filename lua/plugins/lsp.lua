@@ -8,14 +8,28 @@ return {
       -- add longer timeout, since formatting blade files gets a little slow
       format = { timeout_ms = 2000 },
       servers = {
+        -- html
+        html = {
+          filetypes = { "html", "blade" },
+        },
+        emmet_ls = {
+          filetypes = { "html", "css", "blade", "javascriptreact", "typescriptreact" },
+          init_options = {
+            html = { options = { ["output.selfClosingStyle"] = "html" } },
+          },
+        },
         -- javascript & typescript
-        tsserver = {
+        ts_ls = {
           enabled = true,
           filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
         },
+        eslint = {},
         -- php
         phpactor = {
           enabled = lsp == "phpactor",
+        },
+        antlersls = {
+          enabled = false,
         },
         intelephense = {
           enabled = lsp == "intelephense",

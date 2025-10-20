@@ -22,13 +22,14 @@ return {
         html = { "prettier" },
         json = { "prettier" },
         yaml = { "prettier" },
+        go = { "goimports", "gofmt" },
         markdown = { "prettier" },
         graphql = { "prettier" },
         groovy = { "prettier" }, -- or your formatter
       },
       -- LazyVim will merge the options you set here with builtin formatters.
-      -- You can also define any custom formatters here.
-      ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
+      -- @diagnostic disable-next-line: undefined-doc-name
+      -- @type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
       formatters = {
         injected = {
           options = {

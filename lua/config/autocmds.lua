@@ -13,13 +13,6 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "php"
   end,
 })
--- set folding method for blade
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "blade",
-  callback = function()
-    vim.opt_local.foldmethod = "indent"
-  end,
-})
 
 -- Add support for Go templates
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
@@ -40,9 +33,9 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "go",
   callback = function()
-    vim.bo.shiftwidth = 4 -- Standard Go indentation width for display
-    vim.bo.tabstop = 4 -- Standard Go tab width for display
-    vim.bo.softtabstop = 4 -- Consistent with tabstop
+    vim.bo.shiftwidth = 4    -- Standard Go indentation width for display
+    vim.bo.tabstop = 4       -- Standard Go tab width for display
+    vim.bo.softtabstop = 4   -- Consistent with tabstop
     vim.bo.expandtab = false -- Use tabs instead of spaces (Go standard)
   end,
 })
@@ -102,8 +95,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "html",
   callback = function()
-    vim.cmd("setlocal filetype=html.angularjs")
-    vim.cmd('syntax match angularjsExpression "{{\\$ctrl\\.\\w+}}"')
+    vim.opt_local.foldmethod = "indent"
   end,
 })
 
@@ -118,6 +110,34 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "Dockerfile.*",
   callback = function()
     vim.bo.filetype = "dockerfile"
+  end,
+})
+
+-- Blade file handling - consolidated
+local blade_augroup = vim.api.nvim_create_augroup("blade_setup", { clear = true })
+-- Set blade files to php initially for LSP
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  group = blade_augroup,
+  pattern = "*.blade.php",
+  callback = function()
+    vim.bo.filetype = "php"
+  end,
+})
+-- Switch back to blade after LSP attaches and set folding
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = blade_augroup,
+  pattern = "*.blade.php",
+  callback = function(args)
+    vim.schedule(function()
+      for _, client in ipairs(vim.lsp.get_clients()) do
+        if client.name == "intelephense" and client.attached_buffers[args.buf] then
+          vim.bo[args.buf].filetype = "blade"
+          vim.bo[args.buf].syntax = "blade"
+          vim.opt_local.foldmethod = "indent"
+          break
+        end
+      end
+    end)
   end,
 })
 
