@@ -29,38 +29,48 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
--- Set indentation for Go files
+-- Set indentation for Go files according to community standards
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "go",
   callback = function()
-    vim.bo.shiftwidth = 2 -- Change this value to your desired indentation width
-    vim.bo.tabstop = 2 -- Change this value to your desired tab stop
-    vim.bo.expandtab = false -- Use tabs instead of spaces for Go files (common convention)
+    vim.bo.shiftwidth = 4    -- Standard Go indentation width for display
+    vim.bo.tabstop = 4       -- Standard Go tab width for display
+    vim.bo.softtabstop = 4   -- Consistent with tabstop
+    vim.bo.expandtab = false -- Use tabs instead of spaces (Go standard)
   end,
 })
-
--- to have your imports organized on save using the logic of goimports
+-- Organize imports on save using goimports
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
     local params = vim.lsp.util.make_range_params()
-    params.context = {only = {"source.organizeImports"}}
-    -- buf_request_sync defaults to a 1000ms timeout. Depending on your
-    -- machine and codebase, you may want longer. Add an additional
-    -- argument after params if you find that you have to write the file
-    -- twice for changes to be saved.
-    -- E.g., vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
-    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
-    for cid, res in pairs(result or {}) do
-      for _, r in pairs(res.result or {}) do
-        if r.edit then
-          local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
-          vim.lsp.util.apply_workspace_edit(r.edit, enc)
+    params.context = { only = { "source.organizeImports" } }
+
+    -- Increase timeout to 3000ms for larger codebases
+    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
+
+    -- Add error handling
+    if not result or vim.tbl_isempty(result) then
+      -- No result could mean the server doesn't support this feature or there was an error
+      return
+    end
+
+    for cid, res in pairs(result) do
+      -- Check if we have a valid result
+      if res.result and not vim.tbl_isempty(res.result) then
+        for _, r in pairs(res.result) do
+          if r.edit then
+            local client = vim.lsp.get_client_by_id(cid)
+            local enc = client and client.offset_encoding or "utf-16"
+            vim.lsp.util.apply_workspace_edit(r.edit, enc)
+          end
         end
       end
     end
-    vim.lsp.buf.format({async = false})
-  end
+
+    -- Format the file
+    vim.lsp.buf.format({ async = false })
+  end,
 })
 
 -- Additional autocommand to switch back to 'blade' after LSP has attached
@@ -81,21 +91,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
--- Disable Codeium for markdown files
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "markdown",
-  callback = function()
-    -- Assuming Codeium has a configuration option `enabled`
-    vim.b.codeium_enabled = false
-  end,
-})
-
 -- Prevent highlighting AngularJs expressions  {{$ctrl}} as error
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "html",
   callback = function()
-    vim.cmd("setlocal filetype=html.angularjs")
-    vim.cmd('syntax match angularjsExpression "{{\\$ctrl\\.\\w+}}"')
+    vim.opt_local.foldmethod = "indent"
   end,
 })
 
@@ -113,6 +113,34 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Blade file handling - consolidated
+local blade_augroup = vim.api.nvim_create_augroup("blade_setup", { clear = true })
+-- Set blade files to php initially for LSP
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  group = blade_augroup,
+  pattern = "*.blade.php",
+  callback = function()
+    vim.bo.filetype = "php"
+  end,
+})
+-- Switch back to blade after LSP attaches and set folding
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = blade_augroup,
+  pattern = "*.blade.php",
+  callback = function(args)
+    vim.schedule(function()
+      for _, client in ipairs(vim.lsp.get_clients()) do
+        if client.name == "intelephense" and client.attached_buffers[args.buf] then
+          vim.bo[args.buf].filetype = "blade"
+          vim.bo[args.buf].syntax = "blade"
+          vim.opt_local.foldmethod = "indent"
+          break
+        end
+      end
+    end)
+  end,
+})
+
 -- make $ part of the keyword for php.
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "php",
@@ -120,3 +148,16 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt.iskeyword:append("$")
   end,
 })
+
+-- Enable spell checking for specific file types
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "text", "gitcommit", "tex" },
+  callback = function()
+    vim.opt_local.spell = true
+  end,
+})
+
+vim.api.nvim_create_user_command("CleanSwap", function()
+  os.execute([[find . -type f \( -name "*.swp" -o -name "*.swo" -o -name "*.swx" \) -delete]])
+  print("🧼 Swap files nuked.")
+end, {})

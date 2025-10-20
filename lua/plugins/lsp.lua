@@ -1,7 +1,3 @@
-if lazyvim_docs then
-  -- LSP Server to use for PHP.
-  vim.g.lazyvim_php_lsp = "intelephense" -- "intelephense", "phpactor"
-end
 local lsp = vim.g.lazyvim_php_lsp or "intelephense"
 
 return {
@@ -11,88 +7,70 @@ return {
     opts = {
       -- add longer timeout, since formatting blade files gets a little slow
       format = { timeout_ms = 2000 },
-      ---@type lspconfig.options
       servers = {
-        -- automatically installed with mason and loaded with lspconfig
-        -- pyright = {},
-        -- groovyls = {},
+        -- html
+        html = {
+          filetypes = { "html", "blade" },
+        },
+        emmet_ls = {
+          filetypes = { "html", "css", "blade", "javascriptreact", "typescriptreact" },
+          init_options = {
+            html = { options = { ["output.selfClosingStyle"] = "html" } },
+          },
+        },
+        -- javascript & typescript
+        ts_ls = {
+          enabled = true,
+          filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+        },
+        eslint = {},
+        -- php
         phpactor = {
           enabled = lsp == "phpactor",
         },
-        -- lsp = {
-        --   enabled = true,
-        -- },
-        -- VUE 3
-        -- volar = {
-        --   filetypes = { "vue" },
-        --   init_options = {
-        --     vue = {
-        --       hybridMode = false,
-        --     },
-        --   },
-        --   settings = {
-        --     typescript = {
-        --       inlayHints = {
-        --         enumMemberValues = {
-        --           enabled = true,
-        --         },
-        --         functionLikeReturnTypes = {
-        --           enabled = true,
-        --         },
-        --         propertyDeclarationTypes = {
-        --           enabled = true,
-        --         },
-        --         parameterTypes = {
-        --           enabled = true,
-        --           suppressWhenArgumentMatchesName = true,
-        --         },
-        --         variableTypes = {
-        --           enabled = true,
-        --         },
-        --       },
-        --     },
-        --   },
-        -- },
-        -- typescript
-        tsserver = {
-          filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-          init_options = {
-            plugins = {
-              {
-                name = "@vue/typescript-plugin",
-                location = vim.fn.stdpath("data")
-                  .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
-                languages = { "vue" },
+        antlersls = {
+          enabled = false,
+        },
+        -- php
+        intelephense = {
+          enabled = lsp == "intelephense",
+          settings = {
+            intelephense = {
+              environment = {
+                phpVersion = "8.3", -- or "8.2"
               },
+              filetypes = { "php", "blade", "php_only" },
+              files = {
+                associations = { "*.php", "*.blade.php" }, -- Associating .blade.php files as well
+                maxSize = 5000000,
+              },
+              -- format = {
+              --   braces = "k&r",
+              -- },
             },
           },
+        },
+        -- markdown
+        marksman = {
+          -- Optional but recommended: help marksman detect project roots
+          root_dir = require("lspconfig.util").root_pattern(".git", ".marksman.toml", ".editorconfig"),
+        },
+        -- Add this for Lua:
+        lua_ls = {
           settings = {
-            typescript = {
-              tsserver = {
-                useSyntaxServer = false,
-              },
-              inlayHints = {
-                includeInlayParameterNameHints = "all",
-                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
+            Lua = {
+              diagnostics = {
+                globals = { "vim" }, -- <-- fix: allow 'vim' as a global
               },
             },
           },
         },
-        -- php
-        intelephense = {
-          settings = {
-            intelephense = {
-              format = {
-                braces = "k&r",
-              },
-            },
-          },
+        kotlin_language_server = {},
+        -- automatically installed with mason and loaded with lspconfig
+        -- pyright = {},
+        -- groovyls = {},
+        [lsp] = {
+          enabled = true,
         },
       },
       autoformat = true,
