@@ -9,8 +9,7 @@ return {
   cmd = { "Laravel", "Artisan" },
   keys = {
     { "<leader>la", ":Laravel artisan<cr>", desc = "Artisan" },
-    { "<leader>lr", ":Laravel routes<cr>",  desc = "Routes" },
+    { "<leader>lr", ":Laravel routes<cr>", desc = "Routes" },
   },
   opts = { lsp_server = "intelephense" },
 }
-
