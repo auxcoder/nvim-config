@@ -1,0 +1,24 @@
+return {
+  {
+    "max397574/better-escape.nvim",
+    event = "InsertCharPre",
+    -- Lazy.nvim will call require("better_escape").setup(opts)
+    opts = {
+      timeout = vim.o.timeoutlen,
+      default_mappings = true,
+      mappings = {
+        i = { -- insert mode
+          j = { k = "<Esc>", j = "<Esc>" },
+        },
+        c = { -- command mode
+          j = { k = "<C-c>", j = "<C-c>" },
+        },
+        t = { -- terminal mode
+          j = { k = "<C-\\><C-n>" },
+        },
+        v = { j = { k = "<Esc>" } },
+        s = { j = { k = "<Esc>" } },
+      },
+    },
+  },
+}

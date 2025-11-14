@@ -1,10 +1,19 @@
 return {
   {
-    "sindrets/diffview.nvim",
+    "sindrets/diffview.nvim", -- https://github.com/sindrets/diffview.nvim?#configuration
     cmd = { "DiffviewOpen", "DiffviewClose" },
     keys = {
-      { "<leader>gd", "<cmd>DiffviewOpen<cr>",        desc = "Open Diffview" },
-      { "<leader>gh", "<cmd>DiffviewFileHistory<cr>", desc = "File History" },
+      { "<leader>dfo", "<cmd>DiffviewOpen<cr>", desc = "Open Diffview" },
+      { "<leader>dfc", "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
+      { "<leader>dfh", "<cmd>DiffviewFileHistory<cr>", desc = "File History" },
+    },
+    opts = {
+      file_panel = {
+        win_config = {
+          position = "left",
+          width = 35,
+        },
+      },
     },
   },
   {
