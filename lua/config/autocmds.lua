@@ -33,9 +33,9 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "go",
   callback = function()
-    vim.bo.shiftwidth = 4    -- Standard Go indentation width for display
-    vim.bo.tabstop = 4       -- Standard Go tab width for display
-    vim.bo.softtabstop = 4   -- Consistent with tabstop
+    vim.bo.shiftwidth = 4 -- Standard Go indentation width for display
+    vim.bo.tabstop = 4 -- Standard Go tab width for display
+    vim.bo.softtabstop = 4 -- Consistent with tabstop
     vim.bo.expandtab = false -- Use tabs instead of spaces (Go standard)
   end,
 })
@@ -121,6 +121,13 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.blade.php",
   callback = function()
     vim.bo.filetype = "php"
+  end,
+})
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "blade",
+  callback = function()
+    -- Set the Blade-specific comment string
+    vim.opt_local.commentstring = "{{-- %s --}}"
   end,
 })
 -- Switch back to blade after LSP attaches and set folding
