@@ -70,8 +70,10 @@ return {
         kotlin_language_server = {},
         -- automatically installed with mason and loaded with lspconfig
         -- pyright = {},
-        -- groovyls = {},
-
+        -- groovy (for Jenkins Pipeline)
+        groovyls = {
+          enabled = false,
+        },
         -- This is technically redundant if lsp is "intelephense"
         -- [lsp] = {
         --   enabled = true,

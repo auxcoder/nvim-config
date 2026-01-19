@@ -14,8 +14,11 @@ end, { desc = "LazyDocker" })
 -- Perusing code faster with K and J
 vim.keymap.set({ "n", "v" }, "K", "5k", { noremap = true, desc = "Up faster" })
 vim.keymap.set({ "n", "v" }, "J", "5j", { noremap = true, desc = "Down faster" })
+vim.keymap.set({ "n", "v" }, ",", "^", { noremap = true, desc = "Start of line" })
 
--- vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { noremap = true, desc = "Save file" })
+-- Quyiuckfix
+vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>", { noremap = true, desc = "Move down Quickfix list" })
+vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>", { noremap = true, desc = "Move up Quickfix list" })
 
 --_Convert_selected_text_to_snake_case_and_lowercase
 vim.api.nvim_set_keymap("x", "<leader>s", [[:s/\%V\s\+/_/g<CR>gvgu]], { noremap = true, silent = true })
