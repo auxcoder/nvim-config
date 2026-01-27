@@ -168,3 +168,17 @@ vim.api.nvim_create_user_command("CleanSwap", function()
   os.execute([[find . -type f \( -name "*.swp" -o -name "*.swo" -o -name "*.swx" \) -delete]])
   print("🧼 Swap files nuked.")
 end, {})
+
+-- Import your sorter logic
+local sorter = require("config.bootstrap-sorter")
+-- Create an autocommand group to prevent duplicate registrations
+local bootstrap_grp = vim.api.nvim_create_augroup("BootstrapSorter", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = bootstrap_grp,
+  -- List the file extensions you want to target: "*.php", "*.blade.php", "*.jsx", "*.tsx"
+  pattern = { "*.html", "*.blade.php" },
+  callback = function()
+    -- This runs the sorting logic right before the file hits the disk
+    sorter.sort_file_classes()
+  end,
+})
