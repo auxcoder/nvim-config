@@ -85,7 +85,11 @@ M.sort_file_classes = function()
       (attribute_name) @attr_name (#eq? @attr_name "class")
       (quoted_attribute_value (attribute_value) @class_val))
   ]]
-  local query = vim.treesitter.query.parse(ft, query_str)
+  
+  local ok_query, query = pcall(vim.treesitter.query.parse, ft, query_str)
+  if not ok_query then
+    return
+  end
 
   local changes = {}
 
