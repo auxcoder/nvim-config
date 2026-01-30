@@ -1,0 +1,41 @@
+{
+  "log": {
+    "prefix": "log",
+    "body": [
+      "console.log(\"${1:hint}\", ${TM_SELECTED_TEXT}); // eslint-disable-line",
+      "$0"
+    ],
+    "description": "console.log with optional selection"
+  },
+  "fun": {
+    "prefix": "fun",
+    "body": ["function ${1:functionName}($2) {", "\t$0", "}"]
+  },
+  "fore": {
+    "prefix": "fore",
+    "body": ["${1:array}.forEach(item => {", "\t$0", "})"]
+  },
+  "ife": {
+    "prefix": "ife",
+    "body": ["if ($1) {", "\t$0", "}"]
+  },
+  "forl": {
+    "prefix": "forl",
+    "body": ["for (let i = 0; i < $1; i++) {", "\t$0", "}"],
+    "description": "For loop"
+  },
+  "newp": {
+    "prefix": "newp",
+    "body": [
+      "new Promise((resolve, reject) => {",
+      "\t$1",
+      "})",
+      ".then(() => {",
+      "\t$2",
+      "})",
+      ".catch(err => {",
+      "\t$0",
+      "})"
+    ]
+  }
+}
