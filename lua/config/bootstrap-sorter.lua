@@ -68,32 +68,61 @@ end
 
 M.sort_file_classes = function()
   local bufnr = vim.api.nvim_get_current_buf()
-  local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
-  local new_lines = {}
+  local ft = vim.bo[bufnr].filetype
 
-  for _, line in ipairs(lines) do
-    -- This handles class="foo bar" or class='foo bar'
-    local updated_line = line:gsub("class=([\"'])(.-)%1", function(quote, class_string)
-      local classes = {}
-      for class in class_string:gmatch("%S+") do
-        table.insert(classes, class)
-      end
-
-      table.sort(classes, function(a, b)
-        local p1 = get_priority(a)
-        local p2 = get_priority(b)
-        if p1 == p2 then
-          return a < b
-        end -- Alphabetical if same priority
-        return p1 < p2
-      end)
-
-      return "class=" .. quote .. table.concat(classes, " ") .. quote
-    end)
-    table.insert(new_lines, updated_line)
+  -- Use Tree-sitter to find the classes accurately
+  local ok, parser = pcall(vim.treesitter.get_parser, bufnr, ft)
+  if not ok or not parser then
+    return
   end
 
-  vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, new_lines)
+  local tree = parser:parse()[1]
+  local root = tree:root()
+
+  -- This query specifically finds the content of "class" attributes
+  local query_str = [[
+    (attribute
+      (attribute_name) @attr_name (#eq? @attr_name "class")
+      (quoted_attribute_value (attribute_value) @class_val))
+  ]]
+  local query = vim.treesitter.query.parse(ft, query_str)
+
+  local changes = {}
+
+  for id, node in query:iter_captures(root, bufnr, 0, -1) do
+    if query.captures[id] == "class_val" then
+      local class_string = vim.treesitter.get_node_text(node, bufnr)
+
+      -- If it looks like an Angular expression (contains { } : ? or |), SKIP IT
+      if not class_string:find("[{}:?|]") then
+        local range = { node:range() }
+        local classes = {}
+        for class in class_string:gmatch("%S+") do
+          table.insert(classes, class)
+        end
+
+        table.sort(classes, function(a, b)
+          local p1, p2 = get_priority(a), get_priority(b)
+          return p1 == p2 and a < b or p1 < p2
+        end)
+
+        -- Store the change (working backwards so positions don't shift)
+        table.insert(changes, 1, { range = range, text = table.concat(classes, " ") })
+      end
+    end
+  end
+
+  -- Apply only the valid changes to the buffer
+  for _, change in ipairs(changes) do
+    vim.api.nvim_buf_set_text(
+      bufnr,
+      change.range[1],
+      change.range[2],
+      change.range[3],
+      change.range[4],
+      { change.text }
+    )
+  end
 end
 
 return M

@@ -8,7 +8,12 @@ return {
       default_mappings = true,
       mappings = {
         i = { -- insert mode
-          j = { k = "<Esc>", j = "<Esc>" },
+          j = {
+            k = "<Esc>",
+            j = "<Esc>", -- This handles "jj"
+            -- To add "jjs", we have to map the sequence specifically
+            ["js"] = "<Esc>:w<CR>",
+          },
         },
         c = { -- command mode
           j = { k = "<C-c>", j = "<C-c>" },
