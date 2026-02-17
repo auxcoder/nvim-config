@@ -53,6 +53,10 @@ return {
           ["@function"] = { fg = colors.lavender, style = { "bold" } },
           -- Optional: Function calls (invoking the function later)
           ["@function.call"] = { fg = colors.teal },
+          -- Bufferline: Strong contrast between active and inactive
+          BufferLineBufferSelected = { fg = colors.text, bg = colors.base, style = { "bold", "italic" } },
+          BufferLineIndicatorSelected = { fg = colors.mauve, bg = colors.base },
+          BufferLineBuffer = { fg = colors.surface2, bg = colors.crust },
         }
       end,
       term_colors = true,
