@@ -85,7 +85,11 @@ M.sort_file_classes = function()
       (attribute_name) @attr_name (#eq? @attr_name "class")
       (quoted_attribute_value (attribute_value) @class_val))
   ]]
-  local query = vim.treesitter.query.parse(ft, query_str)
+  
+  local ok_query, query = pcall(vim.treesitter.query.parse, ft, query_str)
+  if not ok_query then
+    return
+  end
 
   local changes = {}
 
@@ -93,8 +97,8 @@ M.sort_file_classes = function()
     if query.captures[id] == "class_val" then
       local class_string = vim.treesitter.get_node_text(node, bufnr)
 
-      -- If it looks like an Angular expression (contains { } : ? or |), SKIP IT
-      if not class_string:find("[{}:?|]") then
+      -- If it contains Blade syntax ({{), SKIP IT
+      if not class_string:find("{{") then
         local range = { node:range() }
         local classes = {}
         for class in class_string:gmatch("%S+") do

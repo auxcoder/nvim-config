@@ -7,20 +7,11 @@ return {
       timeout = vim.o.timeoutlen,
       default_mappings = true,
       mappings = {
-        i = { -- insert mode
-          j = {
-            k = "<Esc>",
-            j = "<Esc>", -- This handles "jj"
-            -- To add "jjs", we have to map the sequence specifically
-            ["js"] = "<Esc>:w<CR>",
-          },
+        i = {
+          j = { k = "<Esc>", j = "<Esc>" },
         },
-        c = { -- command mode
-          j = { k = "<C-c>", j = "<C-c>" },
-        },
-        t = { -- terminal mode
-          j = { k = "<C-\\><C-n>" },
-        },
+        c = { j = { k = "<C-c>", j = "<C-c>" } },
+        t = { j = { k = "<C-\\><C-n>" } },
         v = { j = { k = "<Esc>" } },
         s = { j = { k = "<Esc>" } },
       },
