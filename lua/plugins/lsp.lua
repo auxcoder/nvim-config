@@ -8,6 +8,10 @@ return {
       -- add longer timeout, since formatting blade files gets a little slow
       format = { timeout_ms = 2000 },
       servers = {
+        -- Disable copilot
+        copilot = {
+          enabled = false,
+        },
         -- html
         html = {
           filetypes = { "html", "blade" },
