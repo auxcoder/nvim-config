@@ -1,6 +1,9 @@
 return {
   "folke/sidekick.nvim",
   opts = {
+    copilot = {
+      enabled = false,
+    },
     cli = {
       tools = {
         kiro = {
@@ -83,13 +86,78 @@ return {
       mode = { "n", "x" },
       desc = "Sidekick Select Prompt",
     },
-    -- Example of a keybinding to open Claude directly
+    -- Send diagnostics/errors
     {
-      "<leader>ac",
+      "<leader>ae",
       function()
-        require("sidekick.cli").toggle({ name = "claude", focus = true })
+        local diagnostics = vim.diagnostic.get(0)
+        if #diagnostics == 0 then
+          vim.notify("No diagnostics in current buffer", vim.log.levels.INFO)
+          return
+        end
+        local msg = "Diagnostics in " .. vim.fn.expand("%:p") .. ":\n\n"
+        for _, d in ipairs(diagnostics) do
+          msg = msg .. string.format("Line %d: [%s] %s\n", d.lnum + 1, d.severity, d.message)
+        end
+        require("sidekick.cli").send({ msg = msg })
       end,
-      desc = "Sidekick Toggle Claude",
+      desc = "Send Diagnostics",
+    },
+    -- Send git diff
+    {
+      "<leader>ag",
+      function()
+        local diff = vim.fn.system("git diff " .. vim.fn.expand("%:p"))
+        if diff == "" then
+          vim.notify("No changes in current file", vim.log.levels.INFO)
+          return
+        end
+        require("sidekick.cli").send({
+          msg = "Git diff for " .. vim.fn.expand("%:p") .. ":\n\n```diff\n" .. diff .. "```",
+        })
+      end,
+      desc = "Send Git Diff",
+    },
+    -- Send current function/class
+    {
+      "<leader>au",
+      function()
+        require("sidekick.cli").send({ msg = "{this}" })
+      end,
+      desc = "Send Current Function/Class",
+    },
+    -- Quick prompts
+    {
+      "<leader>ax",
+      function()
+        require("sidekick.cli").send({ msg = "{selection}\n\nExplain this code" })
+      end,
+      mode = { "x" },
+      desc = "Explain Selection",
+    },
+    {
+      "<leader>ar",
+      function()
+        require("sidekick.cli").send({ msg = "{selection}\n\nRefactor this code" })
+      end,
+      mode = { "x" },
+      desc = "Refactor Selection",
+    },
+    {
+      "<leader>aw",
+      function()
+        require("sidekick.cli").send({ msg = "{selection}\n\nWrite tests for this code" })
+      end,
+      mode = { "x" },
+      desc = "Write Tests",
+    },
+    -- Open kiro directly
+    {
+      "<leader>ak",
+      function()
+        require("sidekick.cli").toggle({ name = "kiro", focus = true })
+      end,
+      desc = "Toggle Kiro",
     },
   },
 }

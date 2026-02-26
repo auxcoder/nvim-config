@@ -8,6 +8,9 @@ vim.g.lazyvim_php_lsp = "intelephense"
 -- Reduce LSP logging to prevent huge log files
 vim.lsp.set_log_level("WARN") -- or "ERROR" for even less logging
 
+-- mini-snippets
+vim.g.lazyvim_mini_snippets_in_completion = true
+
 local opt = vim.opt
 
 opt.listchars = {
