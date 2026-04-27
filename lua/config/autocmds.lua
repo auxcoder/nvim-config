@@ -16,14 +16,12 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 -- Add support for Go templates
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.gohtml,*.gotmpl",
-  -- pattern = "*.gohtml,*.gotmpl,*.html",
   callback = function()
+    local buf = vim.api.nvim_get_current_buf()
     if vim.fn.search("{{.\\+}}", "nw") ~= 0 then
-      local buf = vim.api.nvim_get_current_buf()
       vim.bo[buf].filetype = "gotmpl"
-      vim.bo[buf].filetype = "html"
     else
-      vim.bo.filetype = "html"
+      vim.bo[buf].filetype = "html"
     end
   end,
 })
@@ -79,18 +77,14 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "Jenkinsfile*",
-  callback = function()
-    vim.bo.filetype = "groovy"
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "Dockerfile.*",
-  callback = function()
-    vim.bo.filetype = "dockerfile"
-  end,
+-- Filetype detection for Jenkinsfile and Dockerfile variants
+vim.filetype.add({
+  pattern = {
+    ["Jenkinsfile"] = "groovy",
+    ["Jenkinsfile.*"] = "groovy",
+    ["Jenkinsfile-.*"] = "groovy",
+    ["Dockerfile.*"] = "dockerfile",
+  },
 })
 
 -- make $ part of the keyword for php.
