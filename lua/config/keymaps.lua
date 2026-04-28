@@ -1,7 +1,4 @@
 -- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
-
--- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 
 local function map(mode, lhs, rhs, opts)
@@ -14,14 +11,10 @@ end
 -- # General & Navigation
 -------------------------------------------------------------------------------
 
--- Perusing code faster with K and J
-map({ "n", "v" }, "K", "5k", { desc = "Up faster" })
-map({ "n", "v" }, "J", "5j", { desc = "Down faster" })
+-- Perusing code faster with gk and gj (K=hover, J=join preserved)
+map({ "n", "v" }, "gk", "5k", { desc = "Up faster" })
+map({ "n", "v" }, "gj", "5j", { desc = "Down faster" })
 map({ "n", "v" }, ",", "^", { desc = "Start of line" })
-
--- Quickfix list navigation
-map("n", "<M-j>", "<cmd>cnext<CR>", { desc = "Next Quickfix" })
-map("n", "<M-k>", "<cmd>cprev<CR>", { desc = "Prev Quickfix" })
 
 -- Tools
 map("n", "<leader>gd", function()
@@ -43,6 +36,7 @@ map("n", "<leader>s", [[viw:s/\s\+/_/g<CR>viwgu]], { desc = "Snake Case Word" })
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 map("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "Undotree" })
 -- M -> Alt key
+-- Quickfix list navigation
 map("n", "<M-j>", "<cmd>cnext<cr>", { desc = "Next Quickfix buffer" })
 map("n", "<M-k>", "<cmd>cprev<cr>", { desc = "Next Quickfix buffer" })
 
@@ -53,6 +47,10 @@ vim.keymap.set("n", "<leader>gk", function()
     interactive = true,
   })
 end, { desc = "Kiro CLI (Terminal)" })
+
+vim.keymap.set("n", "<leader>yf", function()
+  vim.fn.setreg("+", vim.fn.expand("%:t"))
+end, { desc = "Copy filename to clipboard" })
 
 -- Kiro Personal
 -- vim.keymap.set("n", "<leader>kp", function()
@@ -94,7 +92,7 @@ map(modes, "<leader>fkj", fake("job"), { desc = "Job" })
 map(modes, "<leader>fkc", fake("city"), { desc = "City" })
 map(modes, "<leader>fkl", fake("nonsense"), { desc = "Loren" })
 map(modes, "<leader>fkw", fake("word"), { desc = "Word" })
-map(modes, "<leader>fkw", fake("paragraph"), { desc = "Paragraph" })
+map(modes, "<leader>fkp", fake("paragraph"), { desc = "Paragraph" })
 
 map(modes, "<leader>fkh", function()
   local name = vim.fn["fake#gen"]("male_name")
@@ -102,3 +100,5 @@ map(modes, "<leader>fkh", function()
   local html = string.format('<div class="bg-white border p-4 rounded-lg">\n  %s\n</div>', name)
   vim.snippet.expand(html)
 end, { desc = "HTML Card" })
+
+map("n", "<leader>rn", ":IncRename ")
