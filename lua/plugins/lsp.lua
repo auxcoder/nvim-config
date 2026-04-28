@@ -23,11 +23,7 @@ return {
             html = { options = { ["output.selfClosingStyle"] = "html" } },
           },
         },
-        -- javascript & typescript
-        ts_ls = {
-          enabled = true,
-          filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-        },
+        -- javascript & typescript (handled by lazyvim.plugins.extras.lang.typescript)
         eslint = {},
         -- php
         phpactor = {
@@ -40,15 +36,31 @@ return {
         -- php
         intelephense = {
           enabled = lsp == "intelephense",
+          filetypes = { "php", "blade", "php_only" },
           settings = {
             intelephense = {
               environment = {
-                phpVersion = "8.3", -- or "8.2"
+                phpVersion = "8.3",
               },
-              filetypes = { "php", "blade", "php_only" },
               files = {
-                associations = { "*.php", "*.blade.php" }, -- Associating .blade.php files as well
+                associations = { "*.php", "*.blade.php" },
                 maxSize = 5000000,
+              },
+              stubs = {
+                "php",
+                "standard",
+                "random",
+                "date",
+                "Core",
+                "codeception",
+                -- LARAVEL SPECIFIC STUBS (CRITICAL)
+                "laravel",
+                "fileinfo",
+                -- COMMON LARAVEL EXTENSIONS
+                "json",
+              },
+              completion = {
+                fullyQualifyGlobalFunctionsAndConstants = true,
               },
               -- format = {
               --   braces = "k&r",
@@ -82,47 +94,6 @@ return {
         -- [lsp] = {
         --   enabled = true,
         -- },
-      },
-      setup = {
-        intelephense = function(opts)
-          -- This ensures your custom settings are passed to the server
-          require("lspconfig").intelephense.setup({
-            settings = {
-              intelephense = {
-                environment = {
-                  phpVersion = "8.3",
-                },
-                -- Keep your file types and associations here
-                filetypes = { "php", "blade", "php_only" },
-                files = {
-                  associations = { "*.php", "*.blade.php" },
-                },
-                -- You can add the following to ignore certain files/folders
-                -- runtime specific to Laravel (e.g., storage, cache)
-                stubs = {
-                  "php", -- for core functions like is_dir()
-                  "standard",
-                  "random", -- this specifically loads rand(), mt_rand(), etc.
-                  "date", -- this loads time(), date(), strtotime(), etc.
-                  "Core", -- this loads \Exception, \DateTime, \stdClass, etc
-                  "codeception",
-                  -- LARAVEL SPECIFIC STUBS (CRITICAL)
-                  "laravel", -- Route::get(), Auth::user(), dd()
-                  "fileinfo", -- Helps with file system-related functions (used by Storage)
-                  -- COMMON LARAVEL EXTENSIONS
-                  "json", -- json_encode(), json_decode()
-                },
-                completion = {
-                  fullyQualifyGlobalFunctionsAndConstants = true,
-                },
-              },
-            },
-            -- Ensure it attaches to the correct buffers (especially 'blade')
-            -- This might be redundant with filetypes above but good for safety
-            ft = { "php", "blade", "php_only" },
-            -- Any other language server options
-          })
-        end,
       },
       autoformat = true,
     },
