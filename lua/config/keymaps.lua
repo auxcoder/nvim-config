@@ -35,8 +35,7 @@ map("n", "<leader>s", [[viw:s/\s\+/_/g<CR>viwgu]], { desc = "Snake Case Word" })
 
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 map("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "Undotree" })
--- M -> Alt key
--- Quickfix list navigation
+-- Quickfix list navigation, M -> Alt kecky
 map("n", "<M-j>", "<cmd>cnext<cr>", { desc = "Next Quickfix buffer" })
 map("n", "<M-k>", "<cmd>cprev<cr>", { desc = "Next Quickfix buffer" })
 
