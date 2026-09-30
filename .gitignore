@@ -46,6 +46,5 @@ debug
 .repro
 foo.*
 *.log
-data
 .vscode/
 examples/
