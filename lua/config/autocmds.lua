@@ -10,6 +10,10 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.blade.php",
   callback = function()
     vim.bo.filetype = "blade"
+    vim.bo.shiftwidth = 4
+    vim.bo.tabstop = 4
+    vim.bo.softtabstop = 4
+    vim.bo.expandtab = true -- use spaces
   end,
 })
 
@@ -77,8 +81,20 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "css", "scss" },
+  callback = function()
+    vim.opt_local.foldmethod = "indent"
+    vim.opt_local.foldlevel = 99 -- start with all folds open
+  end,
+})
+
 -- Filetype detection for Jenkinsfile and Dockerfile variants
 vim.filetype.add({
+  extension = {
+    -- eta = "eta",
+    eta = "html",
+  },
   pattern = {
     ["Jenkinsfile"] = "groovy",
     ["Jenkinsfile.*"] = "groovy",
@@ -119,5 +135,16 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function()
     -- This runs the sorting logic right before the file hits the disk
     sorter.sort_file_classes()
+  end,
+})
+
+-- Sort HTML element attributes (img, etc.) on save
+local attr_sorter = require("config.attribute-sorter")
+local attr_sorter_grp = vim.api.nvim_create_augroup("AttributeSorter", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = attr_sorter_grp,
+  pattern = { "*.html", "*.blade.php" },
+  callback = function()
+    attr_sorter.sort_element_attributes()
   end,
 })
