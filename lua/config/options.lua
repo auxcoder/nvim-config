@@ -11,6 +11,9 @@ vim.lsp.log.set_level(vim.log.levels.WARN) -- or "ERROR" for even less logging
 -- mini-snippets
 vim.g.lazyvim_mini_snippets_in_completion = true
 
+-- GOROOT
+vim.env.GOROOT = "/opt/homebrew/opt/go/libexec"
+
 local opt = vim.opt
 
 opt.listchars = {

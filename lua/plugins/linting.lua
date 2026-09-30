@@ -19,6 +19,16 @@ return {
         -- Crucial: Define the standard you want to check against (e.g., PSR12 or Laravel)
         args = { "--standard=PSR12", "$FILE" },
       },
+      stylelint = {
+        -- Force nvim-lint to prefer the local node_modules binary
+        cmd = function()
+          local local_bin = vim.fn.getcwd() .. "/node_modules/.bin/stylelint"
+          if vim.fn.executable(local_bin) == 1 then
+            return local_bin
+          end
+          return "stylelint"
+        end,
+      },
     },
   },
 }

@@ -1,0 +1,6068 @@
+{
+  "version": 1.1,
+  "globalAttributes": [
+    {
+      "name": "class",
+      "description": "Bootstrap 5.3 utility and component classes.",
+      "valueSet": "bootstrap"
+    }
+  ],
+  "valueSets": [
+    {
+      "name": "bootstrap",
+      "values": [
+        {
+          "name": "accordion"
+        },
+        {
+          "name": "accordion-body"
+        },
+        {
+          "name": "accordion-button"
+        },
+        {
+          "name": "accordion-collapse"
+        },
+        {
+          "name": "accordion-flush"
+        },
+        {
+          "name": "accordion-header"
+        },
+        {
+          "name": "accordion-item"
+        },
+        {
+          "name": "active"
+        },
+        {
+          "name": "alert"
+        },
+        {
+          "name": "alert-danger"
+        },
+        {
+          "name": "alert-dark"
+        },
+        {
+          "name": "alert-dismissible"
+        },
+        {
+          "name": "alert-heading"
+        },
+        {
+          "name": "alert-info"
+        },
+        {
+          "name": "alert-light"
+        },
+        {
+          "name": "alert-link"
+        },
+        {
+          "name": "alert-primary"
+        },
+        {
+          "name": "alert-secondary"
+        },
+        {
+          "name": "alert-success"
+        },
+        {
+          "name": "alert-warning"
+        },
+        {
+          "name": "align-baseline"
+        },
+        {
+          "name": "align-bottom"
+        },
+        {
+          "name": "align-content-around"
+        },
+        {
+          "name": "align-content-between"
+        },
+        {
+          "name": "align-content-center"
+        },
+        {
+          "name": "align-content-end"
+        },
+        {
+          "name": "align-content-lg-around"
+        },
+        {
+          "name": "align-content-lg-between"
+        },
+        {
+          "name": "align-content-lg-center"
+        },
+        {
+          "name": "align-content-lg-end"
+        },
+        {
+          "name": "align-content-lg-start"
+        },
+        {
+          "name": "align-content-lg-stretch"
+        },
+        {
+          "name": "align-content-md-around"
+        },
+        {
+          "name": "align-content-md-between"
+        },
+        {
+          "name": "align-content-md-center"
+        },
+        {
+          "name": "align-content-md-end"
+        },
+        {
+          "name": "align-content-md-start"
+        },
+        {
+          "name": "align-content-md-stretch"
+        },
+        {
+          "name": "align-content-sm-around"
+        },
+        {
+          "name": "align-content-sm-between"
+        },
+        {
+          "name": "align-content-sm-center"
+        },
+        {
+          "name": "align-content-sm-end"
+        },
+        {
+          "name": "align-content-sm-start"
+        },
+        {
+          "name": "align-content-sm-stretch"
+        },
+        {
+          "name": "align-content-start"
+        },
+        {
+          "name": "align-content-stretch"
+        },
+        {
+          "name": "align-content-xl-around"
+        },
+        {
+          "name": "align-content-xl-between"
+        },
+        {
+          "name": "align-content-xl-center"
+        },
+        {
+          "name": "align-content-xl-end"
+        },
+        {
+          "name": "align-content-xl-start"
+        },
+        {
+          "name": "align-content-xl-stretch"
+        },
+        {
+          "name": "align-content-xxl-around"
+        },
+        {
+          "name": "align-content-xxl-between"
+        },
+        {
+          "name": "align-content-xxl-center"
+        },
+        {
+          "name": "align-content-xxl-end"
+        },
+        {
+          "name": "align-content-xxl-start"
+        },
+        {
+          "name": "align-content-xxl-stretch"
+        },
+        {
+          "name": "align-items-baseline"
+        },
+        {
+          "name": "align-items-center"
+        },
+        {
+          "name": "align-items-end"
+        },
+        {
+          "name": "align-items-lg-baseline"
+        },
+        {
+          "name": "align-items-lg-center"
+        },
+        {
+          "name": "align-items-lg-end"
+        },
+        {
+          "name": "align-items-lg-start"
+        },
+        {
+          "name": "align-items-lg-stretch"
+        },
+        {
+          "name": "align-items-md-baseline"
+        },
+        {
+          "name": "align-items-md-center"
+        },
+        {
+          "name": "align-items-md-end"
+        },
+        {
+          "name": "align-items-md-start"
+        },
+        {
+          "name": "align-items-md-stretch"
+        },
+        {
+          "name": "align-items-sm-baseline"
+        },
+        {
+          "name": "align-items-sm-center"
+        },
+        {
+          "name": "align-items-sm-end"
+        },
+        {
+          "name": "align-items-sm-start"
+        },
+        {
+          "name": "align-items-sm-stretch"
+        },
+        {
+          "name": "align-items-start"
+        },
+        {
+          "name": "align-items-stretch"
+        },
+        {
+          "name": "align-items-xl-baseline"
+        },
+        {
+          "name": "align-items-xl-center"
+        },
+        {
+          "name": "align-items-xl-end"
+        },
+        {
+          "name": "align-items-xl-start"
+        },
+        {
+          "name": "align-items-xl-stretch"
+        },
+        {
+          "name": "align-items-xxl-baseline"
+        },
+        {
+          "name": "align-items-xxl-center"
+        },
+        {
+          "name": "align-items-xxl-end"
+        },
+        {
+          "name": "align-items-xxl-start"
+        },
+        {
+          "name": "align-items-xxl-stretch"
+        },
+        {
+          "name": "align-middle"
+        },
+        {
+          "name": "align-self-auto"
+        },
+        {
+          "name": "align-self-baseline"
+        },
+        {
+          "name": "align-self-center"
+        },
+        {
+          "name": "align-self-end"
+        },
+        {
+          "name": "align-self-lg-auto"
+        },
+        {
+          "name": "align-self-lg-baseline"
+        },
+        {
+          "name": "align-self-lg-center"
+        },
+        {
+          "name": "align-self-lg-end"
+        },
+        {
+          "name": "align-self-lg-start"
+        },
+        {
+          "name": "align-self-lg-stretch"
+        },
+        {
+          "name": "align-self-md-auto"
+        },
+        {
+          "name": "align-self-md-baseline"
+        },
+        {
+          "name": "align-self-md-center"
+        },
+        {
+          "name": "align-self-md-end"
+        },
+        {
+          "name": "align-self-md-start"
+        },
+        {
+          "name": "align-self-md-stretch"
+        },
+        {
+          "name": "align-self-sm-auto"
+        },
+        {
+          "name": "align-self-sm-baseline"
+        },
+        {
+          "name": "align-self-sm-center"
+        },
+        {
+          "name": "align-self-sm-end"
+        },
+        {
+          "name": "align-self-sm-start"
+        },
+        {
+          "name": "align-self-sm-stretch"
+        },
+        {
+          "name": "align-self-start"
+        },
+        {
+          "name": "align-self-stretch"
+        },
+        {
+          "name": "align-self-xl-auto"
+        },
+        {
+          "name": "align-self-xl-baseline"
+        },
+        {
+          "name": "align-self-xl-center"
+        },
+        {
+          "name": "align-self-xl-end"
+        },
+        {
+          "name": "align-self-xl-start"
+        },
+        {
+          "name": "align-self-xl-stretch"
+        },
+        {
+          "name": "align-self-xxl-auto"
+        },
+        {
+          "name": "align-self-xxl-baseline"
+        },
+        {
+          "name": "align-self-xxl-center"
+        },
+        {
+          "name": "align-self-xxl-end"
+        },
+        {
+          "name": "align-self-xxl-start"
+        },
+        {
+          "name": "align-self-xxl-stretch"
+        },
+        {
+          "name": "align-text-bottom"
+        },
+        {
+          "name": "align-text-top"
+        },
+        {
+          "name": "align-top"
+        },
+        {
+          "name": "badge"
+        },
+        {
+          "name": "bg-black"
+        },
+        {
+          "name": "bg-body"
+        },
+        {
+          "name": "bg-body-secondary"
+        },
+        {
+          "name": "bg-body-tertiary"
+        },
+        {
+          "name": "bg-danger"
+        },
+        {
+          "name": "bg-danger-subtle"
+        },
+        {
+          "name": "bg-dark"
+        },
+        {
+          "name": "bg-dark-subtle"
+        },
+        {
+          "name": "bg-gradient"
+        },
+        {
+          "name": "bg-info"
+        },
+        {
+          "name": "bg-info-subtle"
+        },
+        {
+          "name": "bg-light"
+        },
+        {
+          "name": "bg-light-subtle"
+        },
+        {
+          "name": "bg-opacity-10"
+        },
+        {
+          "name": "bg-opacity-100"
+        },
+        {
+          "name": "bg-opacity-25"
+        },
+        {
+          "name": "bg-opacity-50"
+        },
+        {
+          "name": "bg-opacity-75"
+        },
+        {
+          "name": "bg-primary"
+        },
+        {
+          "name": "bg-primary-subtle"
+        },
+        {
+          "name": "bg-secondary"
+        },
+        {
+          "name": "bg-secondary-subtle"
+        },
+        {
+          "name": "bg-success"
+        },
+        {
+          "name": "bg-success-subtle"
+        },
+        {
+          "name": "bg-transparent"
+        },
+        {
+          "name": "bg-warning"
+        },
+        {
+          "name": "bg-warning-subtle"
+        },
+        {
+          "name": "bg-white"
+        },
+        {
+          "name": "bi"
+        },
+        {
+          "name": "blockquote"
+        },
+        {
+          "name": "blockquote-footer"
+        },
+        {
+          "name": "border"
+        },
+        {
+          "name": "border-0"
+        },
+        {
+          "name": "border-1"
+        },
+        {
+          "name": "border-2"
+        },
+        {
+          "name": "border-3"
+        },
+        {
+          "name": "border-4"
+        },
+        {
+          "name": "border-5"
+        },
+        {
+          "name": "border-black"
+        },
+        {
+          "name": "border-bottom"
+        },
+        {
+          "name": "border-bottom-0"
+        },
+        {
+          "name": "border-danger"
+        },
+        {
+          "name": "border-danger-subtle"
+        },
+        {
+          "name": "border-dark"
+        },
+        {
+          "name": "border-dark-subtle"
+        },
+        {
+          "name": "border-end"
+        },
+        {
+          "name": "border-end-0"
+        },
+        {
+          "name": "border-info"
+        },
+        {
+          "name": "border-info-subtle"
+        },
+        {
+          "name": "border-light"
+        },
+        {
+          "name": "border-light-subtle"
+        },
+        {
+          "name": "border-opacity-10"
+        },
+        {
+          "name": "border-opacity-100"
+        },
+        {
+          "name": "border-opacity-25"
+        },
+        {
+          "name": "border-opacity-50"
+        },
+        {
+          "name": "border-opacity-75"
+        },
+        {
+          "name": "border-primary"
+        },
+        {
+          "name": "border-primary-subtle"
+        },
+        {
+          "name": "border-secondary"
+        },
+        {
+          "name": "border-secondary-subtle"
+        },
+        {
+          "name": "border-start"
+        },
+        {
+          "name": "border-start-0"
+        },
+        {
+          "name": "border-success"
+        },
+        {
+          "name": "border-success-subtle"
+        },
+        {
+          "name": "border-top"
+        },
+        {
+          "name": "border-top-0"
+        },
+        {
+          "name": "border-warning"
+        },
+        {
+          "name": "border-warning-subtle"
+        },
+        {
+          "name": "border-white"
+        },
+        {
+          "name": "bottom-0"
+        },
+        {
+          "name": "bottom-100"
+        },
+        {
+          "name": "bottom-50"
+        },
+        {
+          "name": "breadcrumb"
+        },
+        {
+          "name": "breadcrumb-item"
+        },
+        {
+          "name": "bs-popover-auto"
+        },
+        {
+          "name": "bs-popover-bottom"
+        },
+        {
+          "name": "bs-popover-end"
+        },
+        {
+          "name": "bs-popover-start"
+        },
+        {
+          "name": "bs-popover-top"
+        },
+        {
+          "name": "bs-tooltip-auto"
+        },
+        {
+          "name": "bs-tooltip-bottom"
+        },
+        {
+          "name": "bs-tooltip-end"
+        },
+        {
+          "name": "bs-tooltip-start"
+        },
+        {
+          "name": "bs-tooltip-top"
+        },
+        {
+          "name": "btn"
+        },
+        {
+          "name": "btn-check"
+        },
+        {
+          "name": "btn-close"
+        },
+        {
+          "name": "btn-close-white"
+        },
+        {
+          "name": "btn-danger"
+        },
+        {
+          "name": "btn-dark"
+        },
+        {
+          "name": "btn-group"
+        },
+        {
+          "name": "btn-group-lg"
+        },
+        {
+          "name": "btn-group-sm"
+        },
+        {
+          "name": "btn-group-vertical"
+        },
+        {
+          "name": "btn-info"
+        },
+        {
+          "name": "btn-lg"
+        },
+        {
+          "name": "btn-light"
+        },
+        {
+          "name": "btn-link"
+        },
+        {
+          "name": "btn-outline-danger"
+        },
+        {
+          "name": "btn-outline-dark"
+        },
+        {
+          "name": "btn-outline-info"
+        },
+        {
+          "name": "btn-outline-light"
+        },
+        {
+          "name": "btn-outline-primary"
+        },
+        {
+          "name": "btn-outline-secondary"
+        },
+        {
+          "name": "btn-outline-success"
+        },
+        {
+          "name": "btn-outline-warning"
+        },
+        {
+          "name": "btn-primary"
+        },
+        {
+          "name": "btn-secondary"
+        },
+        {
+          "name": "btn-sm"
+        },
+        {
+          "name": "btn-success"
+        },
+        {
+          "name": "btn-toolbar"
+        },
+        {
+          "name": "btn-warning"
+        },
+        {
+          "name": "caption-top"
+        },
+        {
+          "name": "card"
+        },
+        {
+          "name": "card-body"
+        },
+        {
+          "name": "card-footer"
+        },
+        {
+          "name": "card-group"
+        },
+        {
+          "name": "card-header"
+        },
+        {
+          "name": "card-header-pills"
+        },
+        {
+          "name": "card-header-tabs"
+        },
+        {
+          "name": "card-img"
+        },
+        {
+          "name": "card-img-bottom"
+        },
+        {
+          "name": "card-img-overlay"
+        },
+        {
+          "name": "card-img-top"
+        },
+        {
+          "name": "card-link"
+        },
+        {
+          "name": "card-subtitle"
+        },
+        {
+          "name": "card-text"
+        },
+        {
+          "name": "card-title"
+        },
+        {
+          "name": "carousel"
+        },
+        {
+          "name": "carousel-caption"
+        },
+        {
+          "name": "carousel-control-next"
+        },
+        {
+          "name": "carousel-control-next-icon"
+        },
+        {
+          "name": "carousel-control-prev"
+        },
+        {
+          "name": "carousel-control-prev-icon"
+        },
+        {
+          "name": "carousel-dark"
+        },
+        {
+          "name": "carousel-fade"
+        },
+        {
+          "name": "carousel-indicators"
+        },
+        {
+          "name": "carousel-inner"
+        },
+        {
+          "name": "carousel-item"
+        },
+        {
+          "name": "carousel-item-end"
+        },
+        {
+          "name": "carousel-item-next"
+        },
+        {
+          "name": "carousel-item-prev"
+        },
+        {
+          "name": "carousel-item-start"
+        },
+        {
+          "name": "clearfix"
+        },
+        {
+          "name": "col"
+        },
+        {
+          "name": "col-1"
+        },
+        {
+          "name": "col-10"
+        },
+        {
+          "name": "col-11"
+        },
+        {
+          "name": "col-12"
+        },
+        {
+          "name": "col-2"
+        },
+        {
+          "name": "col-3"
+        },
+        {
+          "name": "col-4"
+        },
+        {
+          "name": "col-5"
+        },
+        {
+          "name": "col-6"
+        },
+        {
+          "name": "col-7"
+        },
+        {
+          "name": "col-8"
+        },
+        {
+          "name": "col-9"
+        },
+        {
+          "name": "col-auto"
+        },
+        {
+          "name": "col-form-label"
+        },
+        {
+          "name": "col-form-label-lg"
+        },
+        {
+          "name": "col-form-label-sm"
+        },
+        {
+          "name": "col-lg"
+        },
+        {
+          "name": "col-lg-1"
+        },
+        {
+          "name": "col-lg-10"
+        },
+        {
+          "name": "col-lg-11"
+        },
+        {
+          "name": "col-lg-12"
+        },
+        {
+          "name": "col-lg-2"
+        },
+        {
+          "name": "col-lg-3"
+        },
+        {
+          "name": "col-lg-4"
+        },
+        {
+          "name": "col-lg-5"
+        },
+        {
+          "name": "col-lg-6"
+        },
+        {
+          "name": "col-lg-7"
+        },
+        {
+          "name": "col-lg-8"
+        },
+        {
+          "name": "col-lg-9"
+        },
+        {
+          "name": "col-lg-auto"
+        },
+        {
+          "name": "col-md"
+        },
+        {
+          "name": "col-md-1"
+        },
+        {
+          "name": "col-md-10"
+        },
+        {
+          "name": "col-md-11"
+        },
+        {
+          "name": "col-md-12"
+        },
+        {
+          "name": "col-md-2"
+        },
+        {
+          "name": "col-md-3"
+        },
+        {
+          "name": "col-md-4"
+        },
+        {
+          "name": "col-md-5"
+        },
+        {
+          "name": "col-md-6"
+        },
+        {
+          "name": "col-md-7"
+        },
+        {
+          "name": "col-md-8"
+        },
+        {
+          "name": "col-md-9"
+        },
+        {
+          "name": "col-md-auto"
+        },
+        {
+          "name": "col-sm"
+        },
+        {
+          "name": "col-sm-1"
+        },
+        {
+          "name": "col-sm-10"
+        },
+        {
+          "name": "col-sm-11"
+        },
+        {
+          "name": "col-sm-12"
+        },
+        {
+          "name": "col-sm-2"
+        },
+        {
+          "name": "col-sm-3"
+        },
+        {
+          "name": "col-sm-4"
+        },
+        {
+          "name": "col-sm-5"
+        },
+        {
+          "name": "col-sm-6"
+        },
+        {
+          "name": "col-sm-7"
+        },
+        {
+          "name": "col-sm-8"
+        },
+        {
+          "name": "col-sm-9"
+        },
+        {
+          "name": "col-sm-auto"
+        },
+        {
+          "name": "col-xl"
+        },
+        {
+          "name": "col-xl-1"
+        },
+        {
+          "name": "col-xl-10"
+        },
+        {
+          "name": "col-xl-11"
+        },
+        {
+          "name": "col-xl-12"
+        },
+        {
+          "name": "col-xl-2"
+        },
+        {
+          "name": "col-xl-3"
+        },
+        {
+          "name": "col-xl-4"
+        },
+        {
+          "name": "col-xl-5"
+        },
+        {
+          "name": "col-xl-6"
+        },
+        {
+          "name": "col-xl-7"
+        },
+        {
+          "name": "col-xl-8"
+        },
+        {
+          "name": "col-xl-9"
+        },
+        {
+          "name": "col-xl-auto"
+        },
+        {
+          "name": "col-xxl"
+        },
+        {
+          "name": "col-xxl-1"
+        },
+        {
+          "name": "col-xxl-10"
+        },
+        {
+          "name": "col-xxl-11"
+        },
+        {
+          "name": "col-xxl-12"
+        },
+        {
+          "name": "col-xxl-2"
+        },
+        {
+          "name": "col-xxl-3"
+        },
+        {
+          "name": "col-xxl-4"
+        },
+        {
+          "name": "col-xxl-5"
+        },
+        {
+          "name": "col-xxl-6"
+        },
+        {
+          "name": "col-xxl-7"
+        },
+        {
+          "name": "col-xxl-8"
+        },
+        {
+          "name": "col-xxl-9"
+        },
+        {
+          "name": "col-xxl-auto"
+        },
+        {
+          "name": "collapse"
+        },
+        {
+          "name": "collapsed"
+        },
+        {
+          "name": "collapsing"
+        },
+        {
+          "name": "column-gap-0"
+        },
+        {
+          "name": "column-gap-1"
+        },
+        {
+          "name": "column-gap-2"
+        },
+        {
+          "name": "column-gap-3"
+        },
+        {
+          "name": "column-gap-4"
+        },
+        {
+          "name": "column-gap-5"
+        },
+        {
+          "name": "column-gap-lg-0"
+        },
+        {
+          "name": "column-gap-lg-1"
+        },
+        {
+          "name": "column-gap-lg-2"
+        },
+        {
+          "name": "column-gap-lg-3"
+        },
+        {
+          "name": "column-gap-lg-4"
+        },
+        {
+          "name": "column-gap-lg-5"
+        },
+        {
+          "name": "column-gap-md-0"
+        },
+        {
+          "name": "column-gap-md-1"
+        },
+        {
+          "name": "column-gap-md-2"
+        },
+        {
+          "name": "column-gap-md-3"
+        },
+        {
+          "name": "column-gap-md-4"
+        },
+        {
+          "name": "column-gap-md-5"
+        },
+        {
+          "name": "column-gap-sm-0"
+        },
+        {
+          "name": "column-gap-sm-1"
+        },
+        {
+          "name": "column-gap-sm-2"
+        },
+        {
+          "name": "column-gap-sm-3"
+        },
+        {
+          "name": "column-gap-sm-4"
+        },
+        {
+          "name": "column-gap-sm-5"
+        },
+        {
+          "name": "column-gap-xl-0"
+        },
+        {
+          "name": "column-gap-xl-1"
+        },
+        {
+          "name": "column-gap-xl-2"
+        },
+        {
+          "name": "column-gap-xl-3"
+        },
+        {
+          "name": "column-gap-xl-4"
+        },
+        {
+          "name": "column-gap-xl-5"
+        },
+        {
+          "name": "column-gap-xxl-0"
+        },
+        {
+          "name": "column-gap-xxl-1"
+        },
+        {
+          "name": "column-gap-xxl-2"
+        },
+        {
+          "name": "column-gap-xxl-3"
+        },
+        {
+          "name": "column-gap-xxl-4"
+        },
+        {
+          "name": "column-gap-xxl-5"
+        },
+        {
+          "name": "container"
+        },
+        {
+          "name": "container-fluid"
+        },
+        {
+          "name": "container-lg"
+        },
+        {
+          "name": "container-md"
+        },
+        {
+          "name": "container-sm"
+        },
+        {
+          "name": "container-xl"
+        },
+        {
+          "name": "container-xxl"
+        },
+        {
+          "name": "d-block"
+        },
+        {
+          "name": "d-flex"
+        },
+        {
+          "name": "d-grid"
+        },
+        {
+          "name": "d-inline"
+        },
+        {
+          "name": "d-inline-block"
+        },
+        {
+          "name": "d-inline-flex"
+        },
+        {
+          "name": "d-inline-grid"
+        },
+        {
+          "name": "d-lg-block"
+        },
+        {
+          "name": "d-lg-flex"
+        },
+        {
+          "name": "d-lg-grid"
+        },
+        {
+          "name": "d-lg-inline"
+        },
+        {
+          "name": "d-lg-inline-block"
+        },
+        {
+          "name": "d-lg-inline-flex"
+        },
+        {
+          "name": "d-lg-inline-grid"
+        },
+        {
+          "name": "d-lg-none"
+        },
+        {
+          "name": "d-lg-table"
+        },
+        {
+          "name": "d-lg-table-cell"
+        },
+        {
+          "name": "d-lg-table-row"
+        },
+        {
+          "name": "d-md-block"
+        },
+        {
+          "name": "d-md-flex"
+        },
+        {
+          "name": "d-md-grid"
+        },
+        {
+          "name": "d-md-inline"
+        },
+        {
+          "name": "d-md-inline-block"
+        },
+        {
+          "name": "d-md-inline-flex"
+        },
+        {
+          "name": "d-md-inline-grid"
+        },
+        {
+          "name": "d-md-none"
+        },
+        {
+          "name": "d-md-table"
+        },
+        {
+          "name": "d-md-table-cell"
+        },
+        {
+          "name": "d-md-table-row"
+        },
+        {
+          "name": "d-none"
+        },
+        {
+          "name": "d-print-block"
+        },
+        {
+          "name": "d-print-flex"
+        },
+        {
+          "name": "d-print-grid"
+        },
+        {
+          "name": "d-print-inline"
+        },
+        {
+          "name": "d-print-inline-block"
+        },
+        {
+          "name": "d-print-inline-flex"
+        },
+        {
+          "name": "d-print-inline-grid"
+        },
+        {
+          "name": "d-print-none"
+        },
+        {
+          "name": "d-print-table"
+        },
+        {
+          "name": "d-print-table-cell"
+        },
+        {
+          "name": "d-print-table-row"
+        },
+        {
+          "name": "d-sm-block"
+        },
+        {
+          "name": "d-sm-flex"
+        },
+        {
+          "name": "d-sm-grid"
+        },
+        {
+          "name": "d-sm-inline"
+        },
+        {
+          "name": "d-sm-inline-block"
+        },
+        {
+          "name": "d-sm-inline-flex"
+        },
+        {
+          "name": "d-sm-inline-grid"
+        },
+        {
+          "name": "d-sm-none"
+        },
+        {
+          "name": "d-sm-table"
+        },
+        {
+          "name": "d-sm-table-cell"
+        },
+        {
+          "name": "d-sm-table-row"
+        },
+        {
+          "name": "d-table"
+        },
+        {
+          "name": "d-table-cell"
+        },
+        {
+          "name": "d-table-row"
+        },
+        {
+          "name": "d-xl-block"
+        },
+        {
+          "name": "d-xl-flex"
+        },
+        {
+          "name": "d-xl-grid"
+        },
+        {
+          "name": "d-xl-inline"
+        },
+        {
+          "name": "d-xl-inline-block"
+        },
+        {
+          "name": "d-xl-inline-flex"
+        },
+        {
+          "name": "d-xl-inline-grid"
+        },
+        {
+          "name": "d-xl-none"
+        },
+        {
+          "name": "d-xl-table"
+        },
+        {
+          "name": "d-xl-table-cell"
+        },
+        {
+          "name": "d-xl-table-row"
+        },
+        {
+          "name": "d-xxl-block"
+        },
+        {
+          "name": "d-xxl-flex"
+        },
+        {
+          "name": "d-xxl-grid"
+        },
+        {
+          "name": "d-xxl-inline"
+        },
+        {
+          "name": "d-xxl-inline-block"
+        },
+        {
+          "name": "d-xxl-inline-flex"
+        },
+        {
+          "name": "d-xxl-inline-grid"
+        },
+        {
+          "name": "d-xxl-none"
+        },
+        {
+          "name": "d-xxl-table"
+        },
+        {
+          "name": "d-xxl-table-cell"
+        },
+        {
+          "name": "d-xxl-table-row"
+        },
+        {
+          "name": "disabled"
+        },
+        {
+          "name": "display-1"
+        },
+        {
+          "name": "display-2"
+        },
+        {
+          "name": "display-3"
+        },
+        {
+          "name": "display-4"
+        },
+        {
+          "name": "display-5"
+        },
+        {
+          "name": "display-6"
+        },
+        {
+          "name": "dropdown"
+        },
+        {
+          "name": "dropdown-center"
+        },
+        {
+          "name": "dropdown-divider"
+        },
+        {
+          "name": "dropdown-header"
+        },
+        {
+          "name": "dropdown-item"
+        },
+        {
+          "name": "dropdown-item-text"
+        },
+        {
+          "name": "dropdown-menu"
+        },
+        {
+          "name": "dropdown-menu-dark"
+        },
+        {
+          "name": "dropdown-menu-end"
+        },
+        {
+          "name": "dropdown-menu-lg-end"
+        },
+        {
+          "name": "dropdown-menu-lg-start"
+        },
+        {
+          "name": "dropdown-menu-md-end"
+        },
+        {
+          "name": "dropdown-menu-md-start"
+        },
+        {
+          "name": "dropdown-menu-sm-end"
+        },
+        {
+          "name": "dropdown-menu-sm-start"
+        },
+        {
+          "name": "dropdown-menu-start"
+        },
+        {
+          "name": "dropdown-menu-xl-end"
+        },
+        {
+          "name": "dropdown-menu-xl-start"
+        },
+        {
+          "name": "dropdown-menu-xxl-end"
+        },
+        {
+          "name": "dropdown-menu-xxl-start"
+        },
+        {
+          "name": "dropdown-toggle"
+        },
+        {
+          "name": "dropdown-toggle-split"
+        },
+        {
+          "name": "dropend"
+        },
+        {
+          "name": "dropstart"
+        },
+        {
+          "name": "dropup"
+        },
+        {
+          "name": "dropup-center"
+        },
+        {
+          "name": "end-0"
+        },
+        {
+          "name": "end-100"
+        },
+        {
+          "name": "end-50"
+        },
+        {
+          "name": "fade"
+        },
+        {
+          "name": "figure"
+        },
+        {
+          "name": "figure-caption"
+        },
+        {
+          "name": "figure-img"
+        },
+        {
+          "name": "fixed-bottom"
+        },
+        {
+          "name": "fixed-top"
+        },
+        {
+          "name": "flex-column"
+        },
+        {
+          "name": "flex-column-reverse"
+        },
+        {
+          "name": "flex-fill"
+        },
+        {
+          "name": "flex-grow-0"
+        },
+        {
+          "name": "flex-grow-1"
+        },
+        {
+          "name": "flex-lg-column"
+        },
+        {
+          "name": "flex-lg-column-reverse"
+        },
+        {
+          "name": "flex-lg-fill"
+        },
+        {
+          "name": "flex-lg-grow-0"
+        },
+        {
+          "name": "flex-lg-grow-1"
+        },
+        {
+          "name": "flex-lg-nowrap"
+        },
+        {
+          "name": "flex-lg-row"
+        },
+        {
+          "name": "flex-lg-row-reverse"
+        },
+        {
+          "name": "flex-lg-shrink-0"
+        },
+        {
+          "name": "flex-lg-shrink-1"
+        },
+        {
+          "name": "flex-lg-wrap"
+        },
+        {
+          "name": "flex-lg-wrap-reverse"
+        },
+        {
+          "name": "flex-md-column"
+        },
+        {
+          "name": "flex-md-column-reverse"
+        },
+        {
+          "name": "flex-md-fill"
+        },
+        {
+          "name": "flex-md-grow-0"
+        },
+        {
+          "name": "flex-md-grow-1"
+        },
+        {
+          "name": "flex-md-nowrap"
+        },
+        {
+          "name": "flex-md-row"
+        },
+        {
+          "name": "flex-md-row-reverse"
+        },
+        {
+          "name": "flex-md-shrink-0"
+        },
+        {
+          "name": "flex-md-shrink-1"
+        },
+        {
+          "name": "flex-md-wrap"
+        },
+        {
+          "name": "flex-md-wrap-reverse"
+        },
+        {
+          "name": "flex-nowrap"
+        },
+        {
+          "name": "flex-row"
+        },
+        {
+          "name": "flex-row-reverse"
+        },
+        {
+          "name": "flex-shrink-0"
+        },
+        {
+          "name": "flex-shrink-1"
+        },
+        {
+          "name": "flex-sm-column"
+        },
+        {
+          "name": "flex-sm-column-reverse"
+        },
+        {
+          "name": "flex-sm-fill"
+        },
+        {
+          "name": "flex-sm-grow-0"
+        },
+        {
+          "name": "flex-sm-grow-1"
+        },
+        {
+          "name": "flex-sm-nowrap"
+        },
+        {
+          "name": "flex-sm-row"
+        },
+        {
+          "name": "flex-sm-row-reverse"
+        },
+        {
+          "name": "flex-sm-shrink-0"
+        },
+        {
+          "name": "flex-sm-shrink-1"
+        },
+        {
+          "name": "flex-sm-wrap"
+        },
+        {
+          "name": "flex-sm-wrap-reverse"
+        },
+        {
+          "name": "flex-wrap"
+        },
+        {
+          "name": "flex-wrap-reverse"
+        },
+        {
+          "name": "flex-xl-column"
+        },
+        {
+          "name": "flex-xl-column-reverse"
+        },
+        {
+          "name": "flex-xl-fill"
+        },
+        {
+          "name": "flex-xl-grow-0"
+        },
+        {
+          "name": "flex-xl-grow-1"
+        },
+        {
+          "name": "flex-xl-nowrap"
+        },
+        {
+          "name": "flex-xl-row"
+        },
+        {
+          "name": "flex-xl-row-reverse"
+        },
+        {
+          "name": "flex-xl-shrink-0"
+        },
+        {
+          "name": "flex-xl-shrink-1"
+        },
+        {
+          "name": "flex-xl-wrap"
+        },
+        {
+          "name": "flex-xl-wrap-reverse"
+        },
+        {
+          "name": "flex-xxl-column"
+        },
+        {
+          "name": "flex-xxl-column-reverse"
+        },
+        {
+          "name": "flex-xxl-fill"
+        },
+        {
+          "name": "flex-xxl-grow-0"
+        },
+        {
+          "name": "flex-xxl-grow-1"
+        },
+        {
+          "name": "flex-xxl-nowrap"
+        },
+        {
+          "name": "flex-xxl-row"
+        },
+        {
+          "name": "flex-xxl-row-reverse"
+        },
+        {
+          "name": "flex-xxl-shrink-0"
+        },
+        {
+          "name": "flex-xxl-shrink-1"
+        },
+        {
+          "name": "flex-xxl-wrap"
+        },
+        {
+          "name": "flex-xxl-wrap-reverse"
+        },
+        {
+          "name": "float-end"
+        },
+        {
+          "name": "float-lg-end"
+        },
+        {
+          "name": "float-lg-none"
+        },
+        {
+          "name": "float-lg-start"
+        },
+        {
+          "name": "float-md-end"
+        },
+        {
+          "name": "float-md-none"
+        },
+        {
+          "name": "float-md-start"
+        },
+        {
+          "name": "float-none"
+        },
+        {
+          "name": "float-sm-end"
+        },
+        {
+          "name": "float-sm-none"
+        },
+        {
+          "name": "float-sm-start"
+        },
+        {
+          "name": "float-start"
+        },
+        {
+          "name": "float-xl-end"
+        },
+        {
+          "name": "float-xl-none"
+        },
+        {
+          "name": "float-xl-start"
+        },
+        {
+          "name": "float-xxl-end"
+        },
+        {
+          "name": "float-xxl-none"
+        },
+        {
+          "name": "float-xxl-start"
+        },
+        {
+          "name": "focus-ring"
+        },
+        {
+          "name": "focus-ring-danger"
+        },
+        {
+          "name": "focus-ring-dark"
+        },
+        {
+          "name": "focus-ring-info"
+        },
+        {
+          "name": "focus-ring-light"
+        },
+        {
+          "name": "focus-ring-primary"
+        },
+        {
+          "name": "focus-ring-secondary"
+        },
+        {
+          "name": "focus-ring-success"
+        },
+        {
+          "name": "focus-ring-warning"
+        },
+        {
+          "name": "font-monospace"
+        },
+        {
+          "name": "form-check"
+        },
+        {
+          "name": "form-check-inline"
+        },
+        {
+          "name": "form-check-input"
+        },
+        {
+          "name": "form-check-label"
+        },
+        {
+          "name": "form-check-reverse"
+        },
+        {
+          "name": "form-control"
+        },
+        {
+          "name": "form-control-color"
+        },
+        {
+          "name": "form-control-lg"
+        },
+        {
+          "name": "form-control-plaintext"
+        },
+        {
+          "name": "form-control-sm"
+        },
+        {
+          "name": "form-floating"
+        },
+        {
+          "name": "form-label"
+        },
+        {
+          "name": "form-range"
+        },
+        {
+          "name": "form-select"
+        },
+        {
+          "name": "form-select-lg"
+        },
+        {
+          "name": "form-select-sm"
+        },
+        {
+          "name": "form-switch"
+        },
+        {
+          "name": "form-text"
+        },
+        {
+          "name": "fs-1"
+        },
+        {
+          "name": "fs-2"
+        },
+        {
+          "name": "fs-3"
+        },
+        {
+          "name": "fs-4"
+        },
+        {
+          "name": "fs-5"
+        },
+        {
+          "name": "fs-6"
+        },
+        {
+          "name": "fst-italic"
+        },
+        {
+          "name": "fst-normal"
+        },
+        {
+          "name": "fw-bold"
+        },
+        {
+          "name": "fw-bolder"
+        },
+        {
+          "name": "fw-light"
+        },
+        {
+          "name": "fw-lighter"
+        },
+        {
+          "name": "fw-medium"
+        },
+        {
+          "name": "fw-normal"
+        },
+        {
+          "name": "fw-semibold"
+        },
+        {
+          "name": "g-0"
+        },
+        {
+          "name": "g-1"
+        },
+        {
+          "name": "g-2"
+        },
+        {
+          "name": "g-3"
+        },
+        {
+          "name": "g-4"
+        },
+        {
+          "name": "g-5"
+        },
+        {
+          "name": "g-lg-0"
+        },
+        {
+          "name": "g-lg-1"
+        },
+        {
+          "name": "g-lg-2"
+        },
+        {
+          "name": "g-lg-3"
+        },
+        {
+          "name": "g-lg-4"
+        },
+        {
+          "name": "g-lg-5"
+        },
+        {
+          "name": "g-md-0"
+        },
+        {
+          "name": "g-md-1"
+        },
+        {
+          "name": "g-md-2"
+        },
+        {
+          "name": "g-md-3"
+        },
+        {
+          "name": "g-md-4"
+        },
+        {
+          "name": "g-md-5"
+        },
+        {
+          "name": "g-sm-0"
+        },
+        {
+          "name": "g-sm-1"
+        },
+        {
+          "name": "g-sm-2"
+        },
+        {
+          "name": "g-sm-3"
+        },
+        {
+          "name": "g-sm-4"
+        },
+        {
+          "name": "g-sm-5"
+        },
+        {
+          "name": "g-xl-0"
+        },
+        {
+          "name": "g-xl-1"
+        },
+        {
+          "name": "g-xl-2"
+        },
+        {
+          "name": "g-xl-3"
+        },
+        {
+          "name": "g-xl-4"
+        },
+        {
+          "name": "g-xl-5"
+        },
+        {
+          "name": "g-xxl-0"
+        },
+        {
+          "name": "g-xxl-1"
+        },
+        {
+          "name": "g-xxl-2"
+        },
+        {
+          "name": "g-xxl-3"
+        },
+        {
+          "name": "g-xxl-4"
+        },
+        {
+          "name": "g-xxl-5"
+        },
+        {
+          "name": "gap-0"
+        },
+        {
+          "name": "gap-1"
+        },
+        {
+          "name": "gap-2"
+        },
+        {
+          "name": "gap-3"
+        },
+        {
+          "name": "gap-4"
+        },
+        {
+          "name": "gap-5"
+        },
+        {
+          "name": "gap-lg-0"
+        },
+        {
+          "name": "gap-lg-1"
+        },
+        {
+          "name": "gap-lg-2"
+        },
+        {
+          "name": "gap-lg-3"
+        },
+        {
+          "name": "gap-lg-4"
+        },
+        {
+          "name": "gap-lg-5"
+        },
+        {
+          "name": "gap-md-0"
+        },
+        {
+          "name": "gap-md-1"
+        },
+        {
+          "name": "gap-md-2"
+        },
+        {
+          "name": "gap-md-3"
+        },
+        {
+          "name": "gap-md-4"
+        },
+        {
+          "name": "gap-md-5"
+        },
+        {
+          "name": "gap-sm-0"
+        },
+        {
+          "name": "gap-sm-1"
+        },
+        {
+          "name": "gap-sm-2"
+        },
+        {
+          "name": "gap-sm-3"
+        },
+        {
+          "name": "gap-sm-4"
+        },
+        {
+          "name": "gap-sm-5"
+        },
+        {
+          "name": "gap-xl-0"
+        },
+        {
+          "name": "gap-xl-1"
+        },
+        {
+          "name": "gap-xl-2"
+        },
+        {
+          "name": "gap-xl-3"
+        },
+        {
+          "name": "gap-xl-4"
+        },
+        {
+          "name": "gap-xl-5"
+        },
+        {
+          "name": "gap-xxl-0"
+        },
+        {
+          "name": "gap-xxl-1"
+        },
+        {
+          "name": "gap-xxl-2"
+        },
+        {
+          "name": "gap-xxl-3"
+        },
+        {
+          "name": "gap-xxl-4"
+        },
+        {
+          "name": "gap-xxl-5"
+        },
+        {
+          "name": "gx-0"
+        },
+        {
+          "name": "gx-1"
+        },
+        {
+          "name": "gx-2"
+        },
+        {
+          "name": "gx-3"
+        },
+        {
+          "name": "gx-4"
+        },
+        {
+          "name": "gx-5"
+        },
+        {
+          "name": "gx-lg-0"
+        },
+        {
+          "name": "gx-lg-1"
+        },
+        {
+          "name": "gx-lg-2"
+        },
+        {
+          "name": "gx-lg-3"
+        },
+        {
+          "name": "gx-lg-4"
+        },
+        {
+          "name": "gx-lg-5"
+        },
+        {
+          "name": "gx-md-0"
+        },
+        {
+          "name": "gx-md-1"
+        },
+        {
+          "name": "gx-md-2"
+        },
+        {
+          "name": "gx-md-3"
+        },
+        {
+          "name": "gx-md-4"
+        },
+        {
+          "name": "gx-md-5"
+        },
+        {
+          "name": "gx-sm-0"
+        },
+        {
+          "name": "gx-sm-1"
+        },
+        {
+          "name": "gx-sm-2"
+        },
+        {
+          "name": "gx-sm-3"
+        },
+        {
+          "name": "gx-sm-4"
+        },
+        {
+          "name": "gx-sm-5"
+        },
+        {
+          "name": "gx-xl-0"
+        },
+        {
+          "name": "gx-xl-1"
+        },
+        {
+          "name": "gx-xl-2"
+        },
+        {
+          "name": "gx-xl-3"
+        },
+        {
+          "name": "gx-xl-4"
+        },
+        {
+          "name": "gx-xl-5"
+        },
+        {
+          "name": "gx-xxl-0"
+        },
+        {
+          "name": "gx-xxl-1"
+        },
+        {
+          "name": "gx-xxl-2"
+        },
+        {
+          "name": "gx-xxl-3"
+        },
+        {
+          "name": "gx-xxl-4"
+        },
+        {
+          "name": "gx-xxl-5"
+        },
+        {
+          "name": "gy-0"
+        },
+        {
+          "name": "gy-1"
+        },
+        {
+          "name": "gy-2"
+        },
+        {
+          "name": "gy-3"
+        },
+        {
+          "name": "gy-4"
+        },
+        {
+          "name": "gy-5"
+        },
+        {
+          "name": "gy-lg-0"
+        },
+        {
+          "name": "gy-lg-1"
+        },
+        {
+          "name": "gy-lg-2"
+        },
+        {
+          "name": "gy-lg-3"
+        },
+        {
+          "name": "gy-lg-4"
+        },
+        {
+          "name": "gy-lg-5"
+        },
+        {
+          "name": "gy-md-0"
+        },
+        {
+          "name": "gy-md-1"
+        },
+        {
+          "name": "gy-md-2"
+        },
+        {
+          "name": "gy-md-3"
+        },
+        {
+          "name": "gy-md-4"
+        },
+        {
+          "name": "gy-md-5"
+        },
+        {
+          "name": "gy-sm-0"
+        },
+        {
+          "name": "gy-sm-1"
+        },
+        {
+          "name": "gy-sm-2"
+        },
+        {
+          "name": "gy-sm-3"
+        },
+        {
+          "name": "gy-sm-4"
+        },
+        {
+          "name": "gy-sm-5"
+        },
+        {
+          "name": "gy-xl-0"
+        },
+        {
+          "name": "gy-xl-1"
+        },
+        {
+          "name": "gy-xl-2"
+        },
+        {
+          "name": "gy-xl-3"
+        },
+        {
+          "name": "gy-xl-4"
+        },
+        {
+          "name": "gy-xl-5"
+        },
+        {
+          "name": "gy-xxl-0"
+        },
+        {
+          "name": "gy-xxl-1"
+        },
+        {
+          "name": "gy-xxl-2"
+        },
+        {
+          "name": "gy-xxl-3"
+        },
+        {
+          "name": "gy-xxl-4"
+        },
+        {
+          "name": "gy-xxl-5"
+        },
+        {
+          "name": "h-100"
+        },
+        {
+          "name": "h-25"
+        },
+        {
+          "name": "h-50"
+        },
+        {
+          "name": "h-75"
+        },
+        {
+          "name": "h-auto"
+        },
+        {
+          "name": "h1"
+        },
+        {
+          "name": "h2"
+        },
+        {
+          "name": "h3"
+        },
+        {
+          "name": "h4"
+        },
+        {
+          "name": "h5"
+        },
+        {
+          "name": "h6"
+        },
+        {
+          "name": "has-validation"
+        },
+        {
+          "name": "hiding"
+        },
+        {
+          "name": "hstack"
+        },
+        {
+          "name": "icon-link"
+        },
+        {
+          "name": "icon-link-hover"
+        },
+        {
+          "name": "img-fluid"
+        },
+        {
+          "name": "img-thumbnail"
+        },
+        {
+          "name": "initialism"
+        },
+        {
+          "name": "input-group"
+        },
+        {
+          "name": "input-group-lg"
+        },
+        {
+          "name": "input-group-sm"
+        },
+        {
+          "name": "input-group-text"
+        },
+        {
+          "name": "invalid-feedback"
+        },
+        {
+          "name": "invalid-tooltip"
+        },
+        {
+          "name": "invisible"
+        },
+        {
+          "name": "is-invalid"
+        },
+        {
+          "name": "is-valid"
+        },
+        {
+          "name": "justify-content-around"
+        },
+        {
+          "name": "justify-content-between"
+        },
+        {
+          "name": "justify-content-center"
+        },
+        {
+          "name": "justify-content-end"
+        },
+        {
+          "name": "justify-content-evenly"
+        },
+        {
+          "name": "justify-content-lg-around"
+        },
+        {
+          "name": "justify-content-lg-between"
+        },
+        {
+          "name": "justify-content-lg-center"
+        },
+        {
+          "name": "justify-content-lg-end"
+        },
+        {
+          "name": "justify-content-lg-evenly"
+        },
+        {
+          "name": "justify-content-lg-start"
+        },
+        {
+          "name": "justify-content-md-around"
+        },
+        {
+          "name": "justify-content-md-between"
+        },
+        {
+          "name": "justify-content-md-center"
+        },
+        {
+          "name": "justify-content-md-end"
+        },
+        {
+          "name": "justify-content-md-evenly"
+        },
+        {
+          "name": "justify-content-md-start"
+        },
+        {
+          "name": "justify-content-sm-around"
+        },
+        {
+          "name": "justify-content-sm-between"
+        },
+        {
+          "name": "justify-content-sm-center"
+        },
+        {
+          "name": "justify-content-sm-end"
+        },
+        {
+          "name": "justify-content-sm-evenly"
+        },
+        {
+          "name": "justify-content-sm-start"
+        },
+        {
+          "name": "justify-content-start"
+        },
+        {
+          "name": "justify-content-xl-around"
+        },
+        {
+          "name": "justify-content-xl-between"
+        },
+        {
+          "name": "justify-content-xl-center"
+        },
+        {
+          "name": "justify-content-xl-end"
+        },
+        {
+          "name": "justify-content-xl-evenly"
+        },
+        {
+          "name": "justify-content-xl-start"
+        },
+        {
+          "name": "justify-content-xxl-around"
+        },
+        {
+          "name": "justify-content-xxl-between"
+        },
+        {
+          "name": "justify-content-xxl-center"
+        },
+        {
+          "name": "justify-content-xxl-end"
+        },
+        {
+          "name": "justify-content-xxl-evenly"
+        },
+        {
+          "name": "justify-content-xxl-start"
+        },
+        {
+          "name": "lead"
+        },
+        {
+          "name": "lh-1"
+        },
+        {
+          "name": "lh-base"
+        },
+        {
+          "name": "lh-lg"
+        },
+        {
+          "name": "lh-sm"
+        },
+        {
+          "name": "link-body-emphasis"
+        },
+        {
+          "name": "link-danger"
+        },
+        {
+          "name": "link-dark"
+        },
+        {
+          "name": "link-info"
+        },
+        {
+          "name": "link-light"
+        },
+        {
+          "name": "link-offset-1"
+        },
+        {
+          "name": "link-offset-1-hover"
+        },
+        {
+          "name": "link-offset-2"
+        },
+        {
+          "name": "link-offset-2-hover"
+        },
+        {
+          "name": "link-offset-3"
+        },
+        {
+          "name": "link-offset-3-hover"
+        },
+        {
+          "name": "link-opacity-10"
+        },
+        {
+          "name": "link-opacity-10-hover"
+        },
+        {
+          "name": "link-opacity-100"
+        },
+        {
+          "name": "link-opacity-100-hover"
+        },
+        {
+          "name": "link-opacity-25"
+        },
+        {
+          "name": "link-opacity-25-hover"
+        },
+        {
+          "name": "link-opacity-50"
+        },
+        {
+          "name": "link-opacity-50-hover"
+        },
+        {
+          "name": "link-opacity-75"
+        },
+        {
+          "name": "link-opacity-75-hover"
+        },
+        {
+          "name": "link-primary"
+        },
+        {
+          "name": "link-secondary"
+        },
+        {
+          "name": "link-success"
+        },
+        {
+          "name": "link-underline"
+        },
+        {
+          "name": "link-underline-danger"
+        },
+        {
+          "name": "link-underline-dark"
+        },
+        {
+          "name": "link-underline-info"
+        },
+        {
+          "name": "link-underline-light"
+        },
+        {
+          "name": "link-underline-opacity-0"
+        },
+        {
+          "name": "link-underline-opacity-0-hover"
+        },
+        {
+          "name": "link-underline-opacity-10"
+        },
+        {
+          "name": "link-underline-opacity-10-hover"
+        },
+        {
+          "name": "link-underline-opacity-100"
+        },
+        {
+          "name": "link-underline-opacity-100-hover"
+        },
+        {
+          "name": "link-underline-opacity-25"
+        },
+        {
+          "name": "link-underline-opacity-25-hover"
+        },
+        {
+          "name": "link-underline-opacity-50"
+        },
+        {
+          "name": "link-underline-opacity-50-hover"
+        },
+        {
+          "name": "link-underline-opacity-75"
+        },
+        {
+          "name": "link-underline-opacity-75-hover"
+        },
+        {
+          "name": "link-underline-primary"
+        },
+        {
+          "name": "link-underline-secondary"
+        },
+        {
+          "name": "link-underline-success"
+        },
+        {
+          "name": "link-underline-warning"
+        },
+        {
+          "name": "link-warning"
+        },
+        {
+          "name": "list-group"
+        },
+        {
+          "name": "list-group-flush"
+        },
+        {
+          "name": "list-group-horizontal"
+        },
+        {
+          "name": "list-group-horizontal-lg"
+        },
+        {
+          "name": "list-group-horizontal-md"
+        },
+        {
+          "name": "list-group-horizontal-sm"
+        },
+        {
+          "name": "list-group-horizontal-xl"
+        },
+        {
+          "name": "list-group-horizontal-xxl"
+        },
+        {
+          "name": "list-group-item"
+        },
+        {
+          "name": "list-group-item-action"
+        },
+        {
+          "name": "list-group-item-danger"
+        },
+        {
+          "name": "list-group-item-dark"
+        },
+        {
+          "name": "list-group-item-info"
+        },
+        {
+          "name": "list-group-item-light"
+        },
+        {
+          "name": "list-group-item-primary"
+        },
+        {
+          "name": "list-group-item-secondary"
+        },
+        {
+          "name": "list-group-item-success"
+        },
+        {
+          "name": "list-group-item-warning"
+        },
+        {
+          "name": "list-group-numbered"
+        },
+        {
+          "name": "list-inline"
+        },
+        {
+          "name": "list-inline-item"
+        },
+        {
+          "name": "list-unstyled"
+        },
+        {
+          "name": "m-0"
+        },
+        {
+          "name": "m-1"
+        },
+        {
+          "name": "m-2"
+        },
+        {
+          "name": "m-3"
+        },
+        {
+          "name": "m-4"
+        },
+        {
+          "name": "m-5"
+        },
+        {
+          "name": "m-auto"
+        },
+        {
+          "name": "m-lg-0"
+        },
+        {
+          "name": "m-lg-1"
+        },
+        {
+          "name": "m-lg-2"
+        },
+        {
+          "name": "m-lg-3"
+        },
+        {
+          "name": "m-lg-4"
+        },
+        {
+          "name": "m-lg-5"
+        },
+        {
+          "name": "m-lg-auto"
+        },
+        {
+          "name": "m-md-0"
+        },
+        {
+          "name": "m-md-1"
+        },
+        {
+          "name": "m-md-2"
+        },
+        {
+          "name": "m-md-3"
+        },
+        {
+          "name": "m-md-4"
+        },
+        {
+          "name": "m-md-5"
+        },
+        {
+          "name": "m-md-auto"
+        },
+        {
+          "name": "m-sm-0"
+        },
+        {
+          "name": "m-sm-1"
+        },
+        {
+          "name": "m-sm-2"
+        },
+        {
+          "name": "m-sm-3"
+        },
+        {
+          "name": "m-sm-4"
+        },
+        {
+          "name": "m-sm-5"
+        },
+        {
+          "name": "m-sm-auto"
+        },
+        {
+          "name": "m-xl-0"
+        },
+        {
+          "name": "m-xl-1"
+        },
+        {
+          "name": "m-xl-2"
+        },
+        {
+          "name": "m-xl-3"
+        },
+        {
+          "name": "m-xl-4"
+        },
+        {
+          "name": "m-xl-5"
+        },
+        {
+          "name": "m-xl-auto"
+        },
+        {
+          "name": "m-xxl-0"
+        },
+        {
+          "name": "m-xxl-1"
+        },
+        {
+          "name": "m-xxl-2"
+        },
+        {
+          "name": "m-xxl-3"
+        },
+        {
+          "name": "m-xxl-4"
+        },
+        {
+          "name": "m-xxl-5"
+        },
+        {
+          "name": "m-xxl-auto"
+        },
+        {
+          "name": "mark"
+        },
+        {
+          "name": "mb-0"
+        },
+        {
+          "name": "mb-1"
+        },
+        {
+          "name": "mb-2"
+        },
+        {
+          "name": "mb-3"
+        },
+        {
+          "name": "mb-4"
+        },
+        {
+          "name": "mb-5"
+        },
+        {
+          "name": "mb-auto"
+        },
+        {
+          "name": "mb-lg-0"
+        },
+        {
+          "name": "mb-lg-1"
+        },
+        {
+          "name": "mb-lg-2"
+        },
+        {
+          "name": "mb-lg-3"
+        },
+        {
+          "name": "mb-lg-4"
+        },
+        {
+          "name": "mb-lg-5"
+        },
+        {
+          "name": "mb-lg-auto"
+        },
+        {
+          "name": "mb-md-0"
+        },
+        {
+          "name": "mb-md-1"
+        },
+        {
+          "name": "mb-md-2"
+        },
+        {
+          "name": "mb-md-3"
+        },
+        {
+          "name": "mb-md-4"
+        },
+        {
+          "name": "mb-md-5"
+        },
+        {
+          "name": "mb-md-auto"
+        },
+        {
+          "name": "mb-sm-0"
+        },
+        {
+          "name": "mb-sm-1"
+        },
+        {
+          "name": "mb-sm-2"
+        },
+        {
+          "name": "mb-sm-3"
+        },
+        {
+          "name": "mb-sm-4"
+        },
+        {
+          "name": "mb-sm-5"
+        },
+        {
+          "name": "mb-sm-auto"
+        },
+        {
+          "name": "mb-xl-0"
+        },
+        {
+          "name": "mb-xl-1"
+        },
+        {
+          "name": "mb-xl-2"
+        },
+        {
+          "name": "mb-xl-3"
+        },
+        {
+          "name": "mb-xl-4"
+        },
+        {
+          "name": "mb-xl-5"
+        },
+        {
+          "name": "mb-xl-auto"
+        },
+        {
+          "name": "mb-xxl-0"
+        },
+        {
+          "name": "mb-xxl-1"
+        },
+        {
+          "name": "mb-xxl-2"
+        },
+        {
+          "name": "mb-xxl-3"
+        },
+        {
+          "name": "mb-xxl-4"
+        },
+        {
+          "name": "mb-xxl-5"
+        },
+        {
+          "name": "mb-xxl-auto"
+        },
+        {
+          "name": "me-0"
+        },
+        {
+          "name": "me-1"
+        },
+        {
+          "name": "me-2"
+        },
+        {
+          "name": "me-3"
+        },
+        {
+          "name": "me-4"
+        },
+        {
+          "name": "me-5"
+        },
+        {
+          "name": "me-auto"
+        },
+        {
+          "name": "me-lg-0"
+        },
+        {
+          "name": "me-lg-1"
+        },
+        {
+          "name": "me-lg-2"
+        },
+        {
+          "name": "me-lg-3"
+        },
+        {
+          "name": "me-lg-4"
+        },
+        {
+          "name": "me-lg-5"
+        },
+        {
+          "name": "me-lg-auto"
+        },
+        {
+          "name": "me-md-0"
+        },
+        {
+          "name": "me-md-1"
+        },
+        {
+          "name": "me-md-2"
+        },
+        {
+          "name": "me-md-3"
+        },
+        {
+          "name": "me-md-4"
+        },
+        {
+          "name": "me-md-5"
+        },
+        {
+          "name": "me-md-auto"
+        },
+        {
+          "name": "me-sm-0"
+        },
+        {
+          "name": "me-sm-1"
+        },
+        {
+          "name": "me-sm-2"
+        },
+        {
+          "name": "me-sm-3"
+        },
+        {
+          "name": "me-sm-4"
+        },
+        {
+          "name": "me-sm-5"
+        },
+        {
+          "name": "me-sm-auto"
+        },
+        {
+          "name": "me-xl-0"
+        },
+        {
+          "name": "me-xl-1"
+        },
+        {
+          "name": "me-xl-2"
+        },
+        {
+          "name": "me-xl-3"
+        },
+        {
+          "name": "me-xl-4"
+        },
+        {
+          "name": "me-xl-5"
+        },
+        {
+          "name": "me-xl-auto"
+        },
+        {
+          "name": "me-xxl-0"
+        },
+        {
+          "name": "me-xxl-1"
+        },
+        {
+          "name": "me-xxl-2"
+        },
+        {
+          "name": "me-xxl-3"
+        },
+        {
+          "name": "me-xxl-4"
+        },
+        {
+          "name": "me-xxl-5"
+        },
+        {
+          "name": "me-xxl-auto"
+        },
+        {
+          "name": "mh-100"
+        },
+        {
+          "name": "min-vh-100"
+        },
+        {
+          "name": "min-vw-100"
+        },
+        {
+          "name": "modal"
+        },
+        {
+          "name": "modal-backdrop"
+        },
+        {
+          "name": "modal-body"
+        },
+        {
+          "name": "modal-content"
+        },
+        {
+          "name": "modal-dialog"
+        },
+        {
+          "name": "modal-dialog-centered"
+        },
+        {
+          "name": "modal-dialog-scrollable"
+        },
+        {
+          "name": "modal-footer"
+        },
+        {
+          "name": "modal-fullscreen"
+        },
+        {
+          "name": "modal-fullscreen-lg-down"
+        },
+        {
+          "name": "modal-fullscreen-md-down"
+        },
+        {
+          "name": "modal-fullscreen-sm-down"
+        },
+        {
+          "name": "modal-fullscreen-xl-down"
+        },
+        {
+          "name": "modal-fullscreen-xxl-down"
+        },
+        {
+          "name": "modal-header"
+        },
+        {
+          "name": "modal-lg"
+        },
+        {
+          "name": "modal-sm"
+        },
+        {
+          "name": "modal-title"
+        },
+        {
+          "name": "modal-xl"
+        },
+        {
+          "name": "ms-0"
+        },
+        {
+          "name": "ms-1"
+        },
+        {
+          "name": "ms-2"
+        },
+        {
+          "name": "ms-3"
+        },
+        {
+          "name": "ms-4"
+        },
+        {
+          "name": "ms-5"
+        },
+        {
+          "name": "ms-auto"
+        },
+        {
+          "name": "ms-lg-0"
+        },
+        {
+          "name": "ms-lg-1"
+        },
+        {
+          "name": "ms-lg-2"
+        },
+        {
+          "name": "ms-lg-3"
+        },
+        {
+          "name": "ms-lg-4"
+        },
+        {
+          "name": "ms-lg-5"
+        },
+        {
+          "name": "ms-lg-auto"
+        },
+        {
+          "name": "ms-md-0"
+        },
+        {
+          "name": "ms-md-1"
+        },
+        {
+          "name": "ms-md-2"
+        },
+        {
+          "name": "ms-md-3"
+        },
+        {
+          "name": "ms-md-4"
+        },
+        {
+          "name": "ms-md-5"
+        },
+        {
+          "name": "ms-md-auto"
+        },
+        {
+          "name": "ms-sm-0"
+        },
+        {
+          "name": "ms-sm-1"
+        },
+        {
+          "name": "ms-sm-2"
+        },
+        {
+          "name": "ms-sm-3"
+        },
+        {
+          "name": "ms-sm-4"
+        },
+        {
+          "name": "ms-sm-5"
+        },
+        {
+          "name": "ms-sm-auto"
+        },
+        {
+          "name": "ms-xl-0"
+        },
+        {
+          "name": "ms-xl-1"
+        },
+        {
+          "name": "ms-xl-2"
+        },
+        {
+          "name": "ms-xl-3"
+        },
+        {
+          "name": "ms-xl-4"
+        },
+        {
+          "name": "ms-xl-5"
+        },
+        {
+          "name": "ms-xl-auto"
+        },
+        {
+          "name": "ms-xxl-0"
+        },
+        {
+          "name": "ms-xxl-1"
+        },
+        {
+          "name": "ms-xxl-2"
+        },
+        {
+          "name": "ms-xxl-3"
+        },
+        {
+          "name": "ms-xxl-4"
+        },
+        {
+          "name": "ms-xxl-5"
+        },
+        {
+          "name": "ms-xxl-auto"
+        },
+        {
+          "name": "mt-0"
+        },
+        {
+          "name": "mt-1"
+        },
+        {
+          "name": "mt-2"
+        },
+        {
+          "name": "mt-3"
+        },
+        {
+          "name": "mt-4"
+        },
+        {
+          "name": "mt-5"
+        },
+        {
+          "name": "mt-auto"
+        },
+        {
+          "name": "mt-lg-0"
+        },
+        {
+          "name": "mt-lg-1"
+        },
+        {
+          "name": "mt-lg-2"
+        },
+        {
+          "name": "mt-lg-3"
+        },
+        {
+          "name": "mt-lg-4"
+        },
+        {
+          "name": "mt-lg-5"
+        },
+        {
+          "name": "mt-lg-auto"
+        },
+        {
+          "name": "mt-md-0"
+        },
+        {
+          "name": "mt-md-1"
+        },
+        {
+          "name": "mt-md-2"
+        },
+        {
+          "name": "mt-md-3"
+        },
+        {
+          "name": "mt-md-4"
+        },
+        {
+          "name": "mt-md-5"
+        },
+        {
+          "name": "mt-md-auto"
+        },
+        {
+          "name": "mt-sm-0"
+        },
+        {
+          "name": "mt-sm-1"
+        },
+        {
+          "name": "mt-sm-2"
+        },
+        {
+          "name": "mt-sm-3"
+        },
+        {
+          "name": "mt-sm-4"
+        },
+        {
+          "name": "mt-sm-5"
+        },
+        {
+          "name": "mt-sm-auto"
+        },
+        {
+          "name": "mt-xl-0"
+        },
+        {
+          "name": "mt-xl-1"
+        },
+        {
+          "name": "mt-xl-2"
+        },
+        {
+          "name": "mt-xl-3"
+        },
+        {
+          "name": "mt-xl-4"
+        },
+        {
+          "name": "mt-xl-5"
+        },
+        {
+          "name": "mt-xl-auto"
+        },
+        {
+          "name": "mt-xxl-0"
+        },
+        {
+          "name": "mt-xxl-1"
+        },
+        {
+          "name": "mt-xxl-2"
+        },
+        {
+          "name": "mt-xxl-3"
+        },
+        {
+          "name": "mt-xxl-4"
+        },
+        {
+          "name": "mt-xxl-5"
+        },
+        {
+          "name": "mt-xxl-auto"
+        },
+        {
+          "name": "mw-100"
+        },
+        {
+          "name": "mx-0"
+        },
+        {
+          "name": "mx-1"
+        },
+        {
+          "name": "mx-2"
+        },
+        {
+          "name": "mx-3"
+        },
+        {
+          "name": "mx-4"
+        },
+        {
+          "name": "mx-5"
+        },
+        {
+          "name": "mx-auto"
+        },
+        {
+          "name": "mx-lg-0"
+        },
+        {
+          "name": "mx-lg-1"
+        },
+        {
+          "name": "mx-lg-2"
+        },
+        {
+          "name": "mx-lg-3"
+        },
+        {
+          "name": "mx-lg-4"
+        },
+        {
+          "name": "mx-lg-5"
+        },
+        {
+          "name": "mx-lg-auto"
+        },
+        {
+          "name": "mx-md-0"
+        },
+        {
+          "name": "mx-md-1"
+        },
+        {
+          "name": "mx-md-2"
+        },
+        {
+          "name": "mx-md-3"
+        },
+        {
+          "name": "mx-md-4"
+        },
+        {
+          "name": "mx-md-5"
+        },
+        {
+          "name": "mx-md-auto"
+        },
+        {
+          "name": "mx-sm-0"
+        },
+        {
+          "name": "mx-sm-1"
+        },
+        {
+          "name": "mx-sm-2"
+        },
+        {
+          "name": "mx-sm-3"
+        },
+        {
+          "name": "mx-sm-4"
+        },
+        {
+          "name": "mx-sm-5"
+        },
+        {
+          "name": "mx-sm-auto"
+        },
+        {
+          "name": "mx-xl-0"
+        },
+        {
+          "name": "mx-xl-1"
+        },
+        {
+          "name": "mx-xl-2"
+        },
+        {
+          "name": "mx-xl-3"
+        },
+        {
+          "name": "mx-xl-4"
+        },
+        {
+          "name": "mx-xl-5"
+        },
+        {
+          "name": "mx-xl-auto"
+        },
+        {
+          "name": "mx-xxl-0"
+        },
+        {
+          "name": "mx-xxl-1"
+        },
+        {
+          "name": "mx-xxl-2"
+        },
+        {
+          "name": "mx-xxl-3"
+        },
+        {
+          "name": "mx-xxl-4"
+        },
+        {
+          "name": "mx-xxl-5"
+        },
+        {
+          "name": "mx-xxl-auto"
+        },
+        {
+          "name": "my-0"
+        },
+        {
+          "name": "my-1"
+        },
+        {
+          "name": "my-2"
+        },
+        {
+          "name": "my-3"
+        },
+        {
+          "name": "my-4"
+        },
+        {
+          "name": "my-5"
+        },
+        {
+          "name": "my-auto"
+        },
+        {
+          "name": "my-lg-0"
+        },
+        {
+          "name": "my-lg-1"
+        },
+        {
+          "name": "my-lg-2"
+        },
+        {
+          "name": "my-lg-3"
+        },
+        {
+          "name": "my-lg-4"
+        },
+        {
+          "name": "my-lg-5"
+        },
+        {
+          "name": "my-lg-auto"
+        },
+        {
+          "name": "my-md-0"
+        },
+        {
+          "name": "my-md-1"
+        },
+        {
+          "name": "my-md-2"
+        },
+        {
+          "name": "my-md-3"
+        },
+        {
+          "name": "my-md-4"
+        },
+        {
+          "name": "my-md-5"
+        },
+        {
+          "name": "my-md-auto"
+        },
+        {
+          "name": "my-sm-0"
+        },
+        {
+          "name": "my-sm-1"
+        },
+        {
+          "name": "my-sm-2"
+        },
+        {
+          "name": "my-sm-3"
+        },
+        {
+          "name": "my-sm-4"
+        },
+        {
+          "name": "my-sm-5"
+        },
+        {
+          "name": "my-sm-auto"
+        },
+        {
+          "name": "my-xl-0"
+        },
+        {
+          "name": "my-xl-1"
+        },
+        {
+          "name": "my-xl-2"
+        },
+        {
+          "name": "my-xl-3"
+        },
+        {
+          "name": "my-xl-4"
+        },
+        {
+          "name": "my-xl-5"
+        },
+        {
+          "name": "my-xl-auto"
+        },
+        {
+          "name": "my-xxl-0"
+        },
+        {
+          "name": "my-xxl-1"
+        },
+        {
+          "name": "my-xxl-2"
+        },
+        {
+          "name": "my-xxl-3"
+        },
+        {
+          "name": "my-xxl-4"
+        },
+        {
+          "name": "my-xxl-5"
+        },
+        {
+          "name": "my-xxl-auto"
+        },
+        {
+          "name": "nav"
+        },
+        {
+          "name": "nav-fill"
+        },
+        {
+          "name": "nav-item"
+        },
+        {
+          "name": "nav-justified"
+        },
+        {
+          "name": "nav-link"
+        },
+        {
+          "name": "nav-pills"
+        },
+        {
+          "name": "nav-tabs"
+        },
+        {
+          "name": "nav-underline"
+        },
+        {
+          "name": "navbar"
+        },
+        {
+          "name": "navbar-brand"
+        },
+        {
+          "name": "navbar-collapse"
+        },
+        {
+          "name": "navbar-dark"
+        },
+        {
+          "name": "navbar-expand"
+        },
+        {
+          "name": "navbar-expand-lg"
+        },
+        {
+          "name": "navbar-expand-md"
+        },
+        {
+          "name": "navbar-expand-sm"
+        },
+        {
+          "name": "navbar-expand-xl"
+        },
+        {
+          "name": "navbar-expand-xxl"
+        },
+        {
+          "name": "navbar-nav"
+        },
+        {
+          "name": "navbar-nav-scroll"
+        },
+        {
+          "name": "navbar-text"
+        },
+        {
+          "name": "navbar-toggler"
+        },
+        {
+          "name": "navbar-toggler-icon"
+        },
+        {
+          "name": "object-fit-contain"
+        },
+        {
+          "name": "object-fit-cover"
+        },
+        {
+          "name": "object-fit-fill"
+        },
+        {
+          "name": "object-fit-lg-contain"
+        },
+        {
+          "name": "object-fit-lg-cover"
+        },
+        {
+          "name": "object-fit-lg-fill"
+        },
+        {
+          "name": "object-fit-lg-none"
+        },
+        {
+          "name": "object-fit-lg-scale"
+        },
+        {
+          "name": "object-fit-md-contain"
+        },
+        {
+          "name": "object-fit-md-cover"
+        },
+        {
+          "name": "object-fit-md-fill"
+        },
+        {
+          "name": "object-fit-md-none"
+        },
+        {
+          "name": "object-fit-md-scale"
+        },
+        {
+          "name": "object-fit-none"
+        },
+        {
+          "name": "object-fit-scale"
+        },
+        {
+          "name": "object-fit-sm-contain"
+        },
+        {
+          "name": "object-fit-sm-cover"
+        },
+        {
+          "name": "object-fit-sm-fill"
+        },
+        {
+          "name": "object-fit-sm-none"
+        },
+        {
+          "name": "object-fit-sm-scale"
+        },
+        {
+          "name": "object-fit-xl-contain"
+        },
+        {
+          "name": "object-fit-xl-cover"
+        },
+        {
+          "name": "object-fit-xl-fill"
+        },
+        {
+          "name": "object-fit-xl-none"
+        },
+        {
+          "name": "object-fit-xl-scale"
+        },
+        {
+          "name": "object-fit-xxl-contain"
+        },
+        {
+          "name": "object-fit-xxl-cover"
+        },
+        {
+          "name": "object-fit-xxl-fill"
+        },
+        {
+          "name": "object-fit-xxl-none"
+        },
+        {
+          "name": "object-fit-xxl-scale"
+        },
+        {
+          "name": "offcanvas"
+        },
+        {
+          "name": "offcanvas-backdrop"
+        },
+        {
+          "name": "offcanvas-body"
+        },
+        {
+          "name": "offcanvas-header"
+        },
+        {
+          "name": "offcanvas-lg"
+        },
+        {
+          "name": "offcanvas-md"
+        },
+        {
+          "name": "offcanvas-sm"
+        },
+        {
+          "name": "offcanvas-title"
+        },
+        {
+          "name": "offcanvas-xl"
+        },
+        {
+          "name": "offcanvas-xxl"
+        },
+        {
+          "name": "offset-1"
+        },
+        {
+          "name": "offset-10"
+        },
+        {
+          "name": "offset-11"
+        },
+        {
+          "name": "offset-2"
+        },
+        {
+          "name": "offset-3"
+        },
+        {
+          "name": "offset-4"
+        },
+        {
+          "name": "offset-5"
+        },
+        {
+          "name": "offset-6"
+        },
+        {
+          "name": "offset-7"
+        },
+        {
+          "name": "offset-8"
+        },
+        {
+          "name": "offset-9"
+        },
+        {
+          "name": "offset-lg-0"
+        },
+        {
+          "name": "offset-lg-1"
+        },
+        {
+          "name": "offset-lg-10"
+        },
+        {
+          "name": "offset-lg-11"
+        },
+        {
+          "name": "offset-lg-2"
+        },
+        {
+          "name": "offset-lg-3"
+        },
+        {
+          "name": "offset-lg-4"
+        },
+        {
+          "name": "offset-lg-5"
+        },
+        {
+          "name": "offset-lg-6"
+        },
+        {
+          "name": "offset-lg-7"
+        },
+        {
+          "name": "offset-lg-8"
+        },
+        {
+          "name": "offset-lg-9"
+        },
+        {
+          "name": "offset-md-0"
+        },
+        {
+          "name": "offset-md-1"
+        },
+        {
+          "name": "offset-md-10"
+        },
+        {
+          "name": "offset-md-11"
+        },
+        {
+          "name": "offset-md-2"
+        },
+        {
+          "name": "offset-md-3"
+        },
+        {
+          "name": "offset-md-4"
+        },
+        {
+          "name": "offset-md-5"
+        },
+        {
+          "name": "offset-md-6"
+        },
+        {
+          "name": "offset-md-7"
+        },
+        {
+          "name": "offset-md-8"
+        },
+        {
+          "name": "offset-md-9"
+        },
+        {
+          "name": "offset-sm-0"
+        },
+        {
+          "name": "offset-sm-1"
+        },
+        {
+          "name": "offset-sm-10"
+        },
+        {
+          "name": "offset-sm-11"
+        },
+        {
+          "name": "offset-sm-2"
+        },
+        {
+          "name": "offset-sm-3"
+        },
+        {
+          "name": "offset-sm-4"
+        },
+        {
+          "name": "offset-sm-5"
+        },
+        {
+          "name": "offset-sm-6"
+        },
+        {
+          "name": "offset-sm-7"
+        },
+        {
+          "name": "offset-sm-8"
+        },
+        {
+          "name": "offset-sm-9"
+        },
+        {
+          "name": "offset-xl-0"
+        },
+        {
+          "name": "offset-xl-1"
+        },
+        {
+          "name": "offset-xl-10"
+        },
+        {
+          "name": "offset-xl-11"
+        },
+        {
+          "name": "offset-xl-2"
+        },
+        {
+          "name": "offset-xl-3"
+        },
+        {
+          "name": "offset-xl-4"
+        },
+        {
+          "name": "offset-xl-5"
+        },
+        {
+          "name": "offset-xl-6"
+        },
+        {
+          "name": "offset-xl-7"
+        },
+        {
+          "name": "offset-xl-8"
+        },
+        {
+          "name": "offset-xl-9"
+        },
+        {
+          "name": "offset-xxl-0"
+        },
+        {
+          "name": "offset-xxl-1"
+        },
+        {
+          "name": "offset-xxl-10"
+        },
+        {
+          "name": "offset-xxl-11"
+        },
+        {
+          "name": "offset-xxl-2"
+        },
+        {
+          "name": "offset-xxl-3"
+        },
+        {
+          "name": "offset-xxl-4"
+        },
+        {
+          "name": "offset-xxl-5"
+        },
+        {
+          "name": "offset-xxl-6"
+        },
+        {
+          "name": "offset-xxl-7"
+        },
+        {
+          "name": "offset-xxl-8"
+        },
+        {
+          "name": "offset-xxl-9"
+        },
+        {
+          "name": "opacity-0"
+        },
+        {
+          "name": "opacity-100"
+        },
+        {
+          "name": "opacity-25"
+        },
+        {
+          "name": "opacity-50"
+        },
+        {
+          "name": "opacity-75"
+        },
+        {
+          "name": "order-0"
+        },
+        {
+          "name": "order-1"
+        },
+        {
+          "name": "order-2"
+        },
+        {
+          "name": "order-3"
+        },
+        {
+          "name": "order-4"
+        },
+        {
+          "name": "order-5"
+        },
+        {
+          "name": "order-first"
+        },
+        {
+          "name": "order-last"
+        },
+        {
+          "name": "order-lg-0"
+        },
+        {
+          "name": "order-lg-1"
+        },
+        {
+          "name": "order-lg-2"
+        },
+        {
+          "name": "order-lg-3"
+        },
+        {
+          "name": "order-lg-4"
+        },
+        {
+          "name": "order-lg-5"
+        },
+        {
+          "name": "order-lg-first"
+        },
+        {
+          "name": "order-lg-last"
+        },
+        {
+          "name": "order-md-0"
+        },
+        {
+          "name": "order-md-1"
+        },
+        {
+          "name": "order-md-2"
+        },
+        {
+          "name": "order-md-3"
+        },
+        {
+          "name": "order-md-4"
+        },
+        {
+          "name": "order-md-5"
+        },
+        {
+          "name": "order-md-first"
+        },
+        {
+          "name": "order-md-last"
+        },
+        {
+          "name": "order-sm-0"
+        },
+        {
+          "name": "order-sm-1"
+        },
+        {
+          "name": "order-sm-2"
+        },
+        {
+          "name": "order-sm-3"
+        },
+        {
+          "name": "order-sm-4"
+        },
+        {
+          "name": "order-sm-5"
+        },
+        {
+          "name": "order-sm-first"
+        },
+        {
+          "name": "order-sm-last"
+        },
+        {
+          "name": "order-xl-0"
+        },
+        {
+          "name": "order-xl-1"
+        },
+        {
+          "name": "order-xl-2"
+        },
+        {
+          "name": "order-xl-3"
+        },
+        {
+          "name": "order-xl-4"
+        },
+        {
+          "name": "order-xl-5"
+        },
+        {
+          "name": "order-xl-first"
+        },
+        {
+          "name": "order-xl-last"
+        },
+        {
+          "name": "order-xxl-0"
+        },
+        {
+          "name": "order-xxl-1"
+        },
+        {
+          "name": "order-xxl-2"
+        },
+        {
+          "name": "order-xxl-3"
+        },
+        {
+          "name": "order-xxl-4"
+        },
+        {
+          "name": "order-xxl-5"
+        },
+        {
+          "name": "order-xxl-first"
+        },
+        {
+          "name": "order-xxl-last"
+        },
+        {
+          "name": "overflow-auto"
+        },
+        {
+          "name": "overflow-hidden"
+        },
+        {
+          "name": "overflow-scroll"
+        },
+        {
+          "name": "overflow-visible"
+        },
+        {
+          "name": "overflow-x-auto"
+        },
+        {
+          "name": "overflow-x-hidden"
+        },
+        {
+          "name": "overflow-x-scroll"
+        },
+        {
+          "name": "overflow-x-visible"
+        },
+        {
+          "name": "overflow-y-auto"
+        },
+        {
+          "name": "overflow-y-hidden"
+        },
+        {
+          "name": "overflow-y-scroll"
+        },
+        {
+          "name": "overflow-y-visible"
+        },
+        {
+          "name": "p-0"
+        },
+        {
+          "name": "p-1"
+        },
+        {
+          "name": "p-2"
+        },
+        {
+          "name": "p-3"
+        },
+        {
+          "name": "p-4"
+        },
+        {
+          "name": "p-5"
+        },
+        {
+          "name": "p-lg-0"
+        },
+        {
+          "name": "p-lg-1"
+        },
+        {
+          "name": "p-lg-2"
+        },
+        {
+          "name": "p-lg-3"
+        },
+        {
+          "name": "p-lg-4"
+        },
+        {
+          "name": "p-lg-5"
+        },
+        {
+          "name": "p-md-0"
+        },
+        {
+          "name": "p-md-1"
+        },
+        {
+          "name": "p-md-2"
+        },
+        {
+          "name": "p-md-3"
+        },
+        {
+          "name": "p-md-4"
+        },
+        {
+          "name": "p-md-5"
+        },
+        {
+          "name": "p-sm-0"
+        },
+        {
+          "name": "p-sm-1"
+        },
+        {
+          "name": "p-sm-2"
+        },
+        {
+          "name": "p-sm-3"
+        },
+        {
+          "name": "p-sm-4"
+        },
+        {
+          "name": "p-sm-5"
+        },
+        {
+          "name": "p-xl-0"
+        },
+        {
+          "name": "p-xl-1"
+        },
+        {
+          "name": "p-xl-2"
+        },
+        {
+          "name": "p-xl-3"
+        },
+        {
+          "name": "p-xl-4"
+        },
+        {
+          "name": "p-xl-5"
+        },
+        {
+          "name": "p-xxl-0"
+        },
+        {
+          "name": "p-xxl-1"
+        },
+        {
+          "name": "p-xxl-2"
+        },
+        {
+          "name": "p-xxl-3"
+        },
+        {
+          "name": "p-xxl-4"
+        },
+        {
+          "name": "p-xxl-5"
+        },
+        {
+          "name": "page-item"
+        },
+        {
+          "name": "page-link"
+        },
+        {
+          "name": "pagination"
+        },
+        {
+          "name": "pagination-lg"
+        },
+        {
+          "name": "pagination-sm"
+        },
+        {
+          "name": "pb-0"
+        },
+        {
+          "name": "pb-1"
+        },
+        {
+          "name": "pb-2"
+        },
+        {
+          "name": "pb-3"
+        },
+        {
+          "name": "pb-4"
+        },
+        {
+          "name": "pb-5"
+        },
+        {
+          "name": "pb-lg-0"
+        },
+        {
+          "name": "pb-lg-1"
+        },
+        {
+          "name": "pb-lg-2"
+        },
+        {
+          "name": "pb-lg-3"
+        },
+        {
+          "name": "pb-lg-4"
+        },
+        {
+          "name": "pb-lg-5"
+        },
+        {
+          "name": "pb-md-0"
+        },
+        {
+          "name": "pb-md-1"
+        },
+        {
+          "name": "pb-md-2"
+        },
+        {
+          "name": "pb-md-3"
+        },
+        {
+          "name": "pb-md-4"
+        },
+        {
+          "name": "pb-md-5"
+        },
+        {
+          "name": "pb-sm-0"
+        },
+        {
+          "name": "pb-sm-1"
+        },
+        {
+          "name": "pb-sm-2"
+        },
+        {
+          "name": "pb-sm-3"
+        },
+        {
+          "name": "pb-sm-4"
+        },
+        {
+          "name": "pb-sm-5"
+        },
+        {
+          "name": "pb-xl-0"
+        },
+        {
+          "name": "pb-xl-1"
+        },
+        {
+          "name": "pb-xl-2"
+        },
+        {
+          "name": "pb-xl-3"
+        },
+        {
+          "name": "pb-xl-4"
+        },
+        {
+          "name": "pb-xl-5"
+        },
+        {
+          "name": "pb-xxl-0"
+        },
+        {
+          "name": "pb-xxl-1"
+        },
+        {
+          "name": "pb-xxl-2"
+        },
+        {
+          "name": "pb-xxl-3"
+        },
+        {
+          "name": "pb-xxl-4"
+        },
+        {
+          "name": "pb-xxl-5"
+        },
+        {
+          "name": "pe-0"
+        },
+        {
+          "name": "pe-1"
+        },
+        {
+          "name": "pe-2"
+        },
+        {
+          "name": "pe-3"
+        },
+        {
+          "name": "pe-4"
+        },
+        {
+          "name": "pe-5"
+        },
+        {
+          "name": "pe-auto"
+        },
+        {
+          "name": "pe-lg-0"
+        },
+        {
+          "name": "pe-lg-1"
+        },
+        {
+          "name": "pe-lg-2"
+        },
+        {
+          "name": "pe-lg-3"
+        },
+        {
+          "name": "pe-lg-4"
+        },
+        {
+          "name": "pe-lg-5"
+        },
+        {
+          "name": "pe-md-0"
+        },
+        {
+          "name": "pe-md-1"
+        },
+        {
+          "name": "pe-md-2"
+        },
+        {
+          "name": "pe-md-3"
+        },
+        {
+          "name": "pe-md-4"
+        },
+        {
+          "name": "pe-md-5"
+        },
+        {
+          "name": "pe-none"
+        },
+        {
+          "name": "pe-sm-0"
+        },
+        {
+          "name": "pe-sm-1"
+        },
+        {
+          "name": "pe-sm-2"
+        },
+        {
+          "name": "pe-sm-3"
+        },
+        {
+          "name": "pe-sm-4"
+        },
+        {
+          "name": "pe-sm-5"
+        },
+        {
+          "name": "pe-xl-0"
+        },
+        {
+          "name": "pe-xl-1"
+        },
+        {
+          "name": "pe-xl-2"
+        },
+        {
+          "name": "pe-xl-3"
+        },
+        {
+          "name": "pe-xl-4"
+        },
+        {
+          "name": "pe-xl-5"
+        },
+        {
+          "name": "pe-xxl-0"
+        },
+        {
+          "name": "pe-xxl-1"
+        },
+        {
+          "name": "pe-xxl-2"
+        },
+        {
+          "name": "pe-xxl-3"
+        },
+        {
+          "name": "pe-xxl-4"
+        },
+        {
+          "name": "pe-xxl-5"
+        },
+        {
+          "name": "placeholder"
+        },
+        {
+          "name": "placeholder-glow"
+        },
+        {
+          "name": "placeholder-lg"
+        },
+        {
+          "name": "placeholder-sm"
+        },
+        {
+          "name": "placeholder-wave"
+        },
+        {
+          "name": "placeholder-xs"
+        },
+        {
+          "name": "popover"
+        },
+        {
+          "name": "popover-arrow"
+        },
+        {
+          "name": "popover-body"
+        },
+        {
+          "name": "popover-header"
+        },
+        {
+          "name": "position-absolute"
+        },
+        {
+          "name": "position-fixed"
+        },
+        {
+          "name": "position-relative"
+        },
+        {
+          "name": "position-static"
+        },
+        {
+          "name": "position-sticky"
+        },
+        {
+          "name": "progress"
+        },
+        {
+          "name": "progress-bar"
+        },
+        {
+          "name": "progress-bar-animated"
+        },
+        {
+          "name": "progress-bar-striped"
+        },
+        {
+          "name": "progress-stacked"
+        },
+        {
+          "name": "ps-0"
+        },
+        {
+          "name": "ps-1"
+        },
+        {
+          "name": "ps-2"
+        },
+        {
+          "name": "ps-3"
+        },
+        {
+          "name": "ps-4"
+        },
+        {
+          "name": "ps-5"
+        },
+        {
+          "name": "ps-lg-0"
+        },
+        {
+          "name": "ps-lg-1"
+        },
+        {
+          "name": "ps-lg-2"
+        },
+        {
+          "name": "ps-lg-3"
+        },
+        {
+          "name": "ps-lg-4"
+        },
+        {
+          "name": "ps-lg-5"
+        },
+        {
+          "name": "ps-md-0"
+        },
+        {
+          "name": "ps-md-1"
+        },
+        {
+          "name": "ps-md-2"
+        },
+        {
+          "name": "ps-md-3"
+        },
+        {
+          "name": "ps-md-4"
+        },
+        {
+          "name": "ps-md-5"
+        },
+        {
+          "name": "ps-sm-0"
+        },
+        {
+          "name": "ps-sm-1"
+        },
+        {
+          "name": "ps-sm-2"
+        },
+        {
+          "name": "ps-sm-3"
+        },
+        {
+          "name": "ps-sm-4"
+        },
+        {
+          "name": "ps-sm-5"
+        },
+        {
+          "name": "ps-xl-0"
+        },
+        {
+          "name": "ps-xl-1"
+        },
+        {
+          "name": "ps-xl-2"
+        },
+        {
+          "name": "ps-xl-3"
+        },
+        {
+          "name": "ps-xl-4"
+        },
+        {
+          "name": "ps-xl-5"
+        },
+        {
+          "name": "ps-xxl-0"
+        },
+        {
+          "name": "ps-xxl-1"
+        },
+        {
+          "name": "ps-xxl-2"
+        },
+        {
+          "name": "ps-xxl-3"
+        },
+        {
+          "name": "ps-xxl-4"
+        },
+        {
+          "name": "ps-xxl-5"
+        },
+        {
+          "name": "pt-0"
+        },
+        {
+          "name": "pt-1"
+        },
+        {
+          "name": "pt-2"
+        },
+        {
+          "name": "pt-3"
+        },
+        {
+          "name": "pt-4"
+        },
+        {
+          "name": "pt-5"
+        },
+        {
+          "name": "pt-lg-0"
+        },
+        {
+          "name": "pt-lg-1"
+        },
+        {
+          "name": "pt-lg-2"
+        },
+        {
+          "name": "pt-lg-3"
+        },
+        {
+          "name": "pt-lg-4"
+        },
+        {
+          "name": "pt-lg-5"
+        },
+        {
+          "name": "pt-md-0"
+        },
+        {
+          "name": "pt-md-1"
+        },
+        {
+          "name": "pt-md-2"
+        },
+        {
+          "name": "pt-md-3"
+        },
+        {
+          "name": "pt-md-4"
+        },
+        {
+          "name": "pt-md-5"
+        },
+        {
+          "name": "pt-sm-0"
+        },
+        {
+          "name": "pt-sm-1"
+        },
+        {
+          "name": "pt-sm-2"
+        },
+        {
+          "name": "pt-sm-3"
+        },
+        {
+          "name": "pt-sm-4"
+        },
+        {
+          "name": "pt-sm-5"
+        },
+        {
+          "name": "pt-xl-0"
+        },
+        {
+          "name": "pt-xl-1"
+        },
+        {
+          "name": "pt-xl-2"
+        },
+        {
+          "name": "pt-xl-3"
+        },
+        {
+          "name": "pt-xl-4"
+        },
+        {
+          "name": "pt-xl-5"
+        },
+        {
+          "name": "pt-xxl-0"
+        },
+        {
+          "name": "pt-xxl-1"
+        },
+        {
+          "name": "pt-xxl-2"
+        },
+        {
+          "name": "pt-xxl-3"
+        },
+        {
+          "name": "pt-xxl-4"
+        },
+        {
+          "name": "pt-xxl-5"
+        },
+        {
+          "name": "px-0"
+        },
+        {
+          "name": "px-1"
+        },
+        {
+          "name": "px-2"
+        },
+        {
+          "name": "px-3"
+        },
+        {
+          "name": "px-4"
+        },
+        {
+          "name": "px-5"
+        },
+        {
+          "name": "px-lg-0"
+        },
+        {
+          "name": "px-lg-1"
+        },
+        {
+          "name": "px-lg-2"
+        },
+        {
+          "name": "px-lg-3"
+        },
+        {
+          "name": "px-lg-4"
+        },
+        {
+          "name": "px-lg-5"
+        },
+        {
+          "name": "px-md-0"
+        },
+        {
+          "name": "px-md-1"
+        },
+        {
+          "name": "px-md-2"
+        },
+        {
+          "name": "px-md-3"
+        },
+        {
+          "name": "px-md-4"
+        },
+        {
+          "name": "px-md-5"
+        },
+        {
+          "name": "px-sm-0"
+        },
+        {
+          "name": "px-sm-1"
+        },
+        {
+          "name": "px-sm-2"
+        },
+        {
+          "name": "px-sm-3"
+        },
+        {
+          "name": "px-sm-4"
+        },
+        {
+          "name": "px-sm-5"
+        },
+        {
+          "name": "px-xl-0"
+        },
+        {
+          "name": "px-xl-1"
+        },
+        {
+          "name": "px-xl-2"
+        },
+        {
+          "name": "px-xl-3"
+        },
+        {
+          "name": "px-xl-4"
+        },
+        {
+          "name": "px-xl-5"
+        },
+        {
+          "name": "px-xxl-0"
+        },
+        {
+          "name": "px-xxl-1"
+        },
+        {
+          "name": "px-xxl-2"
+        },
+        {
+          "name": "px-xxl-3"
+        },
+        {
+          "name": "px-xxl-4"
+        },
+        {
+          "name": "px-xxl-5"
+        },
+        {
+          "name": "py-0"
+        },
+        {
+          "name": "py-1"
+        },
+        {
+          "name": "py-2"
+        },
+        {
+          "name": "py-3"
+        },
+        {
+          "name": "py-4"
+        },
+        {
+          "name": "py-5"
+        },
+        {
+          "name": "py-lg-0"
+        },
+        {
+          "name": "py-lg-1"
+        },
+        {
+          "name": "py-lg-2"
+        },
+        {
+          "name": "py-lg-3"
+        },
+        {
+          "name": "py-lg-4"
+        },
+        {
+          "name": "py-lg-5"
+        },
+        {
+          "name": "py-md-0"
+        },
+        {
+          "name": "py-md-1"
+        },
+        {
+          "name": "py-md-2"
+        },
+        {
+          "name": "py-md-3"
+        },
+        {
+          "name": "py-md-4"
+        },
+        {
+          "name": "py-md-5"
+        },
+        {
+          "name": "py-sm-0"
+        },
+        {
+          "name": "py-sm-1"
+        },
+        {
+          "name": "py-sm-2"
+        },
+        {
+          "name": "py-sm-3"
+        },
+        {
+          "name": "py-sm-4"
+        },
+        {
+          "name": "py-sm-5"
+        },
+        {
+          "name": "py-xl-0"
+        },
+        {
+          "name": "py-xl-1"
+        },
+        {
+          "name": "py-xl-2"
+        },
+        {
+          "name": "py-xl-3"
+        },
+        {
+          "name": "py-xl-4"
+        },
+        {
+          "name": "py-xl-5"
+        },
+        {
+          "name": "py-xxl-0"
+        },
+        {
+          "name": "py-xxl-1"
+        },
+        {
+          "name": "py-xxl-2"
+        },
+        {
+          "name": "py-xxl-3"
+        },
+        {
+          "name": "py-xxl-4"
+        },
+        {
+          "name": "py-xxl-5"
+        },
+        {
+          "name": "ratio"
+        },
+        {
+          "name": "ratio-16x9"
+        },
+        {
+          "name": "ratio-1x1"
+        },
+        {
+          "name": "ratio-21x9"
+        },
+        {
+          "name": "ratio-4x3"
+        },
+        {
+          "name": "rounded"
+        },
+        {
+          "name": "rounded-0"
+        },
+        {
+          "name": "rounded-1"
+        },
+        {
+          "name": "rounded-2"
+        },
+        {
+          "name": "rounded-3"
+        },
+        {
+          "name": "rounded-4"
+        },
+        {
+          "name": "rounded-5"
+        },
+        {
+          "name": "rounded-bottom"
+        },
+        {
+          "name": "rounded-bottom-0"
+        },
+        {
+          "name": "rounded-bottom-1"
+        },
+        {
+          "name": "rounded-bottom-2"
+        },
+        {
+          "name": "rounded-bottom-3"
+        },
+        {
+          "name": "rounded-bottom-4"
+        },
+        {
+          "name": "rounded-bottom-5"
+        },
+        {
+          "name": "rounded-bottom-circle"
+        },
+        {
+          "name": "rounded-bottom-pill"
+        },
+        {
+          "name": "rounded-circle"
+        },
+        {
+          "name": "rounded-end"
+        },
+        {
+          "name": "rounded-end-0"
+        },
+        {
+          "name": "rounded-end-1"
+        },
+        {
+          "name": "rounded-end-2"
+        },
+        {
+          "name": "rounded-end-3"
+        },
+        {
+          "name": "rounded-end-4"
+        },
+        {
+          "name": "rounded-end-5"
+        },
+        {
+          "name": "rounded-end-circle"
+        },
+        {
+          "name": "rounded-end-pill"
+        },
+        {
+          "name": "rounded-pill"
+        },
+        {
+          "name": "rounded-start"
+        },
+        {
+          "name": "rounded-start-0"
+        },
+        {
+          "name": "rounded-start-1"
+        },
+        {
+          "name": "rounded-start-2"
+        },
+        {
+          "name": "rounded-start-3"
+        },
+        {
+          "name": "rounded-start-4"
+        },
+        {
+          "name": "rounded-start-5"
+        },
+        {
+          "name": "rounded-start-circle"
+        },
+        {
+          "name": "rounded-start-pill"
+        },
+        {
+          "name": "rounded-top"
+        },
+        {
+          "name": "rounded-top-0"
+        },
+        {
+          "name": "rounded-top-1"
+        },
+        {
+          "name": "rounded-top-2"
+        },
+        {
+          "name": "rounded-top-3"
+        },
+        {
+          "name": "rounded-top-4"
+        },
+        {
+          "name": "rounded-top-5"
+        },
+        {
+          "name": "rounded-top-circle"
+        },
+        {
+          "name": "rounded-top-pill"
+        },
+        {
+          "name": "row"
+        },
+        {
+          "name": "row-cols-1"
+        },
+        {
+          "name": "row-cols-2"
+        },
+        {
+          "name": "row-cols-3"
+        },
+        {
+          "name": "row-cols-4"
+        },
+        {
+          "name": "row-cols-5"
+        },
+        {
+          "name": "row-cols-6"
+        },
+        {
+          "name": "row-cols-auto"
+        },
+        {
+          "name": "row-cols-lg-1"
+        },
+        {
+          "name": "row-cols-lg-2"
+        },
+        {
+          "name": "row-cols-lg-3"
+        },
+        {
+          "name": "row-cols-lg-4"
+        },
+        {
+          "name": "row-cols-lg-5"
+        },
+        {
+          "name": "row-cols-lg-6"
+        },
+        {
+          "name": "row-cols-lg-auto"
+        },
+        {
+          "name": "row-cols-md-1"
+        },
+        {
+          "name": "row-cols-md-2"
+        },
+        {
+          "name": "row-cols-md-3"
+        },
+        {
+          "name": "row-cols-md-4"
+        },
+        {
+          "name": "row-cols-md-5"
+        },
+        {
+          "name": "row-cols-md-6"
+        },
+        {
+          "name": "row-cols-md-auto"
+        },
+        {
+          "name": "row-cols-sm-1"
+        },
+        {
+          "name": "row-cols-sm-2"
+        },
+        {
+          "name": "row-cols-sm-3"
+        },
+        {
+          "name": "row-cols-sm-4"
+        },
+        {
+          "name": "row-cols-sm-5"
+        },
+        {
+          "name": "row-cols-sm-6"
+        },
+        {
+          "name": "row-cols-sm-auto"
+        },
+        {
+          "name": "row-cols-xl-1"
+        },
+        {
+          "name": "row-cols-xl-2"
+        },
+        {
+          "name": "row-cols-xl-3"
+        },
+        {
+          "name": "row-cols-xl-4"
+        },
+        {
+          "name": "row-cols-xl-5"
+        },
+        {
+          "name": "row-cols-xl-6"
+        },
+        {
+          "name": "row-cols-xl-auto"
+        },
+        {
+          "name": "row-cols-xxl-1"
+        },
+        {
+          "name": "row-cols-xxl-2"
+        },
+        {
+          "name": "row-cols-xxl-3"
+        },
+        {
+          "name": "row-cols-xxl-4"
+        },
+        {
+          "name": "row-cols-xxl-5"
+        },
+        {
+          "name": "row-cols-xxl-6"
+        },
+        {
+          "name": "row-cols-xxl-auto"
+        },
+        {
+          "name": "row-gap-0"
+        },
+        {
+          "name": "row-gap-1"
+        },
+        {
+          "name": "row-gap-2"
+        },
+        {
+          "name": "row-gap-3"
+        },
+        {
+          "name": "row-gap-4"
+        },
+        {
+          "name": "row-gap-5"
+        },
+        {
+          "name": "row-gap-lg-0"
+        },
+        {
+          "name": "row-gap-lg-1"
+        },
+        {
+          "name": "row-gap-lg-2"
+        },
+        {
+          "name": "row-gap-lg-3"
+        },
+        {
+          "name": "row-gap-lg-4"
+        },
+        {
+          "name": "row-gap-lg-5"
+        },
+        {
+          "name": "row-gap-md-0"
+        },
+        {
+          "name": "row-gap-md-1"
+        },
+        {
+          "name": "row-gap-md-2"
+        },
+        {
+          "name": "row-gap-md-3"
+        },
+        {
+          "name": "row-gap-md-4"
+        },
+        {
+          "name": "row-gap-md-5"
+        },
+        {
+          "name": "row-gap-sm-0"
+        },
+        {
+          "name": "row-gap-sm-1"
+        },
+        {
+          "name": "row-gap-sm-2"
+        },
+        {
+          "name": "row-gap-sm-3"
+        },
+        {
+          "name": "row-gap-sm-4"
+        },
+        {
+          "name": "row-gap-sm-5"
+        },
+        {
+          "name": "row-gap-xl-0"
+        },
+        {
+          "name": "row-gap-xl-1"
+        },
+        {
+          "name": "row-gap-xl-2"
+        },
+        {
+          "name": "row-gap-xl-3"
+        },
+        {
+          "name": "row-gap-xl-4"
+        },
+        {
+          "name": "row-gap-xl-5"
+        },
+        {
+          "name": "row-gap-xxl-0"
+        },
+        {
+          "name": "row-gap-xxl-1"
+        },
+        {
+          "name": "row-gap-xxl-2"
+        },
+        {
+          "name": "row-gap-xxl-3"
+        },
+        {
+          "name": "row-gap-xxl-4"
+        },
+        {
+          "name": "row-gap-xxl-5"
+        },
+        {
+          "name": "shadow"
+        },
+        {
+          "name": "shadow-lg"
+        },
+        {
+          "name": "shadow-none"
+        },
+        {
+          "name": "shadow-sm"
+        },
+        {
+          "name": "show"
+        },
+        {
+          "name": "small"
+        },
+        {
+          "name": "spinner-border"
+        },
+        {
+          "name": "spinner-border-sm"
+        },
+        {
+          "name": "spinner-grow"
+        },
+        {
+          "name": "spinner-grow-sm"
+        },
+        {
+          "name": "start-0"
+        },
+        {
+          "name": "start-100"
+        },
+        {
+          "name": "start-50"
+        },
+        {
+          "name": "sticky-bottom"
+        },
+        {
+          "name": "sticky-lg-bottom"
+        },
+        {
+          "name": "sticky-lg-top"
+        },
+        {
+          "name": "sticky-md-bottom"
+        },
+        {
+          "name": "sticky-md-top"
+        },
+        {
+          "name": "sticky-sm-bottom"
+        },
+        {
+          "name": "sticky-sm-top"
+        },
+        {
+          "name": "sticky-top"
+        },
+        {
+          "name": "sticky-xl-bottom"
+        },
+        {
+          "name": "sticky-xl-top"
+        },
+        {
+          "name": "sticky-xxl-bottom"
+        },
+        {
+          "name": "sticky-xxl-top"
+        },
+        {
+          "name": "stretched-link"
+        },
+        {
+          "name": "tab-content"
+        },
+        {
+          "name": "tab-pane"
+        },
+        {
+          "name": "table"
+        },
+        {
+          "name": "table-active"
+        },
+        {
+          "name": "table-bordered"
+        },
+        {
+          "name": "table-borderless"
+        },
+        {
+          "name": "table-danger"
+        },
+        {
+          "name": "table-dark"
+        },
+        {
+          "name": "table-group-divider"
+        },
+        {
+          "name": "table-hover"
+        },
+        {
+          "name": "table-info"
+        },
+        {
+          "name": "table-light"
+        },
+        {
+          "name": "table-primary"
+        },
+        {
+          "name": "table-responsive"
+        },
+        {
+          "name": "table-responsive-lg"
+        },
+        {
+          "name": "table-responsive-md"
+        },
+        {
+          "name": "table-responsive-sm"
+        },
+        {
+          "name": "table-responsive-xl"
+        },
+        {
+          "name": "table-responsive-xxl"
+        },
+        {
+          "name": "table-secondary"
+        },
+        {
+          "name": "table-sm"
+        },
+        {
+          "name": "table-striped"
+        },
+        {
+          "name": "table-striped-columns"
+        },
+        {
+          "name": "table-success"
+        },
+        {
+          "name": "table-warning"
+        },
+        {
+          "name": "text-bg-danger"
+        },
+        {
+          "name": "text-bg-dark"
+        },
+        {
+          "name": "text-bg-info"
+        },
+        {
+          "name": "text-bg-light"
+        },
+        {
+          "name": "text-bg-primary"
+        },
+        {
+          "name": "text-bg-secondary"
+        },
+        {
+          "name": "text-bg-success"
+        },
+        {
+          "name": "text-bg-warning"
+        },
+        {
+          "name": "text-black"
+        },
+        {
+          "name": "text-black-50"
+        },
+        {
+          "name": "text-body"
+        },
+        {
+          "name": "text-body-emphasis"
+        },
+        {
+          "name": "text-body-secondary"
+        },
+        {
+          "name": "text-body-tertiary"
+        },
+        {
+          "name": "text-break"
+        },
+        {
+          "name": "text-capitalize"
+        },
+        {
+          "name": "text-center"
+        },
+        {
+          "name": "text-danger"
+        },
+        {
+          "name": "text-danger-emphasis"
+        },
+        {
+          "name": "text-dark"
+        },
+        {
+          "name": "text-dark-emphasis"
+        },
+        {
+          "name": "text-decoration-line-through"
+        },
+        {
+          "name": "text-decoration-none"
+        },
+        {
+          "name": "text-decoration-underline"
+        },
+        {
+          "name": "text-end"
+        },
+        {
+          "name": "text-info"
+        },
+        {
+          "name": "text-info-emphasis"
+        },
+        {
+          "name": "text-lg-center"
+        },
+        {
+          "name": "text-lg-end"
+        },
+        {
+          "name": "text-lg-start"
+        },
+        {
+          "name": "text-light"
+        },
+        {
+          "name": "text-light-emphasis"
+        },
+        {
+          "name": "text-lowercase"
+        },
+        {
+          "name": "text-md-center"
+        },
+        {
+          "name": "text-md-end"
+        },
+        {
+          "name": "text-md-start"
+        },
+        {
+          "name": "text-muted"
+        },
+        {
+          "name": "text-nowrap"
+        },
+        {
+          "name": "text-opacity-100"
+        },
+        {
+          "name": "text-opacity-25"
+        },
+        {
+          "name": "text-opacity-50"
+        },
+        {
+          "name": "text-opacity-75"
+        },
+        {
+          "name": "text-primary"
+        },
+        {
+          "name": "text-primary-emphasis"
+        },
+        {
+          "name": "text-reset"
+        },
+        {
+          "name": "text-secondary"
+        },
+        {
+          "name": "text-secondary-emphasis"
+        },
+        {
+          "name": "text-sm-center"
+        },
+        {
+          "name": "text-sm-end"
+        },
+        {
+          "name": "text-sm-start"
+        },
+        {
+          "name": "text-start"
+        },
+        {
+          "name": "text-success"
+        },
+        {
+          "name": "text-success-emphasis"
+        },
+        {
+          "name": "text-truncate"
+        },
+        {
+          "name": "text-uppercase"
+        },
+        {
+          "name": "text-warning"
+        },
+        {
+          "name": "text-warning-emphasis"
+        },
+        {
+          "name": "text-white"
+        },
+        {
+          "name": "text-white-50"
+        },
+        {
+          "name": "text-wrap"
+        },
+        {
+          "name": "text-xl-center"
+        },
+        {
+          "name": "text-xl-end"
+        },
+        {
+          "name": "text-xl-start"
+        },
+        {
+          "name": "text-xxl-center"
+        },
+        {
+          "name": "text-xxl-end"
+        },
+        {
+          "name": "text-xxl-start"
+        },
+        {
+          "name": "toast"
+        },
+        {
+          "name": "toast-body"
+        },
+        {
+          "name": "toast-container"
+        },
+        {
+          "name": "toast-header"
+        },
+        {
+          "name": "tooltip"
+        },
+        {
+          "name": "tooltip-arrow"
+        },
+        {
+          "name": "tooltip-inner"
+        },
+        {
+          "name": "top-0"
+        },
+        {
+          "name": "top-100"
+        },
+        {
+          "name": "top-50"
+        },
+        {
+          "name": "translate-middle"
+        },
+        {
+          "name": "translate-middle-x"
+        },
+        {
+          "name": "translate-middle-y"
+        },
+        {
+          "name": "user-select-all"
+        },
+        {
+          "name": "user-select-auto"
+        },
+        {
+          "name": "user-select-none"
+        },
+        {
+          "name": "valid-feedback"
+        },
+        {
+          "name": "valid-tooltip"
+        },
+        {
+          "name": "vh-100"
+        },
+        {
+          "name": "visible"
+        },
+        {
+          "name": "visually-hidden"
+        },
+        {
+          "name": "visually-hidden-focusable"
+        },
+        {
+          "name": "vr"
+        },
+        {
+          "name": "vstack"
+        },
+        {
+          "name": "vw-100"
+        },
+        {
+          "name": "w-100"
+        },
+        {
+          "name": "w-25"
+        },
+        {
+          "name": "w-50"
+        },
+        {
+          "name": "w-75"
+        },
+        {
+          "name": "w-auto"
+        },
+        {
+          "name": "was-validated"
+        },
+        {
+          "name": "z-0"
+        },
+        {
+          "name": "z-1"
+        },
+        {
+          "name": "z-2"
+        },
+        {
+          "name": "z-3"
+        },
+        {
+          "name": "z-n1"
+        }
+      ]
+    }
+  ]
+}

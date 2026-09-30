@@ -11,5 +11,14 @@ return {
     { "<leader>la", ":Laravel artisan<cr>", desc = "Artisan" },
     { "<leader>lr", ":Laravel routes<cr>", desc = "Routes" },
   },
-  opts = { lsp_server = "intelephense" },
+  opts = {
+    lsp_server = "intelephense",
+    -- Use the snacks picker (this config uses snacks, not telescope).
+    features = {
+      pickers = {
+        enable = true,
+        provider = "snacks",
+      },
+    },
+  },
 }

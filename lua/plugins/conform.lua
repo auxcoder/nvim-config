@@ -13,6 +13,9 @@ return {
       -- Use blade_formatter for .blade.php files
       blade = { "blade_formatter" },
 
+      -- Eta templates (HTML-like, formatted with prettier)
+      eta = { "prettier" },
+
       -- Example for related Laravel files
       javascript = { "prettier" },
       typescript = { "prettier" },
@@ -34,30 +37,38 @@ return {
       -- },
       -- Configuration for Laravel Pint
       pint = {
-        -- COMMAND: Explicitly point to the project's local vendor/bin path first.
-        command = "./vendor/bin/pint",
-
-        -- ARGS: Pint is simple, it just needs the filename/path.
+        -- Prefer the project's local Pint (./vendor/bin/pint); fall back to a
+        -- globally-installed `pint` on PATH if the local one isn't present.
+        command = function()
+          local local_bin = "./vendor/bin/pint"
+          if vim.fn.executable(local_bin) == 1 then
+            return local_bin
+          end
+          return "pint"
+        end,
         args = { "$FILENAME" },
-
-        -- CONDITION: CRITICAL for local binaries.
-        -- This checks if the './vendor/bin/pint' file is executable.
-        -- If it is found, it uses the local version. If not, conform may fall
-        -- back to the global 'pint' (if it's in your PATH).
         condition = function(ctx)
-          return vim.fn.executable(ctx.command)
+          return vim.fn.executable("./vendor/bin/pint") == 1 or vim.fn.executable("pint") == 1
         end,
       },
       -- Custom config blade_formatter
       blade_formatter = {
-        -- https://github.com/shufo/blade-formatter, installed via npm install blade-formatter
-        command = "./node_modules/.bin/blade-formatter",
-        args = { "--stdin-filepath", "$FILENAME" },
-        condition = function(ctx)
-          return vim.fn.executable(ctx.command)
+        -- https://github.com/shufo/blade-formatter
+        -- Prefer the project-local binary (./node_modules/.bin/blade-formatter);
+        -- fall back to a globally-installed `blade-formatter` on PATH.
+        command = function()
+          local local_bin = "./node_modules/.bin/blade-formatter"
+          if vim.fn.executable(local_bin) == 1 then
+            return local_bin
+          end
+          return "blade-formatter"
         end,
-        -- You may need to set the command explicitly if you installed it via a specific local composer/npm path
-        -- command = "./node_modules/.bin/blade-formatter"
+        args = { "--indent-size", "4", "--stdin-filepath", "$FILENAME" },
+        condition = function(ctx)
+          -- Available if either the local or a global binary can be found.
+          return vim.fn.executable("./node_modules/.bin/blade-formatter") == 1
+            or vim.fn.executable("blade-formatter") == 1
+        end,
       },
     },
   },
