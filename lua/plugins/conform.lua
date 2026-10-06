@@ -21,6 +21,9 @@ return {
       typescript = { "prettier" },
       json = { "prettier" },
       lua = { "stylua" },
+
+      -- TOML formatting (also provides LSP via taplo in lsp.lua)
+      toml = { "taplo" },
     },
 
     formatters = {
