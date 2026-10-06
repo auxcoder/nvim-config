@@ -123,6 +123,9 @@ return {
           },
         },
         kotlin_language_server = {},
+        -- toml (taplo) — completion, hover, and schema-based validation.
+        -- Auto-installed via Mason when listed here.
+        taplo = {},
         -- automatically installed with mason and loaded with lspconfig
         -- pyright = {},
         -- groovy (for Jenkins Pipeline)
